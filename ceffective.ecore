@@ -7,15 +7,15 @@
         eType="#//AmbienteDespliegue" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mecanismoseguridad" upperBound="-1"
         eType="#//MecanismoSeguridad" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="autenticacionusuario" lowerBound="1"
-        upperBound="-1" eType="#//AutenticacionUsuario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="autenticacionUsuario" lowerBound="1"
+        upperBound="-1" eType="#//AutenticacionUsuario" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AutenticacionUsuario">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="usuario" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="correo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AmbienteDespliegue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ambiente" eType="#//TipoAmbiente"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="recursos" upperBound="-1"
         eType="#//Recurso" containment="true"/>
   </eClassifiers>
