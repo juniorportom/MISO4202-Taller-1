@@ -7,20 +7,18 @@
         eType="#//AmbienteDespliegue" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mecanismoseguridad" upperBound="-1"
         eType="#//MecanismoSeguridad" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="usuario" eType="#//Usuario"
-        eOpposite="#//Usuario/proveedornube"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usuario" upperBound="-1"
+        eType="#//Usuario" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Usuario">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="correo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="llaveSecreta" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="proveedornube" eType="#//ProveedorNube"
-        eOpposite="#//ProveedorNube/usuario"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AmbienteDespliegue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="recursos" upperBound="-1"
-        eType="#//Recurso"/>
+        eType="#//Recurso" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Recurso" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -39,22 +37,26 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MecanismoSeguridad" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" lowerBound="1" eType="#//VPC"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="recursos" upperBound="-1"
-        eType="#//MecanismoSeguridad"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Subred" eSuperTypes="#//MecanismoSeguridad">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cidrBlock" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="zonaDisponibilidad" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" lowerBound="1" eType="#//VPC"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InternetGateway" eSuperTypes="#//MecanismoSeguridad"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InternetGateway" eSuperTypes="#//MecanismoSeguridad">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" lowerBound="1" eType="#//VPC"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GrupoSeguridad" eSuperTypes="#//MecanismoSeguridad">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="descripcion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="zonaDisponibilidad" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reglasSalida" lowerBound="1"
-        upperBound="-1" eType="#//Regla"/>
+        upperBound="-1" eType="#//Regla" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reglasEntrada" lowerBound="1"
-        upperBound="-1" eType="#//Regla"/>
+        upperBound="-1" eType="#//Regla" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" lowerBound="1" eType="#//VPC"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VPC">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -67,7 +69,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="descripcion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ceffective">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="usuario" upperBound="-1"
-        eType="#//Usuario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="proveedorNube" eType="#//ProveedorNube"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

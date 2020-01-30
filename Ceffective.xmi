@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Ceffective:Ceffective xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
-  <usuario/>
+<Ceffective:Ceffective xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
+  <proveedorNube nombre="AWS">
+    <ambientedespliegue nombre="Test">
+      <recursos xsi:type="Ceffective:ServidorBD" nombre="S1" tamano="1000" recursos="//@proveedorNube/@ambientedespliegue.0/@recursos.1" tipo="NoSQL" sistemaManejador="Postgresql"/>
+      <recursos xsi:type="Ceffective:Almacenamiento" nombre="A1" tamano="5000"/>
+      <recursos xsi:type="Ceffective:ServidorAplicaciones" nombre="App1" tamano="500" recursos="//@proveedorNube/@ambientedespliegue.0/@recursos.1" sistemaOperativo="Windows"/>
+    </ambientedespliegue>
+    <mecanismoseguridad xsi:type="Ceffective:Subred" nombre="Sub1" cidrBlock="1234" zonaDisponibilidad="US">
+      <vpc nombre="VPC1"/>
+    </mecanismoseguridad>
+    <mecanismoseguridad xsi:type="Ceffective:GrupoSeguridad" nombre="G1" descripcion="Grupo" zonaDisponibilidad="CO">
+      <reglasSalida tipo="SSH" protocolo="TCP" puerto="22" origen="0.0.0.0/0" descripcion="RS1"/>
+      <reglasEntrada tipo="HTTP" protocolo="TCP" puerto="80" origen="0.0.0.0/0" descripcion="R1"/>
+      <reglasEntrada tipo="NFS" protocolo="TCP" puerto="2049" origen="0.0.0.0/0" descripcion="R2"/>
+      <vpc nombre="VPC2"/>
+    </mecanismoseguridad>
+    <mecanismoseguridad xsi:type="Ceffective:InternetGateway" nombre="I1">
+      <vpc nombre="VPC3"/>
+    </mecanismoseguridad>
+    <usuario nombre="Sebastian" correo="js@u.edu.co" llaveSecreta="123"/>
+  </proveedorNube>
 </Ceffective:Ceffective>
