@@ -1,0 +1,57 @@
+System.out.println("Se tienen recursos de bases de datos con algun recurso asociado: ");
+DBSinAlmacenamiento().println();
+System.out.println("Bases de datos configuradas");
+DBSPorProveedorEspecifico().println();
+
+operation DBSinAlmacenamiento():Boolean{
+	return ServidorBD.allInstances.select(db|db.recursos.size() > 0).size() > 0;
+}
+
+operation DBSPorProveedorEspecifico():Boolean{
+	//AmbienteDespliegue.allInstances.select(a|a.recursos)
+	//Package>ClassUnit.all.select(cu | cu.name.substring(cu.name.length() - 4, cu.name.length()) <> "Test").Size().println();
+	var correctaAsignacion = true;
+	for(proveedor in ProveedorNube.allInstances){
+		//proveedor.ambientedespliegue> ServidorBD.all.select(db|db.tipo.name.println() = "Relacional").println();
+		if(proveedor.nombre == "AWS"){
+			System.out.println("Proveedor AWS bien configurado: ");
+				proveedor.ambientedespliegue>
+				(
+					(
+						(ServidorBD.all.select(db|db.sistemaManejador = "PostgreSQL" and db.tipo.name = "Relacional").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "Oracle" and db.tipo.name = "Relacional").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "Aurora" and db.tipo.name = "Relacional").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "MariaDB" and db.tipo.name = "Relacional").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "MySQL" and db.tipo.name = "Relacional").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "SQLServer" and db.tipo.name = "Relacional").size()) +
+						
+						(ServidorBD.all.select(db|db.sistemaManejador = "DocumentDB" and db.tipo.name = "NoSql").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "Dynamo" and db.tipo.name = "NoSql").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "Cassandra" and db.tipo.name = "NoSql").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "Redis" and db.tipo.name = "NoSql").size()) 
+						 
+					) = ServidorBD.all.size()
+				
+				).println();
+			}
+			if(proveedor.nombre == "GCP"){
+				System.out.println("Proveedor GCP bien configurado: ");
+				proveedor.ambientedespliegue>
+				(
+					(
+						(ServidorBD.all.select(db|db.sistemaManejador = "MySQL" and db.tipo.name = "Relacional").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "PostgreSQL" and db.tipo.name = "Relacional").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "SQLServer" and db.tipo.name = "Relacional").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "CloudSpanner" and db.tipo.name = "Relacional").size()) +
+						
+						(ServidorBD.all.select(db|db.sistemaManejador = "BigTable" and db.tipo.name = "NoSql").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "Firestore" and db.tipo.name = "NoSql").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "Firebase" and db.tipo.name = "NoSql").size()) +
+						(ServidorBD.all.select(db|db.sistemaManejador = "Redis" and db.tipo.name = "NoSql").size()) 
+						 
+					) = ServidorBD.all.size()
+				
+				).println();
+			}		
+		}	
+	}	

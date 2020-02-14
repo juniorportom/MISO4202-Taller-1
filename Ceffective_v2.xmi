@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Ceffective:Ceffective xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ceffective="https://www.uniandes.edu.co/ceffective" xsi:schemaLocation="https://www.uniandes.edu.co/ceffective ceffective.ecore">
-  <proveedorNube nombre="AWS">
+<Ceffective:Ceffective xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
+  <proveedorNube nombre="GCP">
     <ambientedespliegue>
       <recursos xsi:type="Ceffective:ServidorAplicaciones" nombre="Servidor python web" recursos="//@proveedorNube/@ambientedespliegue.0/@recursos.1" vpc="//@proveedorNube/@vpc.0" sistemaOperativo="linux 16.04"/>
       <recursos xsi:type="Ceffective:Almacenamiento" nombre="Disco principal" vpc="//@proveedorNube/@vpc.0" tamanoInicial="100"/>
-      <recursos xsi:type="Ceffective:ServidorBD" nombre="Base de datos app" vpc="//@proveedorNube/@vpc.0" tipo="Relacional" sistemaManejador="postgres"/>
+      <recursos xsi:type="Ceffective:ServidorBD" nombre="Base de datos app" vpc="//@proveedorNube/@vpc.0" tipo="NoSql" sistemaManejador="PostgreSQL"/>
     </ambientedespliegue>
     <autenticacionUsuario xsi:type="Ceffective:AutenticacionBasica" usuario="usuario1" correo="usuario1@correo.com" password="prueba123"/>
     <autenticacionUsuario xsi:type="Ceffective:AutenticacionFirma" usuario="usuario2" correo="usuario2@correo.com" nombre="key ambiente IST" certificado="ambienteIST.pem"/>
