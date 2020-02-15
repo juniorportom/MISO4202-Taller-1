@@ -24,6 +24,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="recursos" upperBound="-1"
         eType="#//Recurso"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" eType="#//VPC" eOpposite="#//VPC/recurso"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="zonaDisponibilidad" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="zonaNombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServidorAplicaciones" eSuperTypes="#//Servidor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sistemaOperativo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

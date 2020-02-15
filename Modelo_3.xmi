@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ceffective:ProveedorNube
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Ceffective="https://www.uniandes.edu.co/ceffective"
+    nombre="AWS">
+  <vpc>
+    <mecanismoseguridad
+        xsi:type="Ceffective:GrupoSeguridad"
+        nombre="Grupo Seguridad"
+        descripcion="Grupo Seguridad"
+        zonaDisponibilidad="us-east-2">
+      <reglasEntrada
+          tipo="Custom TCP"
+          protocolo="TCP"
+          puerto="99"
+          descripcion="Regla Invalida por Puerto Incorrecto"/>
+    </mecanismoseguridad>
+  </vpc>
+</Ceffective:ProveedorNube>

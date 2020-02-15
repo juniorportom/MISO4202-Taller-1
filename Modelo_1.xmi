@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ceffective:ProveedorNube
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Ceffective="https://www.uniandes.edu.co/ceffective"
+    nombre="AWS">
+  <vpc>
+    <mecanismoseguridad
+        xsi:type="Ceffective:Subred"
+        nombre="Invalid CIDR Block"
+        cidrBlock="123.202.2.32/99"
+        zonaDisponibilidad="us-east-2"/>
+  </vpc>
+</Ceffective:ProveedorNube>
