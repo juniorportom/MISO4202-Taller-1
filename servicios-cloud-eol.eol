@@ -1,7 +1,17 @@
+
 System.out.println("Se tienen recursos de bases de datos con algun recurso asociado: ");
 DBSinAlmacenamiento().println();
 System.out.println("Bases de datos configuradas");
 DBSPorProveedorEspecifico().println();
+
+"Validacion CIDR Block".println();
+isValidCIDR().println();
+
+"Validacion Reglas".println();
+isValidRule().println();
+
+"Validacion Region".println();
+isValidRegion().println();
 
 operation DBSinAlmacenamiento():Boolean{
 	return ServidorBD.allInstances.select(db|db.recursos.size() > 0).size() > 0;
@@ -59,8 +69,6 @@ operation DBSPorProveedorEspecifico():Boolean{
 
 
 
-
-
 /*
 IMPARES
 */
@@ -73,9 +81,15 @@ en el ​RFC 4632​, en nuestro caso debemos validar que el texto se escriba n.
 corresponde a un número entre 0-255 y ​m​ un número entre 0-32.
 */
 
-operation Subred isValidCIDR(): Boolean {
-	"--> Prueba CIDR Block para ".concat(self.cidrBlock).println();
-	return self.cidrBlock.matches("^(([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]).([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]).([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]).([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])/([0-9]|[1-2][0-9]|3[0-2]))$");
+operation isValidCIDR(): Boolean {
+	for(red in Subred.allInstances) {	
+		if(red.cidrBlock.matches("^(([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]).([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]).([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]).([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])/([0-9]|[1-2][0-9]|3[0-2]))$")){
+			continue;
+		}else{
+			return false;
+		}
+	}
+	return true;
 }
 
 /*
@@ -84,42 +98,44 @@ Validar que de acuerdo al tipo de regla especificado, los valores de protocolo y
 deben ser los valores fijos dados en la tabla.
 */
 
-operation Regla isValidRule(): Boolean {
-	if ( self.tipo.matches("^(Custom TCP)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^([1-9][0-9][2-9][4-9]|6[0-5][0-5][0-3][0-5]|[1-5][0-9][0-9][0-9][0-9])$");
-	} else if ( self.tipo.matches("^(Custom UDP)$") ) {
-		return self.protocolo.matches("^(UDP)$") and self.puerto.matches("^([1-9][0-9][2-9][4-9]|6[0-5][0-5][0-3][0-5]|[1-5][0-9][0-9][0-9][0-9])$");
-	} else if ( self.tipo.matches("^(DNS UDP)$") ) {
-		return self.protocolo.matches("^(UDP)$") and self.puerto.matches("^(53)$");
-	} else if ( self.tipo.matches("^(DNS TCP)$") ) {
-		return self.protocolo.matches("^(UDP)$") and self.puerto.matches("^(53)$");
-	} else if ( self.tipo.matches("^(HTTP)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(80)$");
-	} else if ( self.tipo.matches("^(HTTPS)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(443)$");
-	} else if ( self.tipo.matches("^(SSH)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(22)$");
-	} else if ( self.tipo.matches("^(NFS)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(2049)$");
-	} else if ( self.tipo.matches("^(PostgresSQL)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(5432)$");
-	} else if ( self.tipo.matches("^(PostgresSQL)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(5432)$");
-	} else if ( self.tipo.matches("^(MySQL/Aurora/MariaDB)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(3306)$");
-	} else if ( self.tipo.matches("^(POP3)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(110)$");
-	} else if ( self.tipo.matches("^(IMAP)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(143)$");
-	} else if ( self.tipo.matches("^(LDAP)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(389)$");
-	} else if ( self.tipo.matches("^(SMTP)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(25)$");
-	} else if ( self.tipo.matches("^(Oracle)$") ) {
-		return self.protocolo.matches("^(TCP)$") and self.puerto.matches("^(1521)$");
-	} else {
-		"--> Falla Validacion Regla [ Tipo : Protocolo : Puerto ] para ".concat(self.tipo).concat(" : ").concat(self.protocolo).concat(" : ").concat(self.puerto).println();
-		return false;
+operation isValidRule(): Boolean {
+	for ( regla in Regla.allInstances ) {
+		if ( regla.tipo.matches("^(Custom TCP)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^([1-9][0-9][2-9][4-9]|6[0-5][0-5][0-3][0-5]|[1-5][0-9][0-9][0-9][0-9])$");
+		} else if ( regla.tipo.matches("^(Custom UDP)$") ) {
+			return regla.protocolo.matches("^(UDP)$") and regla.puerto.matches("^([1-9][0-9][2-9][4-9]|6[0-5][0-5][0-3][0-5]|[1-5][0-9][0-9][0-9][0-9])$");
+		} else if ( regla.tipo.matches("^(DNS UDP)$") ) {
+			return regla.protocolo.matches("^(UDP)$") and regla.puerto.matches("^(53)$");
+		} else if ( regla.tipo.matches("^(DNS TCP)$") ) {
+			return regla.protocolo.matches("^(UDP)$") and regla.puerto.matches("^(53)$");
+		} else if ( regla.tipo.matches("^(HTTP)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(80)$");
+		} else if ( regla.tipo.matches("^(HTTPS)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(443)$");
+		} else if ( regla.tipo.matches("^(SSH)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(22)$");
+		} else if ( regla.tipo.matches("^(NFS)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(2049)$");
+		} else if ( regla.tipo.matches("^(PostgresSQL)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(5432)$");
+		} else if ( regla.tipo.matches("^(PostgresSQL)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(5432)$");
+		} else if ( regla.tipo.matches("^(MySQL/Aurora/MariaDB)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(3306)$");
+		} else if ( regla.tipo.matches("^(POP3)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(110)$");
+		} else if ( regla.tipo.matches("^(IMAP)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(143)$");
+		} else if ( regla.tipo.matches("^(LDAP)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(389)$");
+		} else if ( regla.tipo.matches("^(SMTP)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(25)$");
+		} else if ( regla.tipo.matches("^(Oracle)$") ) {
+			return regla.protocolo.matches("^(TCP)$") and regla.puerto.matches("^(1521)$");
+		} else {
+			"--> Falla Validacion Regla [ Tipo : Protocolo : Puerto ] para ".concat(regla.tipo).concat(" : ").concat(regla.protocolo).concat(" : ").concat(regla.puerto).println();
+			return false;
+		}
 	}
 }
 
@@ -134,69 +150,76 @@ dos tablas, una con las zonas de AWS y otra con las zonas de GCP:
 Agrego Atributo en Recurso: zonaDisponibilidad, zonaNombre
 */
 
-operation ProveedorNube isValidRegion(): Boolean {
-	for ( ambiente in self.ambientedespliegue ) {
-		for ( recurso in ambiente.recursos ) {
-			if ( self.nombre.matches("^(AWS)$") ) {
-				if ( 
-				( recurso.zonaDisponibilidad.matches("^(us-east-2)$") and recurso.zonaNombre.matches("^(EE.UU. Este (Ohio))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(us-east-1)$") and recurso.zonaNombre.matches("^(US East (N. Virginia))$") ) or
-				( recurso.zonaDisponibilidad.matches("^(us-west-1)$") and recurso.zonaNombre.matches("^(EE.UU. Oeste (Norte de California))$") ) or
-				( recurso.zonaDisponibilidad.matches("^(us-east-2)$") and recurso.zonaNombre.matches("^(EE.UU. Oeste (Oregón))$") ) or
-				( recurso.zonaDisponibilidad.matches("^(ap-east-1)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Hong Kong))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(ap-south-1)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Mumbai))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(ap-northeast-3)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Osaka-local))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(ap-northeast-2)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Seúl))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(ap-southeast-1)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Singapur))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(ap-southeast-2)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Sídney))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(ap-northeast-1)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Tokio))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(ca-central-1)$") and recurso.zonaNombre.matches("^(Canadá (Central))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(eu-central-1)$") and recurso.zonaNombre.matches("^(Europa (Fráncfort))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(eu-west-1)$") and recurso.zonaNombre.matches("^(Europa (Irlanda))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(eu-west-2)$") and recurso.zonaNombre.matches("^(Europa (Londres))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(eu-west-3)$") and recurso.zonaNombre.matches("^(Europa (París))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(eu-north-1)$") and recurso.zonaNombre.matches("^(Europa (Estocolmo))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(me-south-1)$") and recurso.zonaNombre.matches("^(Medio Oriente (Baréin))$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(sa-east-1)$") and recurso.zonaNombre.matches("^(América del Sur (São Paulo))$")    )
-				 ) {
-				 continue;
-				 } else {
-				 "--> Falla AWS - Zona Disponibilidad [ Code : Nombre ] para ".concat(recurso.zonaDisponibilidad).concat(" : ").concat("recurso.zonaNombre").println();
-				 	return false;
-				 }
-			} else if ( self.nombre.matches("^(GCP)$") ) {
-				if ( 
-				( recurso.zonaDisponibilidad.matches("^(asia-east1)$") and recurso.zonaNombre.matches("^(Condado de Changhua, Taiwán)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(asia-east2)$") and recurso.zonaNombre.matches("^(Hong Kong)$") ) or
-				( recurso.zonaDisponibilidad.matches("^(asia-northeast1)$") and recurso.zonaNombre.matches("^(Tokio, Japón)$") ) or
-				( recurso.zonaDisponibilidad.matches("^(asia-northeast2)$") and recurso.zonaNombre.matches("^(Osaka, Japón)$") ) or
-				( recurso.zonaDisponibilidad.matches("^(asia-south1)$") and recurso.zonaNombre.matches("^(Bombay, India)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(asia-southeast1)$") and recurso.zonaNombre.matches("^(Jurong West, Singapur)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(australia-southeast1)$") and recurso.zonaNombre.matches("^(Sídney, Australia)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(europe-north1)$") and recurso.zonaNombre.matches("^(Hamina, Finlandia)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(europe-west1)$") and recurso.zonaNombre.matches("^(Saint-Ghislain, Bélgica)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(europe-west2)$") and recurso.zonaNombre.matches("^(Londres, Inglaterra, Reino Unido)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(europe-west3)$") and recurso.zonaNombre.matches("^(Fráncfort, Alemania)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(europe-west4)$") and recurso.zonaNombre.matches("^(Puerto de Ems, Países Bajos)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(europe-west6)$") and recurso.zonaNombre.matches("^(Zúrich, Suiza)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(northamerica-northeast1)$") and recurso.zonaNombre.matches("^(Montreal, Quebec, Canadá)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(southamerica-east1)$") and recurso.zonaNombre.matches("^(Osasco (São Paulo), Brasil)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(us-central1)$") and recurso.zonaNombre.matches("^(Council Bluffs, Iowa, EE.UU.)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(us-east1)$") and recurso.zonaNombre.matches("^(Moncks Corner, Carolina del Sur, EE.UU.)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(us-east4)$") and recurso.zonaNombre.matches("^(Ashburn, Virginia, EE.UU.)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(us-west1)$") and recurso.zonaNombre.matches("^(The Dalles, Oregón, EE.UU.)$")    ) or
-				( recurso.zonaDisponibilidad.matches("^(us-west2)$") and recurso.zonaNombre.matches("^(Los Ángeles, California, EE.UU.)$")    )
-				 ) {
-				 continue;
-				 } else {
-				 	"--> Falla GCP - Zona Disponibilidad [ Code : Nombre ] para ".concat(recurso.zonaDisponibilidad).concat(" : ").concat("recurso.zonaNombre").println();
-				 	return false;
-				 }
+operation isValidRegion(): Boolean {
+	for ( pro in ProveedorNube ) {
+		for ( ambiente in pro.ambientedespliegue ) {
+			for ( recurso in ambiente.recursos ) {
+				if ( pro.nombre.matches("^(AWS)$") ) {
+					if ( 
+					( recurso.zonaDisponibilidad.matches("^(us-east-2)$") and recurso.zonaNombre.matches("^(EE.UU. Este (Ohio))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(us-east-1)$") and recurso.zonaNombre.matches("^(US East (N. Virginia))$") ) or
+					( recurso.zonaDisponibilidad.matches("^(us-west-1)$") and recurso.zonaNombre.matches("^(EE.UU. Oeste (Norte de California))$") ) or
+					( recurso.zonaDisponibilidad.matches("^(us-east-2)$") and recurso.zonaNombre.matches("^(EE.UU. Oeste (Oregón))$") ) or
+					( recurso.zonaDisponibilidad.matches("^(ap-east-1)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Hong Kong))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(ap-south-1)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Mumbai))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(ap-northeast-3)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Osaka-local))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(ap-northeast-2)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Seúl))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(ap-southeast-1)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Singapur))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(ap-southeast-2)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Sídney))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(ap-northeast-1)$") and recurso.zonaNombre.matches("^(Asia Pacífico (Tokio))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(ca-central-1)$") and recurso.zonaNombre.matches("^(Canadá (Central))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(eu-central-1)$") and recurso.zonaNombre.matches("^(Europa (Fráncfort))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(eu-west-1)$") and recurso.zonaNombre.matches("^(Europa (Irlanda))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(eu-west-2)$") and recurso.zonaNombre.matches("^(Europa (Londres))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(eu-west-3)$") and recurso.zonaNombre.matches("^(Europa (París))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(eu-north-1)$") and recurso.zonaNombre.matches("^(Europa (Estocolmo))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(me-south-1)$") and recurso.zonaNombre.matches("^(Medio Oriente (Baréin))$")    ) or
+					( recurso.zonaDisponibilidad.matches("^(sa-east-1)$") and recurso.zonaNombre.matches("^(América del Sur (São Paulo))$")    )
+					 ) {
+					 continue;
+					 } else {
+					 "--> Falla AWS - Zona Disponibilidad [ Code : Nombre ] para ".concat(recurso.zonaDisponibilidad).concat(" : ").concat("recurso.zonaNombre").println();
+					 	return false;
+					 }
+				} else if ( pro.nombre.matches("^(GCP)$") ) {
+				
+					if (recurso.zonaDisponibilidad.isDefined()) {
+						if ( 
+						( recurso.zonaDisponibilidad.matches("^(asia-east1)$") and recurso.zonaNombre.matches("^(Condado de Changhua, Taiwán)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(asia-east2)$") and recurso.zonaNombre.matches("^(Hong Kong)$") ) or
+						( recurso.zonaDisponibilidad.matches("^(asia-northeast1)$") and recurso.zonaNombre.matches("^(Tokio, Japón)$") ) or
+						( recurso.zonaDisponibilidad.matches("^(asia-northeast2)$") and recurso.zonaNombre.matches("^(Osaka, Japón)$") ) or
+						( recurso.zonaDisponibilidad.matches("^(asia-south1)$") and recurso.zonaNombre.matches("^(Bombay, India)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(asia-southeast1)$") and recurso.zonaNombre.matches("^(Jurong West, Singapur)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(australia-southeast1)$") and recurso.zonaNombre.matches("^(Sídney, Australia)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(europe-north1)$") and recurso.zonaNombre.matches("^(Hamina, Finlandia)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(europe-west1)$") and recurso.zonaNombre.matches("^(Saint-Ghislain, Bélgica)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(europe-west2)$") and recurso.zonaNombre.matches("^(Londres, Inglaterra, Reino Unido)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(europe-west3)$") and recurso.zonaNombre.matches("^(Fráncfort, Alemania)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(europe-west4)$") and recurso.zonaNombre.matches("^(Puerto de Ems, Países Bajos)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(europe-west6)$") and recurso.zonaNombre.matches("^(Zúrich, Suiza)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(northamerica-northeast1)$") and recurso.zonaNombre.matches("^(Montreal, Quebec, Canadá)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(southamerica-east1)$") and recurso.zonaNombre.matches("^(Osasco (São Paulo), Brasil)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(us-central1)$") and recurso.zonaNombre.matches("^(Council Bluffs, Iowa, EE.UU.)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(us-east1)$") and recurso.zonaNombre.matches("^(Moncks Corner, Carolina del Sur, EE.UU.)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(us-east4)$") and recurso.zonaNombre.matches("^(Ashburn, Virginia, EE.UU.)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(us-west1)$") and recurso.zonaNombre.matches("^(The Dalles, Oregón, EE.UU.)$")    ) or
+						( recurso.zonaDisponibilidad.matches("^(us-west2)$") and recurso.zonaNombre.matches("^(Los Ángeles, California, EE.UU.)$")    )
+						 ) {
+						 continue;
+						 } else {
+						 	"--> Falla GCP - Zona Disponibilidad [ Code : Nombre ] para ".concat(recurso.zonaDisponibilidad).concat(" : ").concat("recurso.zonaNombre").println();
+						 	return false;
+						 }
+					}
+				
+					
+				}
+				
 			}
-			
 		}
+		return true;
 	}
-	return true;
 }
 
 
