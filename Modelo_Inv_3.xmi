@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Ceffective:Ceffective
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
-  <proveedorNube>
-    <vpc>
-      <mecanismoseguridad
-          xsi:type="Ceffective:GrupoSeguridad"
-          descripcion="Invalido por Regla">
-        <reglasEntrada
-            tipo="Custom TCP"
-            protocolo="TCP"
-            puerto="1000"
-            descripcion="Regla Invalida"/>
+<Ceffective:Ceffective xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
+  <proveedorNube nombre="GCP">
+    <ambientedespliegue>
+      <recursos xsi:type="Ceffective:Almacenamiento" nombre="disco principal" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="z1" zonaNombre="z1" tamanoInicial="100"/>
+      <recursos xsi:type="Ceffective:ServidorAplicaciones" nombre="serv app" recursos="//@proveedorNube/@ambientedespliegue.0/@recursos.0" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="z1" zonaNombre="z1" sistemaOperativo="linux"/>
+      <recursos xsi:type="Ceffective:ServidorBD" nombre="bd app" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="z1" zonaNombre="z1" tipo="NoSql" sistemaManejador="Redis"/>
+    </ambientedespliegue>
+    <vpc recurso="//@proveedorNube/@ambientedespliegue.0/@recursos.0 //@proveedorNube/@ambientedespliegue.0/@recursos.1 //@proveedorNube/@ambientedespliegue.0/@recursos.2">
+      <mecanismoseguridad xsi:type="Ceffective:GrupoSeguridad" descripcion="Invalido por Regla">
+        <reglasEntrada tipo="Custom TCP" protocolo="TCP" puerto="1000" origen="dsfdsfds" descripcion="Regla Invalida"/>
       </mecanismoseguridad>
     </vpc>
   </proveedorNube>

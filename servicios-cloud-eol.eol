@@ -1,14 +1,14 @@
-
-System.out.println("Se tienen recursos de bases de datos con algun recurso asociado: ");
-DBSinAlmacenamiento().println();
-System.out.println("Bases de datos configuradas");
-DBSPorProveedorEspecifico().println();
-
 "Validacion CIDR Block".println();
 isValidCIDR().println();
 
+System.out.println("Se tienen recursos de bases de datos con algun recurso asociado: ");
+DBSinAlmacenamiento().println();
+
 "Validacion Reglas".println();
 isValidRule().println();
+
+System.out.println("Bases de datos configuradas");
+DBSPorProveedorEspecifico().println();
 
 "Validacion Region".println();
 isValidRegion().println();

@@ -10,11 +10,11 @@
     <autenticacionUsuario xsi:type="Ceffective:AutenticacionFirma" usuario="usuario2" correo="usuario2@correo.com" nombre="key ambiente IST" certificado="ambienteIST.pem"/>
     <vpc nombre="Red privada 1" recurso="//@proveedorNube/@ambientedespliegue.0/@recursos.1 //@proveedorNube/@ambientedespliegue.0/@recursos.0 //@proveedorNube/@ambientedespliegue.0/@recursos.2">
       <mecanismoseguridad xsi:type="Ceffective:GrupoSeguridad" nombre="Zona1" descripcion="Zona1 para ambiente IST" zonaDisponibilidad="principal">
-        <reglasSalida tipo="HTTP" protocolo="TCP" puerto="8080" origen="192.168.0.1" descripcion="Regla HTTP"/>
+        <reglasSalida tipo="HTTP" protocolo="TCP" puerto="8080" origen="192.168.0.1/24" descripcion="Regla HTTP"/>
         <reglasEntrada tipo="SSH" protocolo="TCP" puerto="22" origen="192.0.0.1/0" descripcion="Conexion SSH"/>
       </mecanismoseguridad>
       <mecanismoseguridad xsi:type="Ceffective:InternetGateway" nombre="Red principal"/>
-      <mecanismoseguridad xsi:type="Ceffective:Subred" nombre="Red principal" cidrBlock="CIDR1" zonaDisponibilidad="zona1"/>
+      <mecanismoseguridad xsi:type="Ceffective:Subred" nombre="Red principal" cidrBlock="10.1.1.1/16" zonaDisponibilidad="zona1"/>
     </vpc>
   </proveedorNube>
 </Ceffective:Ceffective>

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Ceffective:Ceffective
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
-  <proveedorNube
-      nombre="AWS"/>
+<Ceffective:Ceffective xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
+  <proveedorNube nombre="AWS">
+    <ambientedespliegue>
+      <recursos xsi:type="Ceffective:Almacenamiento" nombre="dico base" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="z1" zonaNombre="z1" tamanoInicial="200"/>
+      <recursos xsi:type="Ceffective:ServidorAplicaciones" nombre="servidor app" recursos="//@proveedorNube/@ambientedespliegue.0/@recursos.0" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="z1" zonaNombre="z1" sistemaOperativo="linux"/>
+      <recursos xsi:type="Ceffective:ServidorBD" nombre="bd app" recursos="//@proveedorNube/@ambientedespliegue.0/@recursos.0" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="z1" zonaNombre="z1" tipo="Relacional" sistemaManejador="Oracle"/>
+    </ambientedespliegue>
+    <autenticacionUsuario xsi:type="Ceffective:AutenticacionBasica" usuario="portocr" correo="portocr@prueba.com" password="prueba123"/>
+    <vpc nombre="vpc1" recurso="//@proveedorNube/@ambientedespliegue.0/@recursos.0 //@proveedorNube/@ambientedespliegue.0/@recursos.1 //@proveedorNube/@ambientedespliegue.0/@recursos.2">
+      <mecanismoseguridad xsi:type="Ceffective:Subred" nombre="z1" cidrBlock="127.0.0.1/16" zonaDisponibilidad="z1"/>
+      <mecanismoseguridad xsi:type="Ceffective:InternetGateway" nombre="Gropo1"/>
+      <mecanismoseguridad xsi:type="Ceffective:GrupoSeguridad" nombre="z1" descripcion="reglas vpc" zonaDisponibilidad="z1">
+        <reglasEntrada tipo="ssh" protocolo="tcp" puerto="22" origen="127.0.0.1/24" descripcion="gestion remota"/>
+      </mecanismoseguridad>
+    </vpc>
+  </proveedorNube>
 </Ceffective:Ceffective>

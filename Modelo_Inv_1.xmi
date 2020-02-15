@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Ceffective:Ceffective xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
   <proveedorNube nombre="AWS">
-    <vpc nombre="VPC Invalid">
+    <ambientedespliegue ambiente="NFT">
+      <recursos xsi:type="Ceffective:Almacenamiento" nombre="Disco principal" zonaDisponibilidad="zona1" zonaNombre="zona1" tamanoInicial="100"/>
+      <recursos xsi:type="Ceffective:ServidorAplicaciones" nombre="Servidor app" recursos="//@proveedorNube/@ambientedespliegue.0/@recursos.0" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="zona1" zonaNombre="zona1" sistemaOperativo="Linux"/>
+      <recursos xsi:type="Ceffective:ServidorBD" nombre="DB Master" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="Zona1" zonaNombre="Zona1" tipo="NoSql" sistemaManejador="Dynamo"/>
+    </ambientedespliegue>
+    <vpc nombre="VPC Invalid" recurso="//@proveedorNube/@ambientedespliegue.0/@recursos.1 //@proveedorNube/@ambientedespliegue.0/@recursos.2">
       <mecanismoseguridad xsi:type="Ceffective:Subred" nombre="Invalido" cidrBlock="13.21.34.22/99" zonaDisponibilidad="eu-west-1"/>
+      <mecanismoseguridad xsi:type="Ceffective:GrupoSeguridad" nombre="Reglas" descripcion="Prueba 1" zonaDisponibilidad="Zona1">
+        <reglasEntrada tipo="SSH" protocolo="TCP" puerto="22" origen="10.236.5.1/24" descripcion="Permisos de gestion remota"/>
+      </mecanismoseguridad>
     </vpc>
   </proveedorNube>
 </Ceffective:Ceffective>

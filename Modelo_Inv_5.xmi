@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Ceffective:Ceffective
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
-  <proveedorNube
-      nombre="AWS">
+<Ceffective:Ceffective xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
+  <proveedorNube nombre="AWS">
     <ambientedespliegue>
-      <recursos
-          xsi:type="Ceffective:Almacenamiento"
-          nombre="Invalido por zona"
-          zonaDisponibilidad="us-west-2"
-          zonaNombre="EE.UU. Oeste (Oregón)"
-          tamanoInicial="100"/>
+      <recursos xsi:type="Ceffective:Almacenamiento" nombre="Invalido por zona" zonaDisponibilidad="us-west-2" zonaNombre="EE.UU. Oeste (Oregón)" tamanoInicial="100"/>
+      <recursos xsi:type="Ceffective:Servidor" nombre="app"/>
+      <recursos xsi:type="Ceffective:ServidorBD" nombre="db app" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="z1" zonaNombre="z1" tipo="Relacional" sistemaManejador="MariaDB"/>
     </ambientedespliegue>
+    <vpc nombre="vpc1" recurso="//@proveedorNube/@ambientedespliegue.0/@recursos.2">
+      <mecanismoseguridad xsi:type="Ceffective:GrupoSeguridad" nombre="z1" descripcion="red app" zonaDisponibilidad="z1">
+        <reglasEntrada tipo="SSH" protocolo="tcp" puerto="22" origen="10.236.4.1/24" descripcion="adm"/>
+      </mecanismoseguridad>
+    </vpc>
   </proveedorNube>
 </Ceffective:Ceffective>

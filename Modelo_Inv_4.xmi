@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ceffective:Ceffective xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
+  <proveedorNube nombre="AWS">
+    <ambientedespliegue>
+      <recursos xsi:type="Ceffective:Almacenamiento" nombre="disco principal" recursos="//@proveedorNube/@ambientedespliegue.0/@recursos.0" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="z1" zonaNombre="z1" tamanoInicial="200"/>
+      <recursos xsi:type="Ceffective:ServidorAplicaciones" nombre="servicios web" recursos="//@proveedorNube/@ambientedespliegue.0/@recursos.0" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="z1" zonaNombre="z1" sistemaOperativo="Linux"/>
+      <recursos xsi:type="Ceffective:ServidorBD" nombre="db app" vpc="//@proveedorNube/@vpc.0" zonaDisponibilidad="z1" zonaNombre="z1" tipo="Relacional" sistemaManejador="Dynamo"/>
+    </ambientedespliegue>
+    <vpc nombre="VPC" recurso="//@proveedorNube/@ambientedespliegue.0/@recursos.0 //@proveedorNube/@ambientedespliegue.0/@recursos.1 //@proveedorNube/@ambientedespliegue.0/@recursos.2">
+      <mecanismoseguridad xsi:type="Ceffective:GrupoSeguridad" nombre="z1" descripcion="red principal" zonaDisponibilidad="z1">
+        <reglasEntrada tipo="HTTP" protocolo="TCP" puerto="8080" origen="10.236.1.2/24" descripcion="Gestion remota"/>
+      </mecanismoseguridad>
+    </vpc>
+  </proveedorNube>
+</Ceffective:Ceffective>
