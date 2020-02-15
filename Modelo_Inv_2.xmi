@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ceffective:Ceffective
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
+  <proveedorNube
+      nombre="AWS"/>
+</Ceffective:Ceffective>

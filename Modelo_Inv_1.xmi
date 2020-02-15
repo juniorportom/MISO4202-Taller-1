@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ceffective:Ceffective xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ceffective="https://www.uniandes.edu.co/ceffective">
+  <proveedorNube nombre="AWS">
+    <vpc nombre="VPC Invalid">
+      <mecanismoseguridad xsi:type="Ceffective:Subred" nombre="Invalido" cidrBlock="13.21.34.22/99" zonaDisponibilidad="eu-west-1"/>
+    </vpc>
+  </proveedorNube>
+</Ceffective:Ceffective>
