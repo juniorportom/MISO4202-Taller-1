@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_Z8M9IE2xEeq8cqt4gf3QHg" selectedViews="_dO414E2xEeq8cqt4gf3QHg" version="14.1.0.201810161215">
-  <semanticResources>ceffective.ecore</semanticResources>
-  <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
-  <ownedViews xmi:type="viewpoint:DView" uid="_dO414E2xEeq8cqt4gf3QHg">
-    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']"/>
-  </ownedViews>
-</viewpoint:DAnalysis>

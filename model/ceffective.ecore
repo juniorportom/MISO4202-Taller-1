@@ -15,7 +15,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="correo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AmbienteDespliegue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ambiente" eType="#//TipoAmbiente"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ambiente" eType="#//TipoAmbiente"
+        defaultValueLiteral="IST"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="recursos" upperBound="-1"
         eType="#//Recurso" containment="true"/>
   </eClassifiers>
@@ -35,7 +36,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServidorBD" eSuperTypes="#//Servidor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//TipoBaseDatos"
-        defaultValueLiteral=""/>
+        defaultValueLiteral="Relacional"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sistemaManejador" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MecanismoSeguridad" abstract="true">
@@ -73,7 +74,8 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Servidor" eSuperTypes="#//Recurso">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tamano" eType="#//TamanoServidor"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tamano" eType="#//TamanoServidor"
+        defaultValueLiteral="Micro"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TipoAmbiente">
     <eLiterals name="IST"/>
