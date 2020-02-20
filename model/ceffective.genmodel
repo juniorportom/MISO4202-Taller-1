@@ -23,9 +23,9 @@
     </genEnums>
     <genClasses ecoreClass="ceffective.ecore#//ProveedorNube">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//ProveedorNube/nombre"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//ProveedorNube/ambientedespliegue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//ProveedorNube/ambientedespliegue"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//ProveedorNube/autenticacionUsuario"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//ProveedorNube/vpc"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//ProveedorNube/vpc"/>
     </genClasses>
     <genClasses ecoreClass="ceffective.ecore#//AutenticacionUsuario">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AutenticacionUsuario/usuario"/>
@@ -33,7 +33,7 @@
     </genClasses>
     <genClasses ecoreClass="ceffective.ecore#//AmbienteDespliegue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AmbienteDespliegue/ambiente"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//AmbienteDespliegue/recursos"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//AmbienteDespliegue/recursos"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ceffective.ecore#//Recurso">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Recurso/nombre"/>
@@ -54,21 +54,21 @@
     </genClasses>
     <genClasses image="false" ecoreClass="ceffective.ecore#//MecanismoSeguridad">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//MecanismoSeguridad/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//MecanismoSeguridad/zonaNombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//MecanismoSeguridad/zonaDisponibilidad"/>
     </genClasses>
     <genClasses ecoreClass="ceffective.ecore#//Subred">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Subred/cidrBlock"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Subred/zonaDisponibilidad"/>
     </genClasses>
     <genClasses ecoreClass="ceffective.ecore#//InternetGateway"/>
     <genClasses ecoreClass="ceffective.ecore#//GrupoSeguridad">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//GrupoSeguridad/descripcion"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//GrupoSeguridad/zonaDisponibilidad"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//GrupoSeguridad/reglasSalida"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//GrupoSeguridad/reglasEntrada"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//GrupoSeguridad/reglasSalida"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//GrupoSeguridad/reglasEntrada"/>
     </genClasses>
     <genClasses ecoreClass="ceffective.ecore#//VPC">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//VPC/nombre"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//VPC/mecanismoseguridad"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//VPC/mecanismoseguridad"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//VPC/recurso"/>
     </genClasses>
     <genClasses ecoreClass="ceffective.ecore#//Regla">

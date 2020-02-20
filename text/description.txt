@@ -5,7 +5,7 @@ org.eclipse.emf.examples.generator.validator plug-in to illustrate how EMF's
 code generator can be extended.
 This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator=false.
 
-Package Ceffective <https://www.uniandes.edu.co/ceffective>
+Package ceffective <https://www.uniandes.edu.co/ceffective>
 
   Class ProveedorNube
     Attribute nombre : EString
@@ -40,16 +40,16 @@ Package Ceffective <https://www.uniandes.edu.co/ceffective>
 
   Class MecanismoSeguridad
     Attribute nombre : EString
+    Attribute zonaNombre : EString
+    Attribute zonaDisponibilidad : EString
 
   Class Subred -> MecanismoSeguridad
     Attribute cidrBlock : EString
-    Attribute zonaDisponibilidad : EString
 
   Class InternetGateway -> MecanismoSeguridad
 
   Class GrupoSeguridad -> MecanismoSeguridad
     Attribute descripcion : EString
-    Attribute zonaDisponibilidad : EString
     Reference reglasSalida : Regla<<1..*>>
     Reference reglasEntrada : Regla<<1..*>>
 

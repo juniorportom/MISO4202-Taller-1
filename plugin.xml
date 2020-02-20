@@ -10,7 +10,7 @@
       <!-- @generated ceffective -->
       <package
             uri="https://www.uniandes.edu.co/ceffective"
-            class="Ceffective.CeffectivePackage"
+            class="ceffective.CeffectivePackage"
             genModel="model/ceffective.genmodel"/>
    </extension>
 
