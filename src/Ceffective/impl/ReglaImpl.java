@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.ReglaImpl#getTipo <em>Tipo</em>}</li>
  *   <li>{@link ceffective.impl.ReglaImpl#getProtocolo <em>Protocolo</em>}</li>
@@ -26,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ceffective.impl.ReglaImpl#getOrigen <em>Origen</em>}</li>
  *   <li>{@link ceffective.impl.ReglaImpl#getDescripcion <em>Descripcion</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -154,7 +154,6 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getTipo() {
 		return tipo;
 	}
@@ -164,7 +163,6 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setTipo(String newTipo) {
 		String oldTipo = tipo;
 		tipo = newTipo;
@@ -177,7 +175,6 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getProtocolo() {
 		return protocolo;
 	}
@@ -187,7 +184,6 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setProtocolo(String newProtocolo) {
 		String oldProtocolo = protocolo;
 		protocolo = newProtocolo;
@@ -200,7 +196,6 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getPuerto() {
 		return puerto;
 	}
@@ -210,7 +205,6 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setPuerto(String newPuerto) {
 		String oldPuerto = puerto;
 		puerto = newPuerto;
@@ -223,7 +217,6 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getOrigen() {
 		return origen;
 	}
@@ -233,7 +226,6 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setOrigen(String newOrigen) {
 		String oldOrigen = origen;
 		origen = newOrigen;
@@ -246,7 +238,6 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getDescripcion() {
 		return descripcion;
 	}
@@ -256,7 +247,6 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setDescripcion(String newDescripcion) {
 		String oldDescripcion = descripcion;
 		descripcion = newDescripcion;
@@ -371,7 +361,7 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (tipo: ");
 		result.append(tipo);
 		result.append(", protocolo: ");

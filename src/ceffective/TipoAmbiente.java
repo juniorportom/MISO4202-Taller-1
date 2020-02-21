@@ -61,6 +61,10 @@ public enum TipoAmbiente implements Enumerator {
 	/**
 	 * The '<em><b>IST</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>IST</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #IST
 	 * @model
@@ -72,6 +76,10 @@ public enum TipoAmbiente implements Enumerator {
 	/**
 	 * The '<em><b>QA</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>QA</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #QA
 	 * @model
@@ -83,6 +91,10 @@ public enum TipoAmbiente implements Enumerator {
 	/**
 	 * The '<em><b>NFT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>NFT</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #NFT
 	 * @model
@@ -94,6 +106,10 @@ public enum TipoAmbiente implements Enumerator {
 	/**
 	 * The '<em><b>PRD</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>PRD</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PRD
 	 * @model
@@ -128,8 +144,6 @@ public enum TipoAmbiente implements Enumerator {
 	 * Returns the '<em><b>Tipo Ambiente</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static TipoAmbiente get(String literal) {
@@ -146,8 +160,6 @@ public enum TipoAmbiente implements Enumerator {
 	 * Returns the '<em><b>Tipo Ambiente</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static TipoAmbiente getByName(String name) {
@@ -164,8 +176,6 @@ public enum TipoAmbiente implements Enumerator {
 	 * Returns the '<em><b>Tipo Ambiente</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static TipoAmbiente get(int value) {
@@ -216,7 +226,6 @@ public enum TipoAmbiente implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -226,7 +235,6 @@ public enum TipoAmbiente implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getName() {
 	  return name;
 	}
@@ -236,7 +244,6 @@ public enum TipoAmbiente implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getLiteral() {
 	  return literal;
 	}

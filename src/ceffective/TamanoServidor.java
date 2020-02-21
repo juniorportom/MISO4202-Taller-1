@@ -61,6 +61,10 @@ public enum TamanoServidor implements Enumerator {
 	/**
 	 * The '<em><b>Micro</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Micro</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MICRO
 	 * @model name="Micro"
@@ -72,6 +76,10 @@ public enum TamanoServidor implements Enumerator {
 	/**
 	 * The '<em><b>Small</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Small</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SMALL
 	 * @model name="Small"
@@ -83,6 +91,10 @@ public enum TamanoServidor implements Enumerator {
 	/**
 	 * The '<em><b>Medium</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Medium</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MEDIUM
 	 * @model name="Medium"
@@ -94,6 +106,10 @@ public enum TamanoServidor implements Enumerator {
 	/**
 	 * The '<em><b>Large</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Large</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LARGE
 	 * @model name="Large"
@@ -128,8 +144,6 @@ public enum TamanoServidor implements Enumerator {
 	 * Returns the '<em><b>Tamano Servidor</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static TamanoServidor get(String literal) {
@@ -146,8 +160,6 @@ public enum TamanoServidor implements Enumerator {
 	 * Returns the '<em><b>Tamano Servidor</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static TamanoServidor getByName(String name) {
@@ -164,8 +176,6 @@ public enum TamanoServidor implements Enumerator {
 	 * Returns the '<em><b>Tamano Servidor</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static TamanoServidor get(int value) {
@@ -216,7 +226,6 @@ public enum TamanoServidor implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -226,7 +235,6 @@ public enum TamanoServidor implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getName() {
 	  return name;
 	}
@@ -236,7 +244,6 @@ public enum TamanoServidor implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getLiteral() {
 	  return literal;
 	}

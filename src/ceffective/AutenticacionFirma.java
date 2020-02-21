@@ -10,11 +10,11 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.AutenticacionFirma#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.AutenticacionFirma#getCertificado <em>Certificado</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getAutenticacionFirma()
  * @model
@@ -24,6 +24,10 @@ public interface AutenticacionFirma extends AutenticacionUsuario {
 	/**
 	 * Returns the value of the '<em><b>Nombre</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nombre</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nombre</em>' attribute.
 	 * @see #setNombre(String)
@@ -46,6 +50,10 @@ public interface AutenticacionFirma extends AutenticacionUsuario {
 	/**
 	 * Returns the value of the '<em><b>Certificado</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Certificado</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Certificado</em>' attribute.
 	 * @see #setCertificado(String)

@@ -17,11 +17,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.AutenticacionFirmaImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.AutenticacionFirmaImpl#getCertificado <em>Certificado</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -90,7 +90,6 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getNombre() {
 		return nombre;
 	}
@@ -100,7 +99,6 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setNombre(String newNombre) {
 		String oldNombre = nombre;
 		nombre = newNombre;
@@ -113,7 +111,6 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getCertificado() {
 		return certificado;
 	}
@@ -123,7 +120,6 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCertificado(String newCertificado) {
 		String oldCertificado = certificado;
 		certificado = newCertificado;
@@ -208,7 +204,7 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nombre: ");
 		result.append(nombre);
 		result.append(", certificado: ");

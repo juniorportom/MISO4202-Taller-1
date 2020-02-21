@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.ServidorAplicacionesImpl#getSistemaOperativo <em>Sistema Operativo</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -69,7 +69,6 @@ public class ServidorAplicacionesImpl extends ServidorImpl implements ServidorAp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getSistemaOperativo() {
 		return sistemaOperativo;
 	}
@@ -79,7 +78,6 @@ public class ServidorAplicacionesImpl extends ServidorImpl implements ServidorAp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setSistemaOperativo(String newSistemaOperativo) {
 		String oldSistemaOperativo = sistemaOperativo;
 		sistemaOperativo = newSistemaOperativo;
@@ -154,7 +152,7 @@ public class ServidorAplicacionesImpl extends ServidorImpl implements ServidorAp
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (sistemaOperativo: ");
 		result.append(sistemaOperativo);
 		result.append(')');

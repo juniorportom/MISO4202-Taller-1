@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.MecanismoSeguridad#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.MecanismoSeguridad#getZonaNombre <em>Zona Nombre</em>}</li>
  *   <li>{@link ceffective.MecanismoSeguridad#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getMecanismoSeguridad()
  * @model abstract="true"
@@ -26,6 +26,10 @@ public interface MecanismoSeguridad extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Nombre</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nombre</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nombre</em>' attribute.
 	 * @see #setNombre(String)
@@ -48,6 +52,10 @@ public interface MecanismoSeguridad extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Zona Nombre</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Zona Nombre</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Zona Nombre</em>' attribute.
 	 * @see #setZonaNombre(String)
@@ -70,6 +78,10 @@ public interface MecanismoSeguridad extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Zona Disponibilidad</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Zona Disponibilidad</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Zona Disponibilidad</em>' attribute.
 	 * @see #setZonaDisponibilidad(String)

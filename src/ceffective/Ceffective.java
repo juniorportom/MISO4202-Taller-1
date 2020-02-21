@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.Ceffective#getProveedorNube <em>Proveedor Nube</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getCeffective()
  * @model
@@ -24,6 +24,10 @@ public interface Ceffective extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Proveedor Nube</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Proveedor Nube</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Proveedor Nube</em>' containment reference.
 	 * @see #setProveedorNube(ProveedorNube)

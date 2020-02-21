@@ -18,10 +18,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.ServidorImpl#getTamano <em>Tamano</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -70,7 +70,6 @@ public class ServidorImpl extends RecursoImpl implements Servidor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public TamanoServidor getTamano() {
 		return tamano;
 	}
@@ -80,7 +79,6 @@ public class ServidorImpl extends RecursoImpl implements Servidor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setTamano(TamanoServidor newTamano) {
 		TamanoServidor oldTamano = tamano;
 		tamano = newTamano == null ? TAMANO_EDEFAULT : newTamano;
@@ -155,7 +153,7 @@ public class ServidorImpl extends RecursoImpl implements Servidor {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (tamano: ");
 		result.append(tamano);
 		result.append(')');

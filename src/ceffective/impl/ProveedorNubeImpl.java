@@ -31,13 +31,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.ProveedorNubeImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.ProveedorNubeImpl#getAmbientedespliegue <em>Ambientedespliegue</em>}</li>
  *   <li>{@link ceffective.impl.ProveedorNubeImpl#getAutenticacionUsuario <em>Autenticacion Usuario</em>}</li>
  *   <li>{@link ceffective.impl.ProveedorNubeImpl#getVpc <em>Vpc</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -116,7 +116,6 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getNombre() {
 		return nombre;
 	}
@@ -126,7 +125,6 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setNombre(String newNombre) {
 		String oldNombre = nombre;
 		nombre = newNombre;
@@ -139,7 +137,6 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<AmbienteDespliegue> getAmbientedespliegue() {
 		if (ambientedespliegue == null) {
 			ambientedespliegue = new EObjectResolvingEList<AmbienteDespliegue>(AmbienteDespliegue.class, this, CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE);
@@ -152,7 +149,6 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<AutenticacionUsuario> getAutenticacionUsuario() {
 		if (autenticacionUsuario == null) {
 			autenticacionUsuario = new EObjectContainmentEList<AutenticacionUsuario>(AutenticacionUsuario.class, this, CeffectivePackage.PROVEEDOR_NUBE__AUTENTICACION_USUARIO);
@@ -165,7 +161,6 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<VPC> getVpc() {
 		if (vpc == null) {
 			vpc = new EObjectResolvingEList<VPC>(VPC.class, this, CeffectivePackage.PROVEEDOR_NUBE__VPC);
@@ -288,7 +283,7 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nombre: ");
 		result.append(nombre);
 		result.append(')');

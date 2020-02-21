@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.AutenticacionBasicaImpl#getPassword <em>Password</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -69,7 +69,6 @@ public class AutenticacionBasicaImpl extends AutenticacionUsuarioImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getPassword() {
 		return password;
 	}
@@ -79,7 +78,6 @@ public class AutenticacionBasicaImpl extends AutenticacionUsuarioImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setPassword(String newPassword) {
 		String oldPassword = password;
 		password = newPassword;
@@ -154,7 +152,7 @@ public class AutenticacionBasicaImpl extends AutenticacionUsuarioImpl implements
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (password: ");
 		result.append(password);
 		result.append(')');

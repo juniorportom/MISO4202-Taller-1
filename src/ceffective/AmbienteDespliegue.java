@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.AmbienteDespliegue#getAmbiente <em>Ambiente</em>}</li>
  *   <li>{@link ceffective.AmbienteDespliegue#getRecursos <em>Recursos</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getAmbienteDespliegue()
  * @model
@@ -29,6 +29,10 @@ public interface AmbienteDespliegue extends EObject {
 	 * The default value is <code>"IST"</code>.
 	 * The literals are from the enumeration {@link ceffective.TipoAmbiente}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ambiente</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ambiente</em>' attribute.
 	 * @see ceffective.TipoAmbiente
@@ -54,6 +58,10 @@ public interface AmbienteDespliegue extends EObject {
 	 * Returns the value of the '<em><b>Recursos</b></em>' reference list.
 	 * The list contents are of type {@link ceffective.Recurso}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Recursos</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Recursos</em>' reference list.
 	 * @see ceffective.CeffectivePackage#getAmbienteDespliegue_Recursos()

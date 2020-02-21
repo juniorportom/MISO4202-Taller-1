@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.CeffectiveImpl#getProveedorNube <em>Proveedor Nube</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -63,7 +63,6 @@ public class CeffectiveImpl extends MinimalEObjectImpl.Container implements Ceff
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ProveedorNube getProveedorNube() {
 		return proveedorNube;
 	}
@@ -88,7 +87,6 @@ public class CeffectiveImpl extends MinimalEObjectImpl.Container implements Ceff
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setProveedorNube(ProveedorNube newProveedorNube) {
 		if (newProveedorNube != proveedorNube) {
 			NotificationChain msgs = null;

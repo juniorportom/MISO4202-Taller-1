@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.ServidorBDImpl#getTipo <em>Tipo</em>}</li>
  *   <li>{@link ceffective.impl.ServidorBDImpl#getSistemaManejador <em>Sistema Manejador</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -91,7 +91,6 @@ public class ServidorBDImpl extends ServidorImpl implements ServidorBD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public TipoBaseDatos getTipo() {
 		return tipo;
 	}
@@ -101,7 +100,6 @@ public class ServidorBDImpl extends ServidorImpl implements ServidorBD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setTipo(TipoBaseDatos newTipo) {
 		TipoBaseDatos oldTipo = tipo;
 		tipo = newTipo == null ? TIPO_EDEFAULT : newTipo;
@@ -114,7 +112,6 @@ public class ServidorBDImpl extends ServidorImpl implements ServidorBD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getSistemaManejador() {
 		return sistemaManejador;
 	}
@@ -124,7 +121,6 @@ public class ServidorBDImpl extends ServidorImpl implements ServidorBD {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setSistemaManejador(String newSistemaManejador) {
 		String oldSistemaManejador = sistemaManejador;
 		sistemaManejador = newSistemaManejador;
@@ -209,7 +205,7 @@ public class ServidorBDImpl extends ServidorImpl implements ServidorBD {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (tipo: ");
 		result.append(tipo);
 		result.append(", sistemaManejador: ");

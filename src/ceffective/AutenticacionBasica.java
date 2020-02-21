@@ -10,10 +10,10 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.AutenticacionBasica#getPassword <em>Password</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getAutenticacionBasica()
  * @model
@@ -23,6 +23,10 @@ public interface AutenticacionBasica extends AutenticacionUsuario {
 	/**
 	 * Returns the value of the '<em><b>Password</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Password</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Password</em>' attribute.
 	 * @see #setPassword(String)

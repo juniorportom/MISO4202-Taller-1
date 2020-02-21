@@ -1,5 +1,4 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: org.xtext.example.ceffective
 Bundle-ManifestVersion: 2
 Bundle-Name: org.xtext.example.ceffective
 Bundle-Vendor: My Company
@@ -10,11 +9,12 @@ Require-Bundle: Ceffective,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",
- org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
  org.eclipse.xtext.util,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+ org.eclipse.xtend.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.xtext.example.ceffective.formatting2,
+Export-Package: org.xtext.example.ceffective.formatting,
  org.xtext.example.ceffective.parser.antlr.internal,
  org.xtext.example.ceffective.parser.antlr,
  org.xtext.example.ceffective.validation,

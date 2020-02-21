@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.RecursoImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.RecursoImpl#getRecursos <em>Recursos</em>}</li>
@@ -35,6 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link ceffective.impl.RecursoImpl#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
  *   <li>{@link ceffective.impl.RecursoImpl#getZonaNombre <em>Zona Nombre</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -143,7 +143,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getNombre() {
 		return nombre;
 	}
@@ -153,7 +152,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setNombre(String newNombre) {
 		String oldNombre = nombre;
 		nombre = newNombre;
@@ -166,7 +164,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Recurso> getRecursos() {
 		if (recursos == null) {
 			recursos = new EObjectResolvingEList<Recurso>(Recurso.class, this, CeffectivePackage.RECURSO__RECURSOS);
@@ -179,7 +176,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public VPC getVpc() {
 		if (vpc != null && vpc.eIsProxy()) {
 			InternalEObject oldVpc = (InternalEObject)vpc;
@@ -221,7 +217,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setVpc(VPC newVpc) {
 		if (newVpc != vpc) {
 			NotificationChain msgs = null;
@@ -241,7 +236,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getZonaDisponibilidad() {
 		return zonaDisponibilidad;
 	}
@@ -251,7 +245,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setZonaDisponibilidad(String newZonaDisponibilidad) {
 		String oldZonaDisponibilidad = zonaDisponibilidad;
 		zonaDisponibilidad = newZonaDisponibilidad;
@@ -264,7 +257,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getZonaNombre() {
 		return zonaNombre;
 	}
@@ -274,7 +266,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setZonaNombre(String newZonaNombre) {
 		String oldZonaNombre = zonaNombre;
 		zonaNombre = newZonaNombre;
@@ -422,7 +413,7 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nombre: ");
 		result.append(nombre);
 		result.append(", zonaDisponibilidad: ");

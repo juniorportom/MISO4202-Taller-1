@@ -10,10 +10,10 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.Subred#getCidrBlock <em>Cidr Block</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getSubred()
  * @model
@@ -23,6 +23,10 @@ public interface Subred extends MecanismoSeguridad {
 	/**
 	 * Returns the value of the '<em><b>Cidr Block</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cidr Block</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cidr Block</em>' attribute.
 	 * @see #setCidrBlock(String)

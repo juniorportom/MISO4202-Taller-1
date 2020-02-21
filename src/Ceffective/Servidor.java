@@ -10,10 +10,10 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.Servidor#getTamano <em>Tamano</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getServidor()
  * @model
@@ -25,6 +25,10 @@ public interface Servidor extends Recurso {
 	 * The default value is <code>"Micro"</code>.
 	 * The literals are from the enumeration {@link ceffective.TamanoServidor}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tamano</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tamano</em>' attribute.
 	 * @see ceffective.TamanoServidor

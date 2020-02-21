@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.VPC#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.VPC#getMecanismoseguridad <em>Mecanismoseguridad</em>}</li>
  *   <li>{@link ceffective.VPC#getRecurso <em>Recurso</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getVPC()
  * @model
@@ -28,6 +28,10 @@ public interface VPC extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Nombre</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nombre</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nombre</em>' attribute.
 	 * @see #setNombre(String)
@@ -51,6 +55,10 @@ public interface VPC extends EObject {
 	 * Returns the value of the '<em><b>Mecanismoseguridad</b></em>' reference list.
 	 * The list contents are of type {@link ceffective.MecanismoSeguridad}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mecanismoseguridad</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mecanismoseguridad</em>' reference list.
 	 * @see ceffective.CeffectivePackage#getVPC_Mecanismoseguridad()
@@ -64,6 +72,10 @@ public interface VPC extends EObject {
 	 * The list contents are of type {@link ceffective.Recurso}.
 	 * It is bidirectional and its opposite is '{@link ceffective.Recurso#getVpc <em>Vpc</em>}'.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Recurso</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Recurso</em>' reference list.
 	 * @see ceffective.CeffectivePackage#getVPC_Recurso()

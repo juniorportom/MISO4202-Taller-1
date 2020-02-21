@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.Regla#getTipo <em>Tipo</em>}</li>
  *   <li>{@link ceffective.Regla#getProtocolo <em>Protocolo</em>}</li>
@@ -19,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ceffective.Regla#getOrigen <em>Origen</em>}</li>
  *   <li>{@link ceffective.Regla#getDescripcion <em>Descripcion</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getRegla()
  * @model
@@ -28,6 +28,10 @@ public interface Regla extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Tipo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tipo</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tipo</em>' attribute.
 	 * @see #setTipo(String)
@@ -50,6 +54,10 @@ public interface Regla extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Protocolo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Protocolo</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Protocolo</em>' attribute.
 	 * @see #setProtocolo(String)
@@ -72,6 +80,10 @@ public interface Regla extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Puerto</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Puerto</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Puerto</em>' attribute.
 	 * @see #setPuerto(String)
@@ -94,6 +106,10 @@ public interface Regla extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Origen</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Origen</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Origen</em>' attribute.
 	 * @see #setOrigen(String)
@@ -116,6 +132,10 @@ public interface Regla extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Descripcion</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Descripcion</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Descripcion</em>' attribute.
 	 * @see #setDescripcion(String)

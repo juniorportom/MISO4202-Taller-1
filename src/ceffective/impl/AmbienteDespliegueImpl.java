@@ -26,11 +26,11 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getAmbiente <em>Ambiente</em>}</li>
  *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getRecursos <em>Recursos</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -89,7 +89,6 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public TipoAmbiente getAmbiente() {
 		return ambiente;
 	}
@@ -99,7 +98,6 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setAmbiente(TipoAmbiente newAmbiente) {
 		TipoAmbiente oldAmbiente = ambiente;
 		ambiente = newAmbiente == null ? AMBIENTE_EDEFAULT : newAmbiente;
@@ -112,7 +110,6 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Recurso> getRecursos() {
 		if (recursos == null) {
 			recursos = new EObjectResolvingEList<Recurso>(Recurso.class, this, CeffectivePackage.AMBIENTE_DESPLIEGUE__RECURSOS);
@@ -199,7 +196,7 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (ambiente: ");
 		result.append(ambiente);
 		result.append(')');

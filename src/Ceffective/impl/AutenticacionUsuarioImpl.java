@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.AutenticacionUsuarioImpl#getUsuario <em>Usuario</em>}</li>
  *   <li>{@link ceffective.impl.AutenticacionUsuarioImpl#getCorreo <em>Correo</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -91,7 +91,6 @@ public class AutenticacionUsuarioImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getUsuario() {
 		return usuario;
 	}
@@ -101,7 +100,6 @@ public class AutenticacionUsuarioImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setUsuario(String newUsuario) {
 		String oldUsuario = usuario;
 		usuario = newUsuario;
@@ -114,7 +112,6 @@ public class AutenticacionUsuarioImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getCorreo() {
 		return correo;
 	}
@@ -124,7 +121,6 @@ public class AutenticacionUsuarioImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCorreo(String newCorreo) {
 		String oldCorreo = correo;
 		correo = newCorreo;
@@ -209,7 +205,7 @@ public class AutenticacionUsuarioImpl extends MinimalEObjectImpl.Container imple
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (usuario: ");
 		result.append(usuario);
 		result.append(", correo: ");

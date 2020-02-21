@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.AutenticacionUsuario#getUsuario <em>Usuario</em>}</li>
  *   <li>{@link ceffective.AutenticacionUsuario#getCorreo <em>Correo</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getAutenticacionUsuario()
  * @model
@@ -25,6 +25,10 @@ public interface AutenticacionUsuario extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Usuario</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Usuario</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Usuario</em>' attribute.
 	 * @see #setUsuario(String)
@@ -47,6 +51,10 @@ public interface AutenticacionUsuario extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Correo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Correo</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Correo</em>' attribute.
 	 * @see #setCorreo(String)

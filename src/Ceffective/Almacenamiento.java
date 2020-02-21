@@ -10,10 +10,10 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.Almacenamiento#getTamanoInicial <em>Tamano Inicial</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getAlmacenamiento()
  * @model
@@ -23,6 +23,10 @@ public interface Almacenamiento extends Recurso {
 	/**
 	 * Returns the value of the '<em><b>Tamano Inicial</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tamano Inicial</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tamano Inicial</em>' attribute.
 	 * @see #setTamanoInicial(int)

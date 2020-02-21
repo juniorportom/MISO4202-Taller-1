@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.ProveedorNube#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.ProveedorNube#getAmbientedespliegue <em>Ambientedespliegue</em>}</li>
  *   <li>{@link ceffective.ProveedorNube#getAutenticacionUsuario <em>Autenticacion Usuario</em>}</li>
  *   <li>{@link ceffective.ProveedorNube#getVpc <em>Vpc</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getProveedorNube()
  * @model
@@ -29,6 +29,10 @@ public interface ProveedorNube extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Nombre</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nombre</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nombre</em>' attribute.
 	 * @see #setNombre(String)
@@ -52,6 +56,10 @@ public interface ProveedorNube extends EObject {
 	 * Returns the value of the '<em><b>Ambientedespliegue</b></em>' reference list.
 	 * The list contents are of type {@link ceffective.AmbienteDespliegue}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ambientedespliegue</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ambientedespliegue</em>' reference list.
 	 * @see ceffective.CeffectivePackage#getProveedorNube_Ambientedespliegue()
@@ -64,6 +72,10 @@ public interface ProveedorNube extends EObject {
 	 * Returns the value of the '<em><b>Autenticacion Usuario</b></em>' containment reference list.
 	 * The list contents are of type {@link ceffective.AutenticacionUsuario}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Autenticacion Usuario</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Autenticacion Usuario</em>' containment reference list.
 	 * @see ceffective.CeffectivePackage#getProveedorNube_AutenticacionUsuario()
@@ -76,6 +88,10 @@ public interface ProveedorNube extends EObject {
 	 * Returns the value of the '<em><b>Vpc</b></em>' reference list.
 	 * The list contents are of type {@link ceffective.VPC}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Vpc</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Vpc</em>' reference list.
 	 * @see ceffective.CeffectivePackage#getProveedorNube_Vpc()

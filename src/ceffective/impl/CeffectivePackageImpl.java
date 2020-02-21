@@ -207,7 +207,7 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
+	 * 
 	 * <p>This method is used to initialize {@link CeffectivePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -221,8 +221,7 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 		if (isInited) return (CeffectivePackage)EPackage.Registry.INSTANCE.getEPackage(CeffectivePackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredCeffectivePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		CeffectivePackageImpl theCeffectivePackage = registeredCeffectivePackage instanceof CeffectivePackageImpl ? (CeffectivePackageImpl)registeredCeffectivePackage : new CeffectivePackageImpl();
+		CeffectivePackageImpl theCeffectivePackage = (CeffectivePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CeffectivePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CeffectivePackageImpl());
 
 		isInited = true;
 
@@ -235,6 +234,7 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 		// Mark meta-data to indicate it can't be changed
 		theCeffectivePackage.freeze();
 
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CeffectivePackage.eNS_URI, theCeffectivePackage);
 		return theCeffectivePackage;
@@ -245,7 +245,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getProveedorNube() {
 		return proveedorNubeEClass;
 	}
@@ -255,7 +254,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getProveedorNube_Nombre() {
 		return (EAttribute)proveedorNubeEClass.getEStructuralFeatures().get(0);
 	}
@@ -265,7 +263,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProveedorNube_Ambientedespliegue() {
 		return (EReference)proveedorNubeEClass.getEStructuralFeatures().get(1);
 	}
@@ -275,7 +272,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProveedorNube_AutenticacionUsuario() {
 		return (EReference)proveedorNubeEClass.getEStructuralFeatures().get(2);
 	}
@@ -285,7 +281,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProveedorNube_Vpc() {
 		return (EReference)proveedorNubeEClass.getEStructuralFeatures().get(3);
 	}
@@ -295,7 +290,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAutenticacionUsuario() {
 		return autenticacionUsuarioEClass;
 	}
@@ -305,7 +299,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAutenticacionUsuario_Usuario() {
 		return (EAttribute)autenticacionUsuarioEClass.getEStructuralFeatures().get(0);
 	}
@@ -315,7 +308,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAutenticacionUsuario_Correo() {
 		return (EAttribute)autenticacionUsuarioEClass.getEStructuralFeatures().get(1);
 	}
@@ -325,7 +317,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAmbienteDespliegue() {
 		return ambienteDespliegueEClass;
 	}
@@ -335,7 +326,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAmbienteDespliegue_Ambiente() {
 		return (EAttribute)ambienteDespliegueEClass.getEStructuralFeatures().get(0);
 	}
@@ -345,7 +335,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getAmbienteDespliegue_Recursos() {
 		return (EReference)ambienteDespliegueEClass.getEStructuralFeatures().get(1);
 	}
@@ -355,7 +344,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRecurso() {
 		return recursoEClass;
 	}
@@ -365,7 +353,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRecurso_Nombre() {
 		return (EAttribute)recursoEClass.getEStructuralFeatures().get(0);
 	}
@@ -375,7 +362,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRecurso_Recursos() {
 		return (EReference)recursoEClass.getEStructuralFeatures().get(1);
 	}
@@ -385,7 +371,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRecurso_Vpc() {
 		return (EReference)recursoEClass.getEStructuralFeatures().get(2);
 	}
@@ -395,7 +380,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRecurso_ZonaDisponibilidad() {
 		return (EAttribute)recursoEClass.getEStructuralFeatures().get(3);
 	}
@@ -405,7 +389,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRecurso_ZonaNombre() {
 		return (EAttribute)recursoEClass.getEStructuralFeatures().get(4);
 	}
@@ -415,7 +398,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getServidorAplicaciones() {
 		return servidorAplicacionesEClass;
 	}
@@ -425,7 +407,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getServidorAplicaciones_SistemaOperativo() {
 		return (EAttribute)servidorAplicacionesEClass.getEStructuralFeatures().get(0);
 	}
@@ -435,7 +416,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAlmacenamiento() {
 		return almacenamientoEClass;
 	}
@@ -445,7 +425,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAlmacenamiento_TamanoInicial() {
 		return (EAttribute)almacenamientoEClass.getEStructuralFeatures().get(0);
 	}
@@ -455,7 +434,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getServidorBD() {
 		return servidorBDEClass;
 	}
@@ -465,7 +443,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getServidorBD_Tipo() {
 		return (EAttribute)servidorBDEClass.getEStructuralFeatures().get(0);
 	}
@@ -475,7 +452,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getServidorBD_SistemaManejador() {
 		return (EAttribute)servidorBDEClass.getEStructuralFeatures().get(1);
 	}
@@ -485,7 +461,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getMecanismoSeguridad() {
 		return mecanismoSeguridadEClass;
 	}
@@ -495,7 +470,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getMecanismoSeguridad_Nombre() {
 		return (EAttribute)mecanismoSeguridadEClass.getEStructuralFeatures().get(0);
 	}
@@ -505,7 +479,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getMecanismoSeguridad_ZonaNombre() {
 		return (EAttribute)mecanismoSeguridadEClass.getEStructuralFeatures().get(1);
 	}
@@ -515,7 +488,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getMecanismoSeguridad_ZonaDisponibilidad() {
 		return (EAttribute)mecanismoSeguridadEClass.getEStructuralFeatures().get(2);
 	}
@@ -525,7 +497,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getSubred() {
 		return subredEClass;
 	}
@@ -535,7 +506,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getSubred_CidrBlock() {
 		return (EAttribute)subredEClass.getEStructuralFeatures().get(0);
 	}
@@ -545,7 +515,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getInternetGateway() {
 		return internetGatewayEClass;
 	}
@@ -555,7 +524,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getGrupoSeguridad() {
 		return grupoSeguridadEClass;
 	}
@@ -565,7 +533,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getGrupoSeguridad_Descripcion() {
 		return (EAttribute)grupoSeguridadEClass.getEStructuralFeatures().get(0);
 	}
@@ -575,7 +542,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getGrupoSeguridad_ReglasSalida() {
 		return (EReference)grupoSeguridadEClass.getEStructuralFeatures().get(1);
 	}
@@ -585,7 +551,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getGrupoSeguridad_ReglasEntrada() {
 		return (EReference)grupoSeguridadEClass.getEStructuralFeatures().get(2);
 	}
@@ -595,7 +560,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getVPC() {
 		return vpcEClass;
 	}
@@ -605,7 +569,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getVPC_Nombre() {
 		return (EAttribute)vpcEClass.getEStructuralFeatures().get(0);
 	}
@@ -615,7 +578,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getVPC_Mecanismoseguridad() {
 		return (EReference)vpcEClass.getEStructuralFeatures().get(1);
 	}
@@ -625,7 +587,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getVPC_Recurso() {
 		return (EReference)vpcEClass.getEStructuralFeatures().get(2);
 	}
@@ -635,7 +596,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRegla() {
 		return reglaEClass;
 	}
@@ -645,7 +605,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRegla_Tipo() {
 		return (EAttribute)reglaEClass.getEStructuralFeatures().get(0);
 	}
@@ -655,7 +614,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRegla_Protocolo() {
 		return (EAttribute)reglaEClass.getEStructuralFeatures().get(1);
 	}
@@ -665,7 +623,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRegla_Puerto() {
 		return (EAttribute)reglaEClass.getEStructuralFeatures().get(2);
 	}
@@ -675,7 +632,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRegla_Origen() {
 		return (EAttribute)reglaEClass.getEStructuralFeatures().get(3);
 	}
@@ -685,7 +641,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRegla_Descripcion() {
 		return (EAttribute)reglaEClass.getEStructuralFeatures().get(4);
 	}
@@ -695,7 +650,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getCeffective() {
 		return ceffectiveEClass;
 	}
@@ -705,7 +659,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getCeffective_ProveedorNube() {
 		return (EReference)ceffectiveEClass.getEStructuralFeatures().get(0);
 	}
@@ -715,7 +668,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getServidor() {
 		return servidorEClass;
 	}
@@ -725,7 +677,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getServidor_Tamano() {
 		return (EAttribute)servidorEClass.getEStructuralFeatures().get(0);
 	}
@@ -735,7 +686,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAutenticacionBasica() {
 		return autenticacionBasicaEClass;
 	}
@@ -745,7 +695,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAutenticacionBasica_Password() {
 		return (EAttribute)autenticacionBasicaEClass.getEStructuralFeatures().get(0);
 	}
@@ -755,7 +704,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAutenticacionFirma() {
 		return autenticacionFirmaEClass;
 	}
@@ -765,7 +713,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAutenticacionFirma_Nombre() {
 		return (EAttribute)autenticacionFirmaEClass.getEStructuralFeatures().get(0);
 	}
@@ -775,7 +722,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAutenticacionFirma_Certificado() {
 		return (EAttribute)autenticacionFirmaEClass.getEStructuralFeatures().get(1);
 	}
@@ -785,7 +731,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EEnum getTipoAmbiente() {
 		return tipoAmbienteEEnum;
 	}
@@ -795,7 +740,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EEnum getTamanoServidor() {
 		return tamanoServidorEEnum;
 	}
@@ -805,7 +749,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EEnum getTipoBaseDatos() {
 		return tipoBaseDatosEEnum;
 	}
@@ -815,7 +758,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public CeffectiveFactory getCeffectiveFactory() {
 		return (CeffectiveFactory)getEFactoryInstance();
 	}

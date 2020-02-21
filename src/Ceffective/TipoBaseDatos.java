@@ -41,6 +41,10 @@ public enum TipoBaseDatos implements Enumerator {
 	/**
 	 * The '<em><b>Relacional</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Relacional</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RELACIONAL
 	 * @model name="Relacional"
@@ -52,6 +56,10 @@ public enum TipoBaseDatos implements Enumerator {
 	/**
 	 * The '<em><b>No Sql</b></em>' literal value.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>No Sql</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #NO_SQL
 	 * @model name="NoSql"
@@ -84,8 +92,6 @@ public enum TipoBaseDatos implements Enumerator {
 	 * Returns the '<em><b>Tipo Base Datos</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static TipoBaseDatos get(String literal) {
@@ -102,8 +108,6 @@ public enum TipoBaseDatos implements Enumerator {
 	 * Returns the '<em><b>Tipo Base Datos</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static TipoBaseDatos getByName(String name) {
@@ -120,8 +124,6 @@ public enum TipoBaseDatos implements Enumerator {
 	 * Returns the '<em><b>Tipo Base Datos</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static TipoBaseDatos get(int value) {
@@ -170,7 +172,6 @@ public enum TipoBaseDatos implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -180,7 +181,6 @@ public enum TipoBaseDatos implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getName() {
 	  return name;
 	}
@@ -190,7 +190,6 @@ public enum TipoBaseDatos implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getLiteral() {
 	  return literal;
 	}

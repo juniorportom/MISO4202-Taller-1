@@ -10,11 +10,11 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.ServidorBD#getTipo <em>Tipo</em>}</li>
  *   <li>{@link ceffective.ServidorBD#getSistemaManejador <em>Sistema Manejador</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getServidorBD()
  * @model
@@ -26,6 +26,10 @@ public interface ServidorBD extends Servidor {
 	 * The default value is <code>"Relacional"</code>.
 	 * The literals are from the enumeration {@link ceffective.TipoBaseDatos}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tipo</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tipo</em>' attribute.
 	 * @see ceffective.TipoBaseDatos
@@ -50,6 +54,10 @@ public interface ServidorBD extends Servidor {
 	/**
 	 * Returns the value of the '<em><b>Sistema Manejador</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sistema Manejador</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sistema Manejador</em>' attribute.
 	 * @see #setSistemaManejador(String)

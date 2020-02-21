@@ -10,10 +10,10 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link ceffective.ServidorAplicaciones#getSistemaOperativo <em>Sistema Operativo</em>}</li>
  * </ul>
+ * </p>
  *
  * @see ceffective.CeffectivePackage#getServidorAplicaciones()
  * @model
@@ -23,6 +23,10 @@ public interface ServidorAplicaciones extends Servidor {
 	/**
 	 * Returns the value of the '<em><b>Sistema Operativo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sistema Operativo</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sistema Operativo</em>' attribute.
 	 * @see #setSistemaOperativo(String)

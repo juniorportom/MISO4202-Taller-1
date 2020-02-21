@@ -24,12 +24,12 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.GrupoSeguridadImpl#getDescripcion <em>Descripcion</em>}</li>
  *   <li>{@link ceffective.impl.GrupoSeguridadImpl#getReglasSalida <em>Reglas Salida</em>}</li>
  *   <li>{@link ceffective.impl.GrupoSeguridadImpl#getReglasEntrada <em>Reglas Entrada</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -98,7 +98,6 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getDescripcion() {
 		return descripcion;
 	}
@@ -108,7 +107,6 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setDescripcion(String newDescripcion) {
 		String oldDescripcion = descripcion;
 		descripcion = newDescripcion;
@@ -121,7 +119,6 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Regla> getReglasSalida() {
 		if (reglasSalida == null) {
 			reglasSalida = new EObjectResolvingEList<Regla>(Regla.class, this, CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_SALIDA);
@@ -134,7 +131,6 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Regla> getReglasEntrada() {
 		if (reglasEntrada == null) {
 			reglasEntrada = new EObjectResolvingEList<Regla>(Regla.class, this, CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_ENTRADA);
@@ -232,7 +228,7 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (descripcion: ");
 		result.append(descripcion);
 		result.append(')');

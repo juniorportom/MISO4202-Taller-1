@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.SubredImpl#getCidrBlock <em>Cidr Block</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -69,7 +69,6 @@ public class SubredImpl extends MecanismoSeguridadImpl implements Subred {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getCidrBlock() {
 		return cidrBlock;
 	}
@@ -79,7 +78,6 @@ public class SubredImpl extends MecanismoSeguridadImpl implements Subred {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCidrBlock(String newCidrBlock) {
 		String oldCidrBlock = cidrBlock;
 		cidrBlock = newCidrBlock;
@@ -154,7 +152,7 @@ public class SubredImpl extends MecanismoSeguridadImpl implements Subred {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cidrBlock: ");
 		result.append(cidrBlock);
 		result.append(')');

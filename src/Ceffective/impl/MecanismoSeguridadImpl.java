@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getZonaNombre <em>Zona Nombre</em>}</li>
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -112,7 +112,6 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getNombre() {
 		return nombre;
 	}
@@ -122,7 +121,6 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setNombre(String newNombre) {
 		String oldNombre = nombre;
 		nombre = newNombre;
@@ -135,7 +133,6 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getZonaNombre() {
 		return zonaNombre;
 	}
@@ -145,7 +142,6 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setZonaNombre(String newZonaNombre) {
 		String oldZonaNombre = zonaNombre;
 		zonaNombre = newZonaNombre;
@@ -158,7 +154,6 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getZonaDisponibilidad() {
 		return zonaDisponibilidad;
 	}
@@ -168,7 +163,6 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setZonaDisponibilidad(String newZonaDisponibilidad) {
 		String oldZonaDisponibilidad = zonaDisponibilidad;
 		zonaDisponibilidad = newZonaDisponibilidad;
@@ -263,7 +257,7 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nombre: ");
 		result.append(nombre);
 		result.append(", zonaNombre: ");

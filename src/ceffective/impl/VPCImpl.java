@@ -30,12 +30,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.VPCImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.VPCImpl#getMecanismoseguridad <em>Mecanismoseguridad</em>}</li>
  *   <li>{@link ceffective.impl.VPCImpl#getRecurso <em>Recurso</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -104,7 +104,6 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getNombre() {
 		return nombre;
 	}
@@ -114,7 +113,6 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setNombre(String newNombre) {
 		String oldNombre = nombre;
 		nombre = newNombre;
@@ -127,7 +125,6 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<MecanismoSeguridad> getMecanismoseguridad() {
 		if (mecanismoseguridad == null) {
 			mecanismoseguridad = new EObjectResolvingEList<MecanismoSeguridad>(MecanismoSeguridad.class, this, CeffectivePackage.VPC__MECANISMOSEGURIDAD);
@@ -140,7 +137,6 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Recurso> getRecurso() {
 		if (recurso == null) {
 			recurso = new EObjectWithInverseResolvingEList<Recurso>(Recurso.class, this, CeffectivePackage.VPC__RECURSO, CeffectivePackage.RECURSO__VPC);
@@ -267,7 +263,7 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nombre: ");
 		result.append(nombre);
 		result.append(')');

@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link ceffective.impl.AlmacenamientoImpl#getTamanoInicial <em>Tamano Inicial</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -69,7 +69,6 @@ public class AlmacenamientoImpl extends RecursoImpl implements Almacenamiento {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getTamanoInicial() {
 		return tamanoInicial;
 	}
@@ -79,7 +78,6 @@ public class AlmacenamientoImpl extends RecursoImpl implements Almacenamiento {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setTamanoInicial(int newTamanoInicial) {
 		int oldTamanoInicial = tamanoInicial;
 		tamanoInicial = newTamanoInicial;
@@ -154,7 +152,7 @@ public class AlmacenamientoImpl extends RecursoImpl implements Almacenamiento {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (tamanoInicial: ");
 		result.append(tamanoInicial);
 		result.append(')');
