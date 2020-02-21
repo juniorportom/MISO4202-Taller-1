@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Ceffective/src" modelPluginID="Ceffective" modelName="Ceffective"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>ceffective.ecore</foreignModel>
+  <genPackages prefix="Ceffective" disposableProviderFactory="true" ecorePackage="ceffective.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ceffective.ecore#//TipoAmbiente">
+      <genEnumLiterals ecoreEnumLiteral="ceffective.ecore#//TipoAmbiente/IST"/>
+      <genEnumLiterals ecoreEnumLiteral="ceffective.ecore#//TipoAmbiente/QA"/>
+      <genEnumLiterals ecoreEnumLiteral="ceffective.ecore#//TipoAmbiente/NFT"/>
+      <genEnumLiterals ecoreEnumLiteral="ceffective.ecore#//TipoAmbiente/PRD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ceffective.ecore#//TamanoServidor">
+      <genEnumLiterals ecoreEnumLiteral="ceffective.ecore#//TamanoServidor/Micro"/>
+      <genEnumLiterals ecoreEnumLiteral="ceffective.ecore#//TamanoServidor/Small"/>
+      <genEnumLiterals ecoreEnumLiteral="ceffective.ecore#//TamanoServidor/Medium"/>
+      <genEnumLiterals ecoreEnumLiteral="ceffective.ecore#//TamanoServidor/Large"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ceffective.ecore#//TipoBaseDatos">
+      <genEnumLiterals ecoreEnumLiteral="ceffective.ecore#//TipoBaseDatos/Relacional"/>
+      <genEnumLiterals ecoreEnumLiteral="ceffective.ecore#//TipoBaseDatos/NoSql"/>
+    </genEnums>
+    <genClasses ecoreClass="ceffective.ecore#//ProveedorNube">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//ProveedorNube/nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//ProveedorNube/ambientedespliegue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//ProveedorNube/autenticacionUsuario"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//ProveedorNube/vpc"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//AutenticacionUsuario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AutenticacionUsuario/usuario"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AutenticacionUsuario/correo"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//AmbienteDespliegue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AmbienteDespliegue/ambiente"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//AmbienteDespliegue/recursos"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ceffective.ecore#//Recurso">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Recurso/nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//Recurso/recursos"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//Recurso/vpc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Recurso/zonaDisponibilidad"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Recurso/zonaNombre"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//ServidorAplicaciones">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//ServidorAplicaciones/sistemaOperativo"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//Almacenamiento">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Almacenamiento/tamanoInicial"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//ServidorBD">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//ServidorBD/tipo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//ServidorBD/sistemaManejador"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ceffective.ecore#//MecanismoSeguridad">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//MecanismoSeguridad/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//MecanismoSeguridad/zonaNombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//MecanismoSeguridad/zonaDisponibilidad"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//Subred">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Subred/cidrBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//InternetGateway"/>
+    <genClasses ecoreClass="ceffective.ecore#//GrupoSeguridad">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//GrupoSeguridad/descripcion"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//GrupoSeguridad/reglasSalida"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//GrupoSeguridad/reglasEntrada"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//VPC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//VPC/nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//VPC/mecanismoseguridad"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//VPC/recurso"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//Regla">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Regla/tipo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Regla/protocolo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Regla/puerto"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Regla/origen"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Regla/descripcion"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//Ceffective">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//Ceffective/proveedorNube"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//Servidor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Servidor/tamano"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//AutenticacionBasica">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AutenticacionBasica/password"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//AutenticacionFirma">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AutenticacionFirma/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AutenticacionFirma/certificado"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
