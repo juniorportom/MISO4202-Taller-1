@@ -263,7 +263,7 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProveedorNube_Ambientedespliegue() {
+	public EReference getProveedorNube_AutenticacionUsuario() {
 		return (EReference)proveedorNubeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -272,7 +272,7 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProveedorNube_AutenticacionUsuario() {
+	public EReference getProveedorNube_Ambientedespliegue() {
 		return (EReference)proveedorNubeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -281,8 +281,17 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProveedorNube_Vpc() {
+	public EReference getProveedorNube_Mecanismoseguridad() {
 		return (EReference)proveedorNubeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProveedorNube_Vpc() {
+		return (EReference)proveedorNubeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -497,6 +506,15 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMecanismoSeguridad_Vpc() {
+		return (EReference)mecanismoSeguridadEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSubred() {
 		return subredEClass;
 	}
@@ -578,17 +596,8 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVPC_Mecanismoseguridad() {
-		return (EReference)vpcEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getVPC_Recurso() {
-		return (EReference)vpcEClass.getEStructuralFeatures().get(2);
+		return (EReference)vpcEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -783,8 +792,9 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 		// Create classes and their features
 		proveedorNubeEClass = createEClass(PROVEEDOR_NUBE);
 		createEAttribute(proveedorNubeEClass, PROVEEDOR_NUBE__NOMBRE);
-		createEReference(proveedorNubeEClass, PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE);
 		createEReference(proveedorNubeEClass, PROVEEDOR_NUBE__AUTENTICACION_USUARIO);
+		createEReference(proveedorNubeEClass, PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE);
+		createEReference(proveedorNubeEClass, PROVEEDOR_NUBE__MECANISMOSEGURIDAD);
 		createEReference(proveedorNubeEClass, PROVEEDOR_NUBE__VPC);
 
 		autenticacionUsuarioEClass = createEClass(AUTENTICACION_USUARIO);
@@ -816,6 +826,7 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 		createEAttribute(mecanismoSeguridadEClass, MECANISMO_SEGURIDAD__NOMBRE);
 		createEAttribute(mecanismoSeguridadEClass, MECANISMO_SEGURIDAD__ZONA_NOMBRE);
 		createEAttribute(mecanismoSeguridadEClass, MECANISMO_SEGURIDAD__ZONA_DISPONIBILIDAD);
+		createEReference(mecanismoSeguridadEClass, MECANISMO_SEGURIDAD__VPC);
 
 		subredEClass = createEClass(SUBRED);
 		createEAttribute(subredEClass, SUBRED__CIDR_BLOCK);
@@ -829,7 +840,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 
 		vpcEClass = createEClass(VPC);
 		createEAttribute(vpcEClass, VPC__NOMBRE);
-		createEReference(vpcEClass, VPC__MECANISMOSEGURIDAD);
 		createEReference(vpcEClass, VPC__RECURSO);
 
 		reglaEClass = createEClass(REGLA);
@@ -899,9 +909,10 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 		// Initialize classes, features, and operations; add parameters
 		initEClass(proveedorNubeEClass, ProveedorNube.class, "ProveedorNube", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProveedorNube_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, ProveedorNube.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProveedorNube_Ambientedespliegue(), this.getAmbienteDespliegue(), null, "ambientedespliegue", null, 0, -1, ProveedorNube.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProveedorNube_AutenticacionUsuario(), this.getAutenticacionUsuario(), null, "autenticacionUsuario", null, 1, -1, ProveedorNube.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProveedorNube_Vpc(), this.getVPC(), null, "vpc", null, 0, -1, ProveedorNube.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProveedorNube_Ambientedespliegue(), this.getAmbienteDespliegue(), null, "ambientedespliegue", null, 0, -1, ProveedorNube.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProveedorNube_Mecanismoseguridad(), this.getMecanismoSeguridad(), null, "mecanismoseguridad", null, 0, -1, ProveedorNube.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProveedorNube_Vpc(), this.getVPC(), null, "vpc", null, 0, 1, ProveedorNube.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(autenticacionUsuarioEClass, AutenticacionUsuario.class, "AutenticacionUsuario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAutenticacionUsuario_Usuario(), ecorePackage.getEString(), "usuario", null, 0, 1, AutenticacionUsuario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -932,6 +943,7 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 		initEAttribute(getMecanismoSeguridad_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, MecanismoSeguridad.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMecanismoSeguridad_ZonaNombre(), ecorePackage.getEString(), "zonaNombre", null, 0, 1, MecanismoSeguridad.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMecanismoSeguridad_ZonaDisponibilidad(), ecorePackage.getEString(), "zonaDisponibilidad", null, 0, 1, MecanismoSeguridad.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMecanismoSeguridad_Vpc(), this.getVPC(), null, "vpc", null, 0, 1, MecanismoSeguridad.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(subredEClass, Subred.class, "Subred", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSubred_CidrBlock(), ecorePackage.getEString(), "cidrBlock", null, 0, 1, Subred.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -945,7 +957,6 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 
 		initEClass(vpcEClass, ceffective.VPC.class, "VPC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVPC_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, ceffective.VPC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVPC_Mecanismoseguridad(), this.getMecanismoSeguridad(), null, "mecanismoseguridad", null, 0, -1, ceffective.VPC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVPC_Recurso(), this.getRecurso(), this.getRecurso_Vpc(), "recurso", null, 0, -1, ceffective.VPC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reglaEClass, Regla.class, "Regla", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

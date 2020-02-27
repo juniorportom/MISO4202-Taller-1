@@ -3,7 +3,6 @@
 package ceffective.impl;
 
 import ceffective.CeffectivePackage;
-import ceffective.MecanismoSeguridad;
 import ceffective.Recurso;
 import ceffective.VPC;
 
@@ -20,7 +19,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ceffective.impl.VPCImpl#getNombre <em>Nombre</em>}</li>
- *   <li>{@link ceffective.impl.VPCImpl#getMecanismoseguridad <em>Mecanismoseguridad</em>}</li>
  *   <li>{@link ceffective.impl.VPCImpl#getRecurso <em>Recurso</em>}</li>
  * </ul>
  * </p>
@@ -59,16 +56,6 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	 * @ordered
 	 */
 	protected String nombre = NOMBRE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getMecanismoseguridad() <em>Mecanismoseguridad</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMecanismoseguridad()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<MecanismoSeguridad> mecanismoseguridad;
 
 	/**
 	 * The cached value of the '{@link #getRecurso() <em>Recurso</em>}' reference list.
@@ -125,18 +112,6 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MecanismoSeguridad> getMecanismoseguridad() {
-		if (mecanismoseguridad == null) {
-			mecanismoseguridad = new EObjectResolvingEList<MecanismoSeguridad>(MecanismoSeguridad.class, this, CeffectivePackage.VPC__MECANISMOSEGURIDAD);
-		}
-		return mecanismoseguridad;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Recurso> getRecurso() {
 		if (recurso == null) {
 			recurso = new EObjectWithInverseResolvingEList<Recurso>(Recurso.class, this, CeffectivePackage.VPC__RECURSO, CeffectivePackage.RECURSO__VPC);
@@ -183,8 +158,6 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 		switch (featureID) {
 			case CeffectivePackage.VPC__NOMBRE:
 				return getNombre();
-			case CeffectivePackage.VPC__MECANISMOSEGURIDAD:
-				return getMecanismoseguridad();
 			case CeffectivePackage.VPC__RECURSO:
 				return getRecurso();
 		}
@@ -202,10 +175,6 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 		switch (featureID) {
 			case CeffectivePackage.VPC__NOMBRE:
 				setNombre((String)newValue);
-				return;
-			case CeffectivePackage.VPC__MECANISMOSEGURIDAD:
-				getMecanismoseguridad().clear();
-				getMecanismoseguridad().addAll((Collection<? extends MecanismoSeguridad>)newValue);
 				return;
 			case CeffectivePackage.VPC__RECURSO:
 				getRecurso().clear();
@@ -226,9 +195,6 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 			case CeffectivePackage.VPC__NOMBRE:
 				setNombre(NOMBRE_EDEFAULT);
 				return;
-			case CeffectivePackage.VPC__MECANISMOSEGURIDAD:
-				getMecanismoseguridad().clear();
-				return;
 			case CeffectivePackage.VPC__RECURSO:
 				getRecurso().clear();
 				return;
@@ -246,8 +212,6 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 		switch (featureID) {
 			case CeffectivePackage.VPC__NOMBRE:
 				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
-			case CeffectivePackage.VPC__MECANISMOSEGURIDAD:
-				return mecanismoseguridad != null && !mecanismoseguridad.isEmpty();
 			case CeffectivePackage.VPC__RECURSO:
 				return recurso != null && !recurso.isEmpty();
 		}

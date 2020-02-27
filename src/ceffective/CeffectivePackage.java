@@ -77,31 +77,40 @@ public interface CeffectivePackage extends EPackage {
 	int PROVEEDOR_NUBE__NOMBRE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Ambientedespliegue</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Autenticacion Usuario</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVEEDOR_NUBE__AUTENTICACION_USUARIO = 2;
+	int PROVEEDOR_NUBE__AUTENTICACION_USUARIO = 1;
 
 	/**
-	 * The feature id for the '<em><b>Vpc</b></em>' reference list.
+	 * The feature id for the '<em><b>Ambientedespliegue</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVEEDOR_NUBE__VPC = 3;
+	int PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Mecanismoseguridad</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVEEDOR_NUBE__MECANISMOSEGURIDAD = 3;
+
+	/**
+	 * The feature id for the '<em><b>Vpc</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVEEDOR_NUBE__VPC = 4;
 
 	/**
 	 * The number of structural features of the '<em>Proveedor Nube</em>' class.
@@ -110,7 +119,7 @@ public interface CeffectivePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVEEDOR_NUBE_FEATURE_COUNT = 4;
+	int PROVEEDOR_NUBE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Proveedor Nube</em>' class.
@@ -679,13 +688,22 @@ public interface CeffectivePackage extends EPackage {
 	int MECANISMO_SEGURIDAD__ZONA_DISPONIBILIDAD = 2;
 
 	/**
+	 * The feature id for the '<em><b>Vpc</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MECANISMO_SEGURIDAD__VPC = 3;
+
+	/**
 	 * The number of structural features of the '<em>Mecanismo Seguridad</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MECANISMO_SEGURIDAD_FEATURE_COUNT = 3;
+	int MECANISMO_SEGURIDAD_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Mecanismo Seguridad</em>' class.
@@ -732,6 +750,15 @@ public interface CeffectivePackage extends EPackage {
 	 * @ordered
 	 */
 	int SUBRED__ZONA_DISPONIBILIDAD = MECANISMO_SEGURIDAD__ZONA_DISPONIBILIDAD;
+
+	/**
+	 * The feature id for the '<em><b>Vpc</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBRED__VPC = MECANISMO_SEGURIDAD__VPC;
 
 	/**
 	 * The feature id for the '<em><b>Cidr Block</b></em>' attribute.
@@ -798,6 +825,15 @@ public interface CeffectivePackage extends EPackage {
 	int INTERNET_GATEWAY__ZONA_DISPONIBILIDAD = MECANISMO_SEGURIDAD__ZONA_DISPONIBILIDAD;
 
 	/**
+	 * The feature id for the '<em><b>Vpc</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNET_GATEWAY__VPC = MECANISMO_SEGURIDAD__VPC;
+
+	/**
 	 * The number of structural features of the '<em>Internet Gateway</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -851,6 +887,15 @@ public interface CeffectivePackage extends EPackage {
 	 * @ordered
 	 */
 	int GRUPO_SEGURIDAD__ZONA_DISPONIBILIDAD = MECANISMO_SEGURIDAD__ZONA_DISPONIBILIDAD;
+
+	/**
+	 * The feature id for the '<em><b>Vpc</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRUPO_SEGURIDAD__VPC = MECANISMO_SEGURIDAD__VPC;
 
 	/**
 	 * The feature id for the '<em><b>Descripcion</b></em>' attribute.
@@ -917,22 +962,13 @@ public interface CeffectivePackage extends EPackage {
 	int VPC__NOMBRE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Mecanismoseguridad</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VPC__MECANISMOSEGURIDAD = 1;
-
-	/**
 	 * The feature id for the '<em><b>Recurso</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VPC__RECURSO = 2;
+	int VPC__RECURSO = 1;
 
 	/**
 	 * The number of structural features of the '<em>VPC</em>' class.
@@ -941,7 +977,7 @@ public interface CeffectivePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VPC_FEATURE_COUNT = 3;
+	int VPC_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>VPC</em>' class.
@@ -1234,17 +1270,6 @@ public interface CeffectivePackage extends EPackage {
 	EAttribute getProveedorNube_Nombre();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ceffective.ProveedorNube#getAmbientedespliegue <em>Ambientedespliegue</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Ambientedespliegue</em>'.
-	 * @see ceffective.ProveedorNube#getAmbientedespliegue()
-	 * @see #getProveedorNube()
-	 * @generated
-	 */
-	EReference getProveedorNube_Ambientedespliegue();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link ceffective.ProveedorNube#getAutenticacionUsuario <em>Autenticacion Usuario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1256,10 +1281,32 @@ public interface CeffectivePackage extends EPackage {
 	EReference getProveedorNube_AutenticacionUsuario();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ceffective.ProveedorNube#getVpc <em>Vpc</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ceffective.ProveedorNube#getAmbientedespliegue <em>Ambientedespliegue</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Vpc</em>'.
+	 * @return the meta object for the containment reference list '<em>Ambientedespliegue</em>'.
+	 * @see ceffective.ProveedorNube#getAmbientedespliegue()
+	 * @see #getProveedorNube()
+	 * @generated
+	 */
+	EReference getProveedorNube_Ambientedespliegue();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ceffective.ProveedorNube#getMecanismoseguridad <em>Mecanismoseguridad</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Mecanismoseguridad</em>'.
+	 * @see ceffective.ProveedorNube#getMecanismoseguridad()
+	 * @see #getProveedorNube()
+	 * @generated
+	 */
+	EReference getProveedorNube_Mecanismoseguridad();
+
+	/**
+	 * Returns the meta object for the reference '{@link ceffective.ProveedorNube#getVpc <em>Vpc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Vpc</em>'.
 	 * @see ceffective.ProveedorNube#getVpc()
 	 * @see #getProveedorNube()
 	 * @generated
@@ -1513,6 +1560,17 @@ public interface CeffectivePackage extends EPackage {
 	EAttribute getMecanismoSeguridad_ZonaDisponibilidad();
 
 	/**
+	 * Returns the meta object for the reference '{@link ceffective.MecanismoSeguridad#getVpc <em>Vpc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Vpc</em>'.
+	 * @see ceffective.MecanismoSeguridad#getVpc()
+	 * @see #getMecanismoSeguridad()
+	 * @generated
+	 */
+	EReference getMecanismoSeguridad_Vpc();
+
+	/**
 	 * Returns the meta object for class '{@link ceffective.Subred <em>Subred</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1606,17 +1664,6 @@ public interface CeffectivePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVPC_Nombre();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ceffective.VPC#getMecanismoseguridad <em>Mecanismoseguridad</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Mecanismoseguridad</em>'.
-	 * @see ceffective.VPC#getMecanismoseguridad()
-	 * @see #getVPC()
-	 * @generated
-	 */
-	EReference getVPC_Mecanismoseguridad();
 
 	/**
 	 * Returns the meta object for the reference list '{@link ceffective.VPC#getRecurso <em>Recurso</em>}'.
@@ -1861,14 +1908,6 @@ public interface CeffectivePackage extends EPackage {
 		EAttribute PROVEEDOR_NUBE__NOMBRE = eINSTANCE.getProveedorNube_Nombre();
 
 		/**
-		 * The meta object literal for the '<em><b>Ambientedespliegue</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE = eINSTANCE.getProveedorNube_Ambientedespliegue();
-
-		/**
 		 * The meta object literal for the '<em><b>Autenticacion Usuario</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1877,7 +1916,23 @@ public interface CeffectivePackage extends EPackage {
 		EReference PROVEEDOR_NUBE__AUTENTICACION_USUARIO = eINSTANCE.getProveedorNube_AutenticacionUsuario();
 
 		/**
-		 * The meta object literal for the '<em><b>Vpc</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Ambientedespliegue</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE = eINSTANCE.getProveedorNube_Ambientedespliegue();
+
+		/**
+		 * The meta object literal for the '<em><b>Mecanismoseguridad</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROVEEDOR_NUBE__MECANISMOSEGURIDAD = eINSTANCE.getProveedorNube_Mecanismoseguridad();
+
+		/**
+		 * The meta object literal for the '<em><b>Vpc</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2083,6 +2138,14 @@ public interface CeffectivePackage extends EPackage {
 		EAttribute MECANISMO_SEGURIDAD__ZONA_DISPONIBILIDAD = eINSTANCE.getMecanismoSeguridad_ZonaDisponibilidad();
 
 		/**
+		 * The meta object literal for the '<em><b>Vpc</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MECANISMO_SEGURIDAD__VPC = eINSTANCE.getMecanismoSeguridad_Vpc();
+
+		/**
 		 * The meta object literal for the '{@link ceffective.impl.SubredImpl <em>Subred</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2161,14 +2224,6 @@ public interface CeffectivePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VPC__NOMBRE = eINSTANCE.getVPC_Nombre();
-
-		/**
-		 * The meta object literal for the '<em><b>Mecanismoseguridad</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VPC__MECANISMOSEGURIDAD = eINSTANCE.getVPC_Mecanismoseguridad();
 
 		/**
 		 * The meta object literal for the '<em><b>Recurso</b></em>' reference list feature.

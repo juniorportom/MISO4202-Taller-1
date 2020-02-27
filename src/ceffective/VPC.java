@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link ceffective.VPC#getNombre <em>Nombre</em>}</li>
- *   <li>{@link ceffective.VPC#getMecanismoseguridad <em>Mecanismoseguridad</em>}</li>
  *   <li>{@link ceffective.VPC#getRecurso <em>Recurso</em>}</li>
  * </ul>
  * </p>
@@ -50,22 +49,6 @@ public interface VPC extends EObject {
 	 * @generated
 	 */
 	void setNombre(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Mecanismoseguridad</b></em>' reference list.
-	 * The list contents are of type {@link ceffective.MecanismoSeguridad}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mecanismoseguridad</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mecanismoseguridad</em>' reference list.
-	 * @see ceffective.CeffectivePackage#getVPC_Mecanismoseguridad()
-	 * @model
-	 * @generated
-	 */
-	EList<MecanismoSeguridad> getMecanismoseguridad();
 
 	/**
 	 * Returns the value of the '<em><b>Recurso</b></em>' reference list.

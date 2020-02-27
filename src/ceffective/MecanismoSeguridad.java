@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ceffective.MecanismoSeguridad#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.MecanismoSeguridad#getZonaNombre <em>Zona Nombre</em>}</li>
  *   <li>{@link ceffective.MecanismoSeguridad#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
+ *   <li>{@link ceffective.MecanismoSeguridad#getVpc <em>Vpc</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,5 +101,31 @@ public interface MecanismoSeguridad extends EObject {
 	 * @generated
 	 */
 	void setZonaDisponibilidad(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Vpc</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Vpc</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Vpc</em>' reference.
+	 * @see #setVpc(VPC)
+	 * @see ceffective.CeffectivePackage#getMecanismoSeguridad_Vpc()
+	 * @model
+	 * @generated
+	 */
+	VPC getVpc();
+
+	/**
+	 * Sets the value of the '{@link ceffective.MecanismoSeguridad#getVpc <em>Vpc</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Vpc</em>' reference.
+	 * @see #getVpc()
+	 * @generated
+	 */
+	void setVpc(VPC value);
 
 } // MecanismoSeguridad

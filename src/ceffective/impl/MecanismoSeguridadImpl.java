@@ -4,10 +4,12 @@ package ceffective.impl;
 
 import ceffective.CeffectivePackage;
 import ceffective.MecanismoSeguridad;
+import ceffective.VPC;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getZonaNombre <em>Zona Nombre</em>}</li>
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
+ *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getVpc <em>Vpc</em>}</li>
  * </ul>
  * </p>
  *
@@ -87,6 +90,16 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 	 * @ordered
 	 */
 	protected String zonaDisponibilidad = ZONA_DISPONIBILIDAD_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVpc()
+	 * @generated
+	 * @ordered
+	 */
+	protected VPC vpc;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,6 +188,44 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public VPC getVpc() {
+		if (vpc != null && vpc.eIsProxy()) {
+			InternalEObject oldVpc = (InternalEObject)vpc;
+			vpc = (VPC)eResolveProxy(oldVpc);
+			if (vpc != oldVpc) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CeffectivePackage.MECANISMO_SEGURIDAD__VPC, oldVpc, vpc));
+			}
+		}
+		return vpc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VPC basicGetVpc() {
+		return vpc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVpc(VPC newVpc) {
+		VPC oldVpc = vpc;
+		vpc = newVpc;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.MECANISMO_SEGURIDAD__VPC, oldVpc, vpc));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -184,6 +235,9 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 				return getZonaNombre();
 			case CeffectivePackage.MECANISMO_SEGURIDAD__ZONA_DISPONIBILIDAD:
 				return getZonaDisponibilidad();
+			case CeffectivePackage.MECANISMO_SEGURIDAD__VPC:
+				if (resolve) return getVpc();
+				return basicGetVpc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,6 +258,9 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 				return;
 			case CeffectivePackage.MECANISMO_SEGURIDAD__ZONA_DISPONIBILIDAD:
 				setZonaDisponibilidad((String)newValue);
+				return;
+			case CeffectivePackage.MECANISMO_SEGURIDAD__VPC:
+				setVpc((VPC)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,6 +283,9 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 			case CeffectivePackage.MECANISMO_SEGURIDAD__ZONA_DISPONIBILIDAD:
 				setZonaDisponibilidad(ZONA_DISPONIBILIDAD_EDEFAULT);
 				return;
+			case CeffectivePackage.MECANISMO_SEGURIDAD__VPC:
+				setVpc((VPC)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -244,6 +304,8 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 				return ZONA_NOMBRE_EDEFAULT == null ? zonaNombre != null : !ZONA_NOMBRE_EDEFAULT.equals(zonaNombre);
 			case CeffectivePackage.MECANISMO_SEGURIDAD__ZONA_DISPONIBILIDAD:
 				return ZONA_DISPONIBILIDAD_EDEFAULT == null ? zonaDisponibilidad != null : !ZONA_DISPONIBILIDAD_EDEFAULT.equals(zonaDisponibilidad);
+			case CeffectivePackage.MECANISMO_SEGURIDAD__VPC:
+				return vpc != null;
 		}
 		return super.eIsSet(featureID);
 	}

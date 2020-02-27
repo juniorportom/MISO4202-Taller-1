@@ -5,6 +5,7 @@ package ceffective.impl;
 import ceffective.AmbienteDespliegue;
 import ceffective.AutenticacionUsuario;
 import ceffective.CeffectivePackage;
+import ceffective.MecanismoSeguridad;
 import ceffective.ProveedorNube;
 import ceffective.VPC;
 
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,8 +33,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ceffective.impl.ProveedorNubeImpl#getNombre <em>Nombre</em>}</li>
- *   <li>{@link ceffective.impl.ProveedorNubeImpl#getAmbientedespliegue <em>Ambientedespliegue</em>}</li>
  *   <li>{@link ceffective.impl.ProveedorNubeImpl#getAutenticacionUsuario <em>Autenticacion Usuario</em>}</li>
+ *   <li>{@link ceffective.impl.ProveedorNubeImpl#getAmbientedespliegue <em>Ambientedespliegue</em>}</li>
+ *   <li>{@link ceffective.impl.ProveedorNubeImpl#getMecanismoseguridad <em>Mecanismoseguridad</em>}</li>
  *   <li>{@link ceffective.impl.ProveedorNubeImpl#getVpc <em>Vpc</em>}</li>
  * </ul>
  * </p>
@@ -63,16 +64,6 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 	protected String nombre = NOMBRE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAmbientedespliegue() <em>Ambientedespliegue</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAmbientedespliegue()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AmbienteDespliegue> ambientedespliegue;
-
-	/**
 	 * The cached value of the '{@link #getAutenticacionUsuario() <em>Autenticacion Usuario</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,14 +74,34 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 	protected EList<AutenticacionUsuario> autenticacionUsuario;
 
 	/**
-	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' reference list.
+	 * The cached value of the '{@link #getAmbientedespliegue() <em>Ambientedespliegue</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmbientedespliegue()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AmbienteDespliegue> ambientedespliegue;
+
+	/**
+	 * The cached value of the '{@link #getMecanismoseguridad() <em>Mecanismoseguridad</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMecanismoseguridad()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MecanismoSeguridad> mecanismoseguridad;
+
+	/**
+	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVpc()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<VPC> vpc;
+	protected VPC vpc;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,18 +148,6 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AmbienteDespliegue> getAmbientedespliegue() {
-		if (ambientedespliegue == null) {
-			ambientedespliegue = new EObjectResolvingEList<AmbienteDespliegue>(AmbienteDespliegue.class, this, CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE);
-		}
-		return ambientedespliegue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<AutenticacionUsuario> getAutenticacionUsuario() {
 		if (autenticacionUsuario == null) {
 			autenticacionUsuario = new EObjectContainmentEList<AutenticacionUsuario>(AutenticacionUsuario.class, this, CeffectivePackage.PROVEEDOR_NUBE__AUTENTICACION_USUARIO);
@@ -161,11 +160,61 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<VPC> getVpc() {
-		if (vpc == null) {
-			vpc = new EObjectResolvingEList<VPC>(VPC.class, this, CeffectivePackage.PROVEEDOR_NUBE__VPC);
+	public EList<AmbienteDespliegue> getAmbientedespliegue() {
+		if (ambientedespliegue == null) {
+			ambientedespliegue = new EObjectContainmentEList<AmbienteDespliegue>(AmbienteDespliegue.class, this, CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE);
+		}
+		return ambientedespliegue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<MecanismoSeguridad> getMecanismoseguridad() {
+		if (mecanismoseguridad == null) {
+			mecanismoseguridad = new EObjectContainmentEList<MecanismoSeguridad>(MecanismoSeguridad.class, this, CeffectivePackage.PROVEEDOR_NUBE__MECANISMOSEGURIDAD);
+		}
+		return mecanismoseguridad;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VPC getVpc() {
+		if (vpc != null && vpc.eIsProxy()) {
+			InternalEObject oldVpc = (InternalEObject)vpc;
+			vpc = (VPC)eResolveProxy(oldVpc);
+			if (vpc != oldVpc) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CeffectivePackage.PROVEEDOR_NUBE__VPC, oldVpc, vpc));
+			}
 		}
 		return vpc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VPC basicGetVpc() {
+		return vpc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVpc(VPC newVpc) {
+		VPC oldVpc = vpc;
+		vpc = newVpc;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.PROVEEDOR_NUBE__VPC, oldVpc, vpc));
 	}
 
 	/**
@@ -178,6 +227,10 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 		switch (featureID) {
 			case CeffectivePackage.PROVEEDOR_NUBE__AUTENTICACION_USUARIO:
 				return ((InternalEList<?>)getAutenticacionUsuario()).basicRemove(otherEnd, msgs);
+			case CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE:
+				return ((InternalEList<?>)getAmbientedespliegue()).basicRemove(otherEnd, msgs);
+			case CeffectivePackage.PROVEEDOR_NUBE__MECANISMOSEGURIDAD:
+				return ((InternalEList<?>)getMecanismoseguridad()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -192,12 +245,15 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 		switch (featureID) {
 			case CeffectivePackage.PROVEEDOR_NUBE__NOMBRE:
 				return getNombre();
-			case CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE:
-				return getAmbientedespliegue();
 			case CeffectivePackage.PROVEEDOR_NUBE__AUTENTICACION_USUARIO:
 				return getAutenticacionUsuario();
+			case CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE:
+				return getAmbientedespliegue();
+			case CeffectivePackage.PROVEEDOR_NUBE__MECANISMOSEGURIDAD:
+				return getMecanismoseguridad();
 			case CeffectivePackage.PROVEEDOR_NUBE__VPC:
-				return getVpc();
+				if (resolve) return getVpc();
+				return basicGetVpc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,17 +270,20 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 			case CeffectivePackage.PROVEEDOR_NUBE__NOMBRE:
 				setNombre((String)newValue);
 				return;
-			case CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE:
-				getAmbientedespliegue().clear();
-				getAmbientedespliegue().addAll((Collection<? extends AmbienteDespliegue>)newValue);
-				return;
 			case CeffectivePackage.PROVEEDOR_NUBE__AUTENTICACION_USUARIO:
 				getAutenticacionUsuario().clear();
 				getAutenticacionUsuario().addAll((Collection<? extends AutenticacionUsuario>)newValue);
 				return;
+			case CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE:
+				getAmbientedespliegue().clear();
+				getAmbientedespliegue().addAll((Collection<? extends AmbienteDespliegue>)newValue);
+				return;
+			case CeffectivePackage.PROVEEDOR_NUBE__MECANISMOSEGURIDAD:
+				getMecanismoseguridad().clear();
+				getMecanismoseguridad().addAll((Collection<? extends MecanismoSeguridad>)newValue);
+				return;
 			case CeffectivePackage.PROVEEDOR_NUBE__VPC:
-				getVpc().clear();
-				getVpc().addAll((Collection<? extends VPC>)newValue);
+				setVpc((VPC)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -241,14 +300,17 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 			case CeffectivePackage.PROVEEDOR_NUBE__NOMBRE:
 				setNombre(NOMBRE_EDEFAULT);
 				return;
-			case CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE:
-				getAmbientedespliegue().clear();
-				return;
 			case CeffectivePackage.PROVEEDOR_NUBE__AUTENTICACION_USUARIO:
 				getAutenticacionUsuario().clear();
 				return;
+			case CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE:
+				getAmbientedespliegue().clear();
+				return;
+			case CeffectivePackage.PROVEEDOR_NUBE__MECANISMOSEGURIDAD:
+				getMecanismoseguridad().clear();
+				return;
 			case CeffectivePackage.PROVEEDOR_NUBE__VPC:
-				getVpc().clear();
+				setVpc((VPC)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -264,12 +326,14 @@ public class ProveedorNubeImpl extends MinimalEObjectImpl.Container implements P
 		switch (featureID) {
 			case CeffectivePackage.PROVEEDOR_NUBE__NOMBRE:
 				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
-			case CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE:
-				return ambientedespliegue != null && !ambientedespliegue.isEmpty();
 			case CeffectivePackage.PROVEEDOR_NUBE__AUTENTICACION_USUARIO:
 				return autenticacionUsuario != null && !autenticacionUsuario.isEmpty();
+			case CeffectivePackage.PROVEEDOR_NUBE__AMBIENTEDESPLIEGUE:
+				return ambientedespliegue != null && !ambientedespliegue.isEmpty();
+			case CeffectivePackage.PROVEEDOR_NUBE__MECANISMOSEGURIDAD:
+				return mecanismoseguridad != null && !mecanismoseguridad.isEmpty();
 			case CeffectivePackage.PROVEEDOR_NUBE__VPC:
-				return vpc != null && !vpc.isEmpty();
+				return vpc != null;
 		}
 		return super.eIsSet(featureID);
 	}
