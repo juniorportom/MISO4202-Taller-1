@@ -36,8 +36,8 @@
     </genClasses>
     <genClasses ecoreClass="ceffective.ecore#//AmbienteDespliegue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AmbienteDespliegue/ambiente"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//AmbienteDespliegue/recursos"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//AmbienteDespliegue/vpc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//AmbienteDespliegue/recursos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//AmbienteDespliegue/vpc"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//AmbienteDespliegue/mecanismoseguridad"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AmbienteDespliegue/nombre"/>
     </genClasses>
@@ -72,7 +72,7 @@
     <genClasses ecoreClass="ceffective.ecore#//InternetGateway"/>
     <genClasses ecoreClass="ceffective.ecore#//GrupoSeguridad">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//GrupoSeguridad/descripcion"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//GrupoSeguridad/reglas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//GrupoSeguridad/reglas"/>
     </genClasses>
     <genClasses ecoreClass="ceffective.ecore#//VPC">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//VPC/nombre"/>

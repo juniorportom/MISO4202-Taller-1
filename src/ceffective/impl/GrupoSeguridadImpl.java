@@ -5,18 +5,15 @@ package ceffective.impl;
 import ceffective.CeffectivePackage;
 import ceffective.GrupoSeguridad;
 import ceffective.Regla;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,7 +51,7 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 	protected String descripcion = DESCRIPCION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getReglas() <em>Reglas</em>}' reference list.
+	 * The cached value of the '{@link #getReglas() <em>Reglas</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReglas()
@@ -110,9 +107,23 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 	 */
 	public EList<Regla> getReglas() {
 		if (reglas == null) {
-			reglas = new EObjectResolvingEList<Regla>(Regla.class, this, CeffectivePackage.GRUPO_SEGURIDAD__REGLAS);
+			reglas = new EObjectContainmentEList<Regla>(Regla.class, this, CeffectivePackage.GRUPO_SEGURIDAD__REGLAS);
 		}
 		return reglas;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS:
+				return ((InternalEList<?>)getReglas()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

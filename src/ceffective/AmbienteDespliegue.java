@@ -58,7 +58,7 @@ public interface AmbienteDespliegue extends EObject {
 	void setAmbiente(TipoAmbiente value);
 
 	/**
-	 * Returns the value of the '<em><b>Recursos</b></em>' reference list.
+	 * Returns the value of the '<em><b>Recursos</b></em>' containment reference list.
 	 * The list contents are of type {@link ceffective.Recurso}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -66,15 +66,15 @@ public interface AmbienteDespliegue extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Recursos</em>' reference list.
+	 * @return the value of the '<em>Recursos</em>' containment reference list.
 	 * @see ceffective.CeffectivePackage#getAmbienteDespliegue_Recursos()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Recurso> getRecursos();
 
 	/**
-	 * Returns the value of the '<em><b>Vpc</b></em>' reference list.
+	 * Returns the value of the '<em><b>Vpc</b></em>' containment reference list.
 	 * The list contents are of type {@link ceffective.VPC}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -82,9 +82,9 @@ public interface AmbienteDespliegue extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Vpc</em>' reference list.
+	 * @return the value of the '<em>Vpc</em>' containment reference list.
 	 * @see ceffective.CeffectivePackage#getAmbienteDespliegue_Vpc()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<VPC> getVpc();

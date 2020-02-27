@@ -7,23 +7,16 @@ import ceffective.CeffectivePackage;
 import ceffective.MecanismoSeguridad;
 import ceffective.Recurso;
 import ceffective.TipoAmbiente;
-
 import ceffective.VPC;
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -65,7 +58,7 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	protected TipoAmbiente ambiente = AMBIENTE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRecursos() <em>Recursos</em>}' reference list.
+	 * The cached value of the '{@link #getRecursos() <em>Recursos</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRecursos()
@@ -75,7 +68,7 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	protected EList<Recurso> recursos;
 
 	/**
-	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' reference list.
+	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVpc()
@@ -161,7 +154,7 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<Recurso> getRecursos() {
 		if (recursos == null) {
-			recursos = new EObjectResolvingEList<Recurso>(Recurso.class, this, CeffectivePackage.AMBIENTE_DESPLIEGUE__RECURSOS);
+			recursos = new EObjectContainmentEList<Recurso>(Recurso.class, this, CeffectivePackage.AMBIENTE_DESPLIEGUE__RECURSOS);
 		}
 		return recursos;
 	}
@@ -173,7 +166,7 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<VPC> getVpc() {
 		if (vpc == null) {
-			vpc = new EObjectResolvingEList<VPC>(VPC.class, this, CeffectivePackage.AMBIENTE_DESPLIEGUE__VPC);
+			vpc = new EObjectContainmentEList<VPC>(VPC.class, this, CeffectivePackage.AMBIENTE_DESPLIEGUE__VPC);
 		}
 		return vpc;
 	}
@@ -219,6 +212,10 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__RECURSOS:
+				return ((InternalEList<?>)getRecursos()).basicRemove(otherEnd, msgs);
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__VPC:
+				return ((InternalEList<?>)getVpc()).basicRemove(otherEnd, msgs);
 			case CeffectivePackage.AMBIENTE_DESPLIEGUE__MECANISMOSEGURIDAD:
 				return ((InternalEList<?>)getMecanismoseguridad()).basicRemove(otherEnd, msgs);
 		}

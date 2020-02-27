@@ -81,7 +81,7 @@ public interface Recurso extends EObject {
 	 * @return the value of the '<em>Vpc</em>' reference.
 	 * @see #setVpc(VPC)
 	 * @see ceffective.CeffectivePackage#getRecurso_Vpc()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	VPC getVpc();

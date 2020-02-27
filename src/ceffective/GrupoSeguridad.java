@@ -49,7 +49,7 @@ public interface GrupoSeguridad extends MecanismoSeguridad {
 	void setDescripcion(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Reglas</b></em>' reference list.
+	 * Returns the value of the '<em><b>Reglas</b></em>' containment reference list.
 	 * The list contents are of type {@link ceffective.Regla}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -57,9 +57,9 @@ public interface GrupoSeguridad extends MecanismoSeguridad {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reglas</em>' reference list.
+	 * @return the value of the '<em>Reglas</em>' containment reference list.
 	 * @see ceffective.CeffectivePackage#getGrupoSeguridad_Reglas()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<Regla> getReglas();

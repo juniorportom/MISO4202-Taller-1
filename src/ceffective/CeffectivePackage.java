@@ -178,7 +178,7 @@ public interface CeffectivePackage extends EPackage {
 	int AMBIENTE_DESPLIEGUE__AMBIENTE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Recursos</b></em>' reference list.
+	 * The feature id for the '<em><b>Recursos</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -187,7 +187,7 @@ public interface CeffectivePackage extends EPackage {
 	int AMBIENTE_DESPLIEGUE__RECURSOS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Vpc</b></em>' reference list.
+	 * The feature id for the '<em><b>Vpc</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -997,7 +997,7 @@ public interface CeffectivePackage extends EPackage {
 	int GRUPO_SEGURIDAD__DESCRIPCION = MECANISMO_SEGURIDAD_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Reglas</b></em>' reference list.
+	 * The feature id for the '<em><b>Reglas</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1464,10 +1464,10 @@ public interface CeffectivePackage extends EPackage {
 	EAttribute getAmbienteDespliegue_Ambiente();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ceffective.AmbienteDespliegue#getRecursos <em>Recursos</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ceffective.AmbienteDespliegue#getRecursos <em>Recursos</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Recursos</em>'.
+	 * @return the meta object for the containment reference list '<em>Recursos</em>'.
 	 * @see ceffective.AmbienteDespliegue#getRecursos()
 	 * @see #getAmbienteDespliegue()
 	 * @generated
@@ -1475,10 +1475,10 @@ public interface CeffectivePackage extends EPackage {
 	EReference getAmbienteDespliegue_Recursos();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ceffective.AmbienteDespliegue#getVpc <em>Vpc</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ceffective.AmbienteDespliegue#getVpc <em>Vpc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Vpc</em>'.
+	 * @return the meta object for the containment reference list '<em>Vpc</em>'.
 	 * @see ceffective.AmbienteDespliegue#getVpc()
 	 * @see #getAmbienteDespliegue()
 	 * @generated
@@ -1775,10 +1775,10 @@ public interface CeffectivePackage extends EPackage {
 	EAttribute getGrupoSeguridad_Descripcion();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ceffective.GrupoSeguridad#getReglas <em>Reglas</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ceffective.GrupoSeguridad#getReglas <em>Reglas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Reglas</em>'.
+	 * @return the meta object for the containment reference list '<em>Reglas</em>'.
 	 * @see ceffective.GrupoSeguridad#getReglas()
 	 * @see #getGrupoSeguridad()
 	 * @generated
@@ -2152,7 +2152,7 @@ public interface CeffectivePackage extends EPackage {
 		EAttribute AMBIENTE_DESPLIEGUE__AMBIENTE = eINSTANCE.getAmbienteDespliegue_Ambiente();
 
 		/**
-		 * The meta object literal for the '<em><b>Recursos</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Recursos</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2160,7 +2160,7 @@ public interface CeffectivePackage extends EPackage {
 		EReference AMBIENTE_DESPLIEGUE__RECURSOS = eINSTANCE.getAmbienteDespliegue_Recursos();
 
 		/**
-		 * The meta object literal for the '<em><b>Vpc</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Vpc</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2400,7 +2400,7 @@ public interface CeffectivePackage extends EPackage {
 		EAttribute GRUPO_SEGURIDAD__DESCRIPCION = eINSTANCE.getGrupoSeguridad_Descripcion();
 
 		/**
-		 * The meta object literal for the '<em><b>Reglas</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Reglas</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
