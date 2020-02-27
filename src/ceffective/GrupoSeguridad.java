@@ -13,8 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link ceffective.GrupoSeguridad#getDescripcion <em>Descripcion</em>}</li>
- *   <li>{@link ceffective.GrupoSeguridad#getReglasSalida <em>Reglas Salida</em>}</li>
- *   <li>{@link ceffective.GrupoSeguridad#getReglasEntrada <em>Reglas Entrada</em>}</li>
+ *   <li>{@link ceffective.GrupoSeguridad#getReglas <em>Reglas</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,35 +49,19 @@ public interface GrupoSeguridad extends MecanismoSeguridad {
 	void setDescripcion(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Reglas Salida</b></em>' reference list.
+	 * Returns the value of the '<em><b>Reglas</b></em>' containment reference list.
 	 * The list contents are of type {@link ceffective.Regla}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Reglas Salida</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Reglas</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reglas Salida</em>' reference list.
-	 * @see ceffective.CeffectivePackage#getGrupoSeguridad_ReglasSalida()
-	 * @model required="true"
+	 * @return the value of the '<em>Reglas</em>' containment reference list.
+	 * @see ceffective.CeffectivePackage#getGrupoSeguridad_Reglas()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Regla> getReglasSalida();
-
-	/**
-	 * Returns the value of the '<em><b>Reglas Entrada</b></em>' reference list.
-	 * The list contents are of type {@link ceffective.Regla}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Reglas Entrada</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reglas Entrada</em>' reference list.
-	 * @see ceffective.CeffectivePackage#getGrupoSeguridad_ReglasEntrada()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<Regla> getReglasEntrada();
+	EList<Regla> getReglas();
 
 } // GrupoSeguridad

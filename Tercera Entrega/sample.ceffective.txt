@@ -1,0 +1,94 @@
+InfraestructuraCeffective ProyectoPrueba {
+	proveedorNube = {
+		tipoProveedor = AWS ;
+		autenticacionUsuario = {
+			accessId = "123";
+			secret = "1290";
+			usuario = Nidoo;
+			correo = pruebanido;
+		};
+		ambientes = [
+			{
+				ambiente = QA;
+				nombre = "dev";
+				vpcs = [
+					{
+						nombre = VPC;
+						id = vpcdesarrollo;
+						cidrBlock = "172.34.0.0/16";
+					}
+				]
+				
+				securityresource = [
+					{
+						nombre = InternetGateway;
+						id = gatewaydesarrollo;
+						//vpc = VPC;
+					}, 
+					{
+						nombre = GrupoSeguridad;
+						id = gseguridaddesarrollo;
+						//vpc = vpcdesarrollo;
+						reglas = [
+							{
+								tipo = HTTP;
+								protocolo = TCP;
+								puerto = "80";
+								origen = "0.0.0.0/0";
+								descripcion = "HTTP entrada";
+								direccion = ENTRADA;
+							},
+							{
+								tipo = HTTP;
+								protocolo = TCP;
+								puerto = "80";
+								origen = "0.0.0.0/0";
+								descripcion = "HTTP salida";
+								direccion = SALIDA;
+							}
+						]
+					},
+					{
+						nombre =  Subred;
+						zonaDisponibilidad = useast1;
+						id = subred1;
+						cidrBlock = "172.34.2.0/24";
+						//vpc = vpcdesarrollo;
+					}
+				]
+				recursos = [
+					{
+						nombre = ServidorApp;
+						id = servidorapp;
+						dimension = Micro;
+						sistemaOperativo = linux;
+						//vpc = vpcdesarrollo;
+					},
+					{
+						nombre = Database;
+						id = dbdesarrollo;
+						dimension = Micro;
+						tipo = NoSql;
+						//vpc = vpcdesarrollo;
+					},
+					{
+						nombre = Almacenamiento;
+						id = almacenamientodesarrollo;
+						gigas = 20.0;
+						//vpc = vpcdesarrollo;
+					}
+				]
+				conexiones = [
+					{
+						recurso1 = servidorapp;
+						recurso2 = dbdesarrollo;
+					},
+					{
+						recurso1 = servidorapp;
+						recurso2 = almacenamientodesarrollo;
+					}
+				]
+			}
+		]
+	};
+}

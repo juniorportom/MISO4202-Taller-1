@@ -16,9 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ceffective.Recurso#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.Recurso#getRecursos <em>Recursos</em>}</li>
- *   <li>{@link ceffective.Recurso#getVpc <em>Vpc</em>}</li>
  *   <li>{@link ceffective.Recurso#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
  *   <li>{@link ceffective.Recurso#getZonaNombre <em>Zona Nombre</em>}</li>
+ *   <li>{@link ceffective.Recurso#getVpc <em>Vpc</em>}</li>
+ *   <li>{@link ceffective.Recurso#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,7 +72,6 @@ public interface Recurso extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Vpc</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link ceffective.VPC#getRecurso <em>Recurso</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Vpc</em>' reference isn't clear,
@@ -81,8 +81,7 @@ public interface Recurso extends EObject {
 	 * @return the value of the '<em>Vpc</em>' reference.
 	 * @see #setVpc(VPC)
 	 * @see ceffective.CeffectivePackage#getRecurso_Vpc()
-	 * @see ceffective.VPC#getRecurso
-	 * @model opposite="recurso"
+	 * @model
 	 * @generated
 	 */
 	VPC getVpc();
@@ -96,6 +95,32 @@ public interface Recurso extends EObject {
 	 * @generated
 	 */
 	void setVpc(VPC value);
+
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see ceffective.CeffectivePackage#getRecurso_Id()
+	 * @model
+	 * @generated
+	 */
+	String getId();
+
+	/**
+	 * Sets the value of the '{@link ceffective.Recurso#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Zona Disponibilidad</b></em>' attribute.

@@ -11,8 +11,8 @@ package ceffective;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link ceffective.AutenticacionFirma#getNombre <em>Nombre</em>}</li>
- *   <li>{@link ceffective.AutenticacionFirma#getCertificado <em>Certificado</em>}</li>
+ *   <li>{@link ceffective.AutenticacionFirma#getAccessId <em>Access Id</em>}</li>
+ *   <li>{@link ceffective.AutenticacionFirma#getSecret <em>Secret</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,55 +22,55 @@ package ceffective;
  */
 public interface AutenticacionFirma extends AutenticacionUsuario {
 	/**
-	 * Returns the value of the '<em><b>Nombre</b></em>' attribute.
+	 * Returns the value of the '<em><b>Access Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Nombre</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Access Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nombre</em>' attribute.
-	 * @see #setNombre(String)
-	 * @see ceffective.CeffectivePackage#getAutenticacionFirma_Nombre()
+	 * @return the value of the '<em>Access Id</em>' attribute.
+	 * @see #setAccessId(String)
+	 * @see ceffective.CeffectivePackage#getAutenticacionFirma_AccessId()
 	 * @model
 	 * @generated
 	 */
-	String getNombre();
+	String getAccessId();
 
 	/**
-	 * Sets the value of the '{@link ceffective.AutenticacionFirma#getNombre <em>Nombre</em>}' attribute.
+	 * Sets the value of the '{@link ceffective.AutenticacionFirma#getAccessId <em>Access Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nombre</em>' attribute.
-	 * @see #getNombre()
+	 * @param value the new value of the '<em>Access Id</em>' attribute.
+	 * @see #getAccessId()
 	 * @generated
 	 */
-	void setNombre(String value);
+	void setAccessId(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Certificado</b></em>' attribute.
+	 * Returns the value of the '<em><b>Secret</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Certificado</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Secret</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Certificado</em>' attribute.
-	 * @see #setCertificado(String)
-	 * @see ceffective.CeffectivePackage#getAutenticacionFirma_Certificado()
+	 * @return the value of the '<em>Secret</em>' attribute.
+	 * @see #setSecret(String)
+	 * @see ceffective.CeffectivePackage#getAutenticacionFirma_Secret()
 	 * @model
 	 * @generated
 	 */
-	String getCertificado();
+	String getSecret();
 
 	/**
-	 * Sets the value of the '{@link ceffective.AutenticacionFirma#getCertificado <em>Certificado</em>}' attribute.
+	 * Sets the value of the '{@link ceffective.AutenticacionFirma#getSecret <em>Secret</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Certificado</em>' attribute.
-	 * @see #getCertificado()
+	 * @param value the new value of the '<em>Secret</em>' attribute.
+	 * @see #getSecret()
 	 * @generated
 	 */
-	void setCertificado(String value);
+	void setSecret(String value);
 
 } // AutenticacionFirma

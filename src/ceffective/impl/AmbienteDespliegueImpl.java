@@ -4,21 +4,20 @@ package ceffective.impl;
 
 import ceffective.AmbienteDespliegue;
 import ceffective.CeffectivePackage;
+import ceffective.MecanismoSeguridad;
 import ceffective.Recurso;
 import ceffective.TipoAmbiente;
-
+import ceffective.VPC;
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +28,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getAmbiente <em>Ambiente</em>}</li>
  *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getRecursos <em>Recursos</em>}</li>
+ *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getVpc <em>Vpc</em>}</li>
+ *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getMecanismoseguridad <em>Mecanismoseguridad</em>}</li>
+ *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getNombre <em>Nombre</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,7 +58,7 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	protected TipoAmbiente ambiente = AMBIENTE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRecursos() <em>Recursos</em>}' reference list.
+	 * The cached value of the '{@link #getRecursos() <em>Recursos</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRecursos()
@@ -64,6 +66,46 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EList<Recurso> recursos;
+
+	/**
+	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVpc()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<VPC> vpc;
+
+	/**
+	 * The cached value of the '{@link #getMecanismoseguridad() <em>Mecanismoseguridad</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMecanismoseguridad()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MecanismoSeguridad> mecanismoseguridad;
+
+	/**
+	 * The default value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNombre()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NOMBRE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNombre()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nombre = NOMBRE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,9 +154,72 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public EList<Recurso> getRecursos() {
 		if (recursos == null) {
-			recursos = new EObjectResolvingEList<Recurso>(Recurso.class, this, CeffectivePackage.AMBIENTE_DESPLIEGUE__RECURSOS);
+			recursos = new EObjectContainmentEList<Recurso>(Recurso.class, this, CeffectivePackage.AMBIENTE_DESPLIEGUE__RECURSOS);
 		}
 		return recursos;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<VPC> getVpc() {
+		if (vpc == null) {
+			vpc = new EObjectContainmentEList<VPC>(VPC.class, this, CeffectivePackage.AMBIENTE_DESPLIEGUE__VPC);
+		}
+		return vpc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<MecanismoSeguridad> getMecanismoseguridad() {
+		if (mecanismoseguridad == null) {
+			mecanismoseguridad = new EObjectContainmentEList<MecanismoSeguridad>(MecanismoSeguridad.class, this, CeffectivePackage.AMBIENTE_DESPLIEGUE__MECANISMOSEGURIDAD);
+		}
+		return mecanismoseguridad;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNombre(String newNombre) {
+		String oldNombre = nombre;
+		nombre = newNombre;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.AMBIENTE_DESPLIEGUE__NOMBRE, oldNombre, nombre));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__RECURSOS:
+				return ((InternalEList<?>)getRecursos()).basicRemove(otherEnd, msgs);
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__VPC:
+				return ((InternalEList<?>)getVpc()).basicRemove(otherEnd, msgs);
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__MECANISMOSEGURIDAD:
+				return ((InternalEList<?>)getMecanismoseguridad()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -129,6 +234,12 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 				return getAmbiente();
 			case CeffectivePackage.AMBIENTE_DESPLIEGUE__RECURSOS:
 				return getRecursos();
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__VPC:
+				return getVpc();
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__MECANISMOSEGURIDAD:
+				return getMecanismoseguridad();
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__NOMBRE:
+				return getNombre();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -149,6 +260,17 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 				getRecursos().clear();
 				getRecursos().addAll((Collection<? extends Recurso>)newValue);
 				return;
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__VPC:
+				getVpc().clear();
+				getVpc().addAll((Collection<? extends VPC>)newValue);
+				return;
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__MECANISMOSEGURIDAD:
+				getMecanismoseguridad().clear();
+				getMecanismoseguridad().addAll((Collection<? extends MecanismoSeguridad>)newValue);
+				return;
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__NOMBRE:
+				setNombre((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -167,6 +289,15 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 			case CeffectivePackage.AMBIENTE_DESPLIEGUE__RECURSOS:
 				getRecursos().clear();
 				return;
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__VPC:
+				getVpc().clear();
+				return;
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__MECANISMOSEGURIDAD:
+				getMecanismoseguridad().clear();
+				return;
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__NOMBRE:
+				setNombre(NOMBRE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -183,6 +314,12 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 				return ambiente != AMBIENTE_EDEFAULT;
 			case CeffectivePackage.AMBIENTE_DESPLIEGUE__RECURSOS:
 				return recursos != null && !recursos.isEmpty();
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__VPC:
+				return vpc != null && !vpc.isEmpty();
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__MECANISMOSEGURIDAD:
+				return mecanismoseguridad != null && !mecanismoseguridad.isEmpty();
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__NOMBRE:
+				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -199,6 +336,8 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (ambiente: ");
 		result.append(ambiente);
+		result.append(", nombre: ");
+		result.append(nombre);
 		result.append(')');
 		return result.toString();
 	}

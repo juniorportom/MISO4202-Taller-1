@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ceffective.impl.CeffectiveImpl#getProveedorNube <em>Proveedor Nube</em>}</li>
+ *   <li>{@link ceffective.impl.CeffectiveImpl#getNombre <em>Nombre</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +39,25 @@ public class CeffectiveImpl extends MinimalEObjectImpl.Container implements Ceff
 	 * @ordered
 	 */
 	protected ProveedorNube proveedorNube;
+
+	/**
+	 * The default value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNombre()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NOMBRE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNombre()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nombre = NOMBRE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,6 +126,27 @@ public class CeffectiveImpl extends MinimalEObjectImpl.Container implements Ceff
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNombre(String newNombre) {
+		String oldNombre = nombre;
+		nombre = newNombre;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.CEFFECTIVE__NOMBRE, oldNombre, nombre));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -125,6 +166,8 @@ public class CeffectiveImpl extends MinimalEObjectImpl.Container implements Ceff
 		switch (featureID) {
 			case CeffectivePackage.CEFFECTIVE__PROVEEDOR_NUBE:
 				return getProveedorNube();
+			case CeffectivePackage.CEFFECTIVE__NOMBRE:
+				return getNombre();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,6 +182,9 @@ public class CeffectiveImpl extends MinimalEObjectImpl.Container implements Ceff
 		switch (featureID) {
 			case CeffectivePackage.CEFFECTIVE__PROVEEDOR_NUBE:
 				setProveedorNube((ProveedorNube)newValue);
+				return;
+			case CeffectivePackage.CEFFECTIVE__NOMBRE:
+				setNombre((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -155,6 +201,9 @@ public class CeffectiveImpl extends MinimalEObjectImpl.Container implements Ceff
 			case CeffectivePackage.CEFFECTIVE__PROVEEDOR_NUBE:
 				setProveedorNube((ProveedorNube)null);
 				return;
+			case CeffectivePackage.CEFFECTIVE__NOMBRE:
+				setNombre(NOMBRE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -169,8 +218,26 @@ public class CeffectiveImpl extends MinimalEObjectImpl.Container implements Ceff
 		switch (featureID) {
 			case CeffectivePackage.CEFFECTIVE__PROVEEDOR_NUBE:
 				return proveedorNube != null;
+			case CeffectivePackage.CEFFECTIVE__NOMBRE:
+				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (nombre: ");
+		result.append(nombre);
+		result.append(')');
+		return result.toString();
 	}
 
 } //CeffectiveImpl

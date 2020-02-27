@@ -2,8 +2,6 @@
  */
 package ceffective;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link ceffective.VPC#getNombre <em>Nombre</em>}</li>
- *   <li>{@link ceffective.VPC#getRecurso <em>Recurso</em>}</li>
+ *   <li>{@link ceffective.VPC#getId <em>Id</em>}</li>
+ *   <li>{@link ceffective.VPC#getCidrBlock <em>Cidr Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,21 +50,55 @@ public interface VPC extends EObject {
 	void setNombre(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Recurso</b></em>' reference list.
-	 * The list contents are of type {@link ceffective.Recurso}.
-	 * It is bidirectional and its opposite is '{@link ceffective.Recurso#getVpc <em>Vpc</em>}'.
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Recurso</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Recurso</em>' reference list.
-	 * @see ceffective.CeffectivePackage#getVPC_Recurso()
-	 * @see ceffective.Recurso#getVpc
-	 * @model opposite="vpc"
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see ceffective.CeffectivePackage#getVPC_Id()
+	 * @model
 	 * @generated
 	 */
-	EList<Recurso> getRecurso();
+	String getId();
+
+	/**
+	 * Sets the value of the '{@link ceffective.VPC#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Cidr Block</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cidr Block</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cidr Block</em>' attribute.
+	 * @see #setCidrBlock(String)
+	 * @see ceffective.CeffectivePackage#getVPC_CidrBlock()
+	 * @model
+	 * @generated
+	 */
+	String getCidrBlock();
+
+	/**
+	 * Sets the value of the '{@link ceffective.VPC#getCidrBlock <em>Cidr Block</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cidr Block</em>' attribute.
+	 * @see #getCidrBlock()
+	 * @generated
+	 */
+	void setCidrBlock(String value);
 
 } // VPC

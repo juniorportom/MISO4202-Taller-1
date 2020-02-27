@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ceffective.impl.AutenticacionFirmaImpl#getNombre <em>Nombre</em>}</li>
- *   <li>{@link ceffective.impl.AutenticacionFirmaImpl#getCertificado <em>Certificado</em>}</li>
+ *   <li>{@link ceffective.impl.AutenticacionFirmaImpl#getAccessId <em>Access Id</em>}</li>
+ *   <li>{@link ceffective.impl.AutenticacionFirmaImpl#getSecret <em>Secret</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,44 +27,44 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements AutenticacionFirma {
 	/**
-	 * The default value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * The default value of the '{@link #getAccessId() <em>Access Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNombre()
+	 * @see #getAccessId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOMBRE_EDEFAULT = null;
+	protected static final String ACCESS_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNombre() <em>Nombre</em>}' attribute.
+	 * The cached value of the '{@link #getAccessId() <em>Access Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNombre()
+	 * @see #getAccessId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nombre = NOMBRE_EDEFAULT;
+	protected String accessId = ACCESS_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCertificado() <em>Certificado</em>}' attribute.
+	 * The default value of the '{@link #getSecret() <em>Secret</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCertificado()
+	 * @see #getSecret()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CERTIFICADO_EDEFAULT = null;
+	protected static final String SECRET_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getCertificado() <em>Certificado</em>}' attribute.
+	 * The cached value of the '{@link #getSecret() <em>Secret</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCertificado()
+	 * @see #getSecret()
 	 * @generated
 	 * @ordered
 	 */
-	protected String certificado = CERTIFICADO_EDEFAULT;
+	protected String secret = SECRET_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,8 +90,8 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNombre() {
-		return nombre;
+	public String getAccessId() {
+		return accessId;
 	}
 
 	/**
@@ -99,11 +99,11 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNombre(String newNombre) {
-		String oldNombre = nombre;
-		nombre = newNombre;
+	public void setAccessId(String newAccessId) {
+		String oldAccessId = accessId;
+		accessId = newAccessId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.AUTENTICACION_FIRMA__NOMBRE, oldNombre, nombre));
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.AUTENTICACION_FIRMA__ACCESS_ID, oldAccessId, accessId));
 	}
 
 	/**
@@ -111,8 +111,8 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getCertificado() {
-		return certificado;
+	public String getSecret() {
+		return secret;
 	}
 
 	/**
@@ -120,11 +120,11 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCertificado(String newCertificado) {
-		String oldCertificado = certificado;
-		certificado = newCertificado;
+	public void setSecret(String newSecret) {
+		String oldSecret = secret;
+		secret = newSecret;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.AUTENTICACION_FIRMA__CERTIFICADO, oldCertificado, certificado));
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.AUTENTICACION_FIRMA__SECRET, oldSecret, secret));
 	}
 
 	/**
@@ -135,10 +135,10 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CeffectivePackage.AUTENTICACION_FIRMA__NOMBRE:
-				return getNombre();
-			case CeffectivePackage.AUTENTICACION_FIRMA__CERTIFICADO:
-				return getCertificado();
+			case CeffectivePackage.AUTENTICACION_FIRMA__ACCESS_ID:
+				return getAccessId();
+			case CeffectivePackage.AUTENTICACION_FIRMA__SECRET:
+				return getSecret();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,11 +151,11 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CeffectivePackage.AUTENTICACION_FIRMA__NOMBRE:
-				setNombre((String)newValue);
+			case CeffectivePackage.AUTENTICACION_FIRMA__ACCESS_ID:
+				setAccessId((String)newValue);
 				return;
-			case CeffectivePackage.AUTENTICACION_FIRMA__CERTIFICADO:
-				setCertificado((String)newValue);
+			case CeffectivePackage.AUTENTICACION_FIRMA__SECRET:
+				setSecret((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -169,11 +169,11 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CeffectivePackage.AUTENTICACION_FIRMA__NOMBRE:
-				setNombre(NOMBRE_EDEFAULT);
+			case CeffectivePackage.AUTENTICACION_FIRMA__ACCESS_ID:
+				setAccessId(ACCESS_ID_EDEFAULT);
 				return;
-			case CeffectivePackage.AUTENTICACION_FIRMA__CERTIFICADO:
-				setCertificado(CERTIFICADO_EDEFAULT);
+			case CeffectivePackage.AUTENTICACION_FIRMA__SECRET:
+				setSecret(SECRET_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -187,10 +187,10 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CeffectivePackage.AUTENTICACION_FIRMA__NOMBRE:
-				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
-			case CeffectivePackage.AUTENTICACION_FIRMA__CERTIFICADO:
-				return CERTIFICADO_EDEFAULT == null ? certificado != null : !CERTIFICADO_EDEFAULT.equals(certificado);
+			case CeffectivePackage.AUTENTICACION_FIRMA__ACCESS_ID:
+				return ACCESS_ID_EDEFAULT == null ? accessId != null : !ACCESS_ID_EDEFAULT.equals(accessId);
+			case CeffectivePackage.AUTENTICACION_FIRMA__SECRET:
+				return SECRET_EDEFAULT == null ? secret != null : !SECRET_EDEFAULT.equals(secret);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -205,10 +205,10 @@ public class AutenticacionFirmaImpl extends AutenticacionUsuarioImpl implements 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (nombre: ");
-		result.append(nombre);
-		result.append(", certificado: ");
-		result.append(certificado);
+		result.append(" (accessId: ");
+		result.append(accessId);
+		result.append(", secret: ");
+		result.append(secret);
 		result.append(')');
 		return result.toString();
 	}

@@ -22,6 +22,7 @@ package ceffective;
 public interface Almacenamiento extends Recurso {
 	/**
 	 * Returns the value of the '<em><b>Tamano Inicial</b></em>' attribute.
+	 * The default value is <code>"0.0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tamano Inicial</em>' attribute isn't clear,
@@ -29,12 +30,12 @@ public interface Almacenamiento extends Recurso {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tamano Inicial</em>' attribute.
-	 * @see #setTamanoInicial(int)
+	 * @see #setTamanoInicial(float)
 	 * @see ceffective.CeffectivePackage#getAlmacenamiento_TamanoInicial()
-	 * @model
+	 * @model default="0.0"
 	 * @generated
 	 */
-	int getTamanoInicial();
+	float getTamanoInicial();
 
 	/**
 	 * Sets the value of the '{@link ceffective.Almacenamiento#getTamanoInicial <em>Tamano Inicial</em>}' attribute.
@@ -44,6 +45,6 @@ public interface Almacenamiento extends Recurso {
 	 * @see #getTamanoInicial()
 	 * @generated
 	 */
-	void setTamanoInicial(int value);
+	void setTamanoInicial(float value);
 
 } // Almacenamiento

@@ -5,20 +5,13 @@ package ceffective.impl;
 import ceffective.CeffectivePackage;
 import ceffective.Recurso;
 import ceffective.VPC;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -30,9 +23,10 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link ceffective.impl.RecursoImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.RecursoImpl#getRecursos <em>Recursos</em>}</li>
- *   <li>{@link ceffective.impl.RecursoImpl#getVpc <em>Vpc</em>}</li>
  *   <li>{@link ceffective.impl.RecursoImpl#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
  *   <li>{@link ceffective.impl.RecursoImpl#getZonaNombre <em>Zona Nombre</em>}</li>
+ *   <li>{@link ceffective.impl.RecursoImpl#getVpc <em>Vpc</em>}</li>
+ *   <li>{@link ceffective.impl.RecursoImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,16 +62,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<Recurso> recursos;
-
-	/**
-	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVpc()
-	 * @generated
-	 * @ordered
-	 */
-	protected VPC vpc;
 
 	/**
 	 * The default value of the '{@link #getZonaDisponibilidad() <em>Zona Disponibilidad</em>}' attribute.
@@ -118,6 +102,36 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String zonaNombre = ZONA_NOMBRE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getVpc() <em>Vpc</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVpc()
+	 * @generated
+	 * @ordered
+	 */
+	protected VPC vpc;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,14 +216,11 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetVpc(VPC newVpc, NotificationChain msgs) {
+	public void setVpc(VPC newVpc) {
 		VPC oldVpc = vpc;
 		vpc = newVpc;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CeffectivePackage.RECURSO__VPC, oldVpc, newVpc);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.RECURSO__VPC, oldVpc, vpc));
 	}
 
 	/**
@@ -217,18 +228,20 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setVpc(VPC newVpc) {
-		if (newVpc != vpc) {
-			NotificationChain msgs = null;
-			if (vpc != null)
-				msgs = ((InternalEObject)vpc).eInverseRemove(this, CeffectivePackage.VPC__RECURSO, VPC.class, msgs);
-			if (newVpc != null)
-				msgs = ((InternalEObject)newVpc).eInverseAdd(this, CeffectivePackage.VPC__RECURSO, VPC.class, msgs);
-			msgs = basicSetVpc(newVpc, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.RECURSO__VPC, newVpc, newVpc));
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.RECURSO__ID, oldId, id));
 	}
 
 	/**
@@ -279,49 +292,21 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CeffectivePackage.RECURSO__VPC:
-				if (vpc != null)
-					msgs = ((InternalEObject)vpc).eInverseRemove(this, CeffectivePackage.VPC__RECURSO, VPC.class, msgs);
-				return basicSetVpc((VPC)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CeffectivePackage.RECURSO__VPC:
-				return basicSetVpc(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CeffectivePackage.RECURSO__NOMBRE:
 				return getNombre();
 			case CeffectivePackage.RECURSO__RECURSOS:
 				return getRecursos();
-			case CeffectivePackage.RECURSO__VPC:
-				if (resolve) return getVpc();
-				return basicGetVpc();
 			case CeffectivePackage.RECURSO__ZONA_DISPONIBILIDAD:
 				return getZonaDisponibilidad();
 			case CeffectivePackage.RECURSO__ZONA_NOMBRE:
 				return getZonaNombre();
+			case CeffectivePackage.RECURSO__VPC:
+				if (resolve) return getVpc();
+				return basicGetVpc();
+			case CeffectivePackage.RECURSO__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -342,14 +327,17 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 				getRecursos().clear();
 				getRecursos().addAll((Collection<? extends Recurso>)newValue);
 				return;
-			case CeffectivePackage.RECURSO__VPC:
-				setVpc((VPC)newValue);
-				return;
 			case CeffectivePackage.RECURSO__ZONA_DISPONIBILIDAD:
 				setZonaDisponibilidad((String)newValue);
 				return;
 			case CeffectivePackage.RECURSO__ZONA_NOMBRE:
 				setZonaNombre((String)newValue);
+				return;
+			case CeffectivePackage.RECURSO__VPC:
+				setVpc((VPC)newValue);
+				return;
+			case CeffectivePackage.RECURSO__ID:
+				setId((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -369,14 +357,17 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 			case CeffectivePackage.RECURSO__RECURSOS:
 				getRecursos().clear();
 				return;
-			case CeffectivePackage.RECURSO__VPC:
-				setVpc((VPC)null);
-				return;
 			case CeffectivePackage.RECURSO__ZONA_DISPONIBILIDAD:
 				setZonaDisponibilidad(ZONA_DISPONIBILIDAD_EDEFAULT);
 				return;
 			case CeffectivePackage.RECURSO__ZONA_NOMBRE:
 				setZonaNombre(ZONA_NOMBRE_EDEFAULT);
+				return;
+			case CeffectivePackage.RECURSO__VPC:
+				setVpc((VPC)null);
+				return;
+			case CeffectivePackage.RECURSO__ID:
+				setId(ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -394,12 +385,14 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
 			case CeffectivePackage.RECURSO__RECURSOS:
 				return recursos != null && !recursos.isEmpty();
-			case CeffectivePackage.RECURSO__VPC:
-				return vpc != null;
 			case CeffectivePackage.RECURSO__ZONA_DISPONIBILIDAD:
 				return ZONA_DISPONIBILIDAD_EDEFAULT == null ? zonaDisponibilidad != null : !ZONA_DISPONIBILIDAD_EDEFAULT.equals(zonaDisponibilidad);
 			case CeffectivePackage.RECURSO__ZONA_NOMBRE:
 				return ZONA_NOMBRE_EDEFAULT == null ? zonaNombre != null : !ZONA_NOMBRE_EDEFAULT.equals(zonaNombre);
+			case CeffectivePackage.RECURSO__VPC:
+				return vpc != null;
+			case CeffectivePackage.RECURSO__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -420,6 +413,8 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 		result.append(zonaDisponibilidad);
 		result.append(", zonaNombre: ");
 		result.append(zonaNombre);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}
