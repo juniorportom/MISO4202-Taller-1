@@ -3,24 +3,11 @@
 package ceffective.impl;
 
 import ceffective.CeffectivePackage;
-import ceffective.Recurso;
 import ceffective.VPC;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +17,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ceffective.impl.VPCImpl#getNombre <em>Nombre</em>}</li>
- *   <li>{@link ceffective.impl.VPCImpl#getRecurso <em>Recurso</em>}</li>
+ *   <li>{@link ceffective.impl.VPCImpl#getId <em>Id</em>}</li>
+ *   <li>{@link ceffective.impl.VPCImpl#getCidrBlock <em>Cidr Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,14 +46,44 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	protected String nombre = NOMBRE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRecurso() <em>Recurso</em>}' reference list.
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRecurso()
+	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Recurso> recurso;
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCidrBlock() <em>Cidr Block</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCidrBlock()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CIDR_BLOCK_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCidrBlock() <em>Cidr Block</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCidrBlock()
+	 * @generated
+	 * @ordered
+	 */
+	protected String cidrBlock = CIDR_BLOCK_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,11 +130,8 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Recurso> getRecurso() {
-		if (recurso == null) {
-			recurso = new EObjectWithInverseResolvingEList<Recurso>(Recurso.class, this, CeffectivePackage.VPC__RECURSO, CeffectivePackage.RECURSO__VPC);
-		}
-		return recurso;
+	public String getId() {
+		return id;
 	}
 
 	/**
@@ -124,14 +139,11 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CeffectivePackage.VPC__RECURSO:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRecurso()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.VPC__ID, oldId, id));
 	}
 
 	/**
@@ -139,13 +151,20 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CeffectivePackage.VPC__RECURSO:
-				return ((InternalEList<?>)getRecurso()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public String getCidrBlock() {
+		return cidrBlock;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCidrBlock(String newCidrBlock) {
+		String oldCidrBlock = cidrBlock;
+		cidrBlock = newCidrBlock;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.VPC__CIDR_BLOCK, oldCidrBlock, cidrBlock));
 	}
 
 	/**
@@ -158,8 +177,10 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 		switch (featureID) {
 			case CeffectivePackage.VPC__NOMBRE:
 				return getNombre();
-			case CeffectivePackage.VPC__RECURSO:
-				return getRecurso();
+			case CeffectivePackage.VPC__ID:
+				return getId();
+			case CeffectivePackage.VPC__CIDR_BLOCK:
+				return getCidrBlock();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,9 +197,11 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 			case CeffectivePackage.VPC__NOMBRE:
 				setNombre((String)newValue);
 				return;
-			case CeffectivePackage.VPC__RECURSO:
-				getRecurso().clear();
-				getRecurso().addAll((Collection<? extends Recurso>)newValue);
+			case CeffectivePackage.VPC__ID:
+				setId((String)newValue);
+				return;
+			case CeffectivePackage.VPC__CIDR_BLOCK:
+				setCidrBlock((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,8 +218,11 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 			case CeffectivePackage.VPC__NOMBRE:
 				setNombre(NOMBRE_EDEFAULT);
 				return;
-			case CeffectivePackage.VPC__RECURSO:
-				getRecurso().clear();
+			case CeffectivePackage.VPC__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case CeffectivePackage.VPC__CIDR_BLOCK:
+				setCidrBlock(CIDR_BLOCK_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -212,8 +238,10 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 		switch (featureID) {
 			case CeffectivePackage.VPC__NOMBRE:
 				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
-			case CeffectivePackage.VPC__RECURSO:
-				return recurso != null && !recurso.isEmpty();
+			case CeffectivePackage.VPC__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case CeffectivePackage.VPC__CIDR_BLOCK:
+				return CIDR_BLOCK_EDEFAULT == null ? cidrBlock != null : !CIDR_BLOCK_EDEFAULT.equals(cidrBlock);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -230,6 +258,10 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nombre: ");
 		result.append(nombre);
+		result.append(", id: ");
+		result.append(id);
+		result.append(", cidrBlock: ");
+		result.append(cidrBlock);
 		result.append(')');
 		return result.toString();
 	}

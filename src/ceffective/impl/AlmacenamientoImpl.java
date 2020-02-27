@@ -33,7 +33,7 @@ public class AlmacenamientoImpl extends RecursoImpl implements Almacenamiento {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int TAMANO_INICIAL_EDEFAULT = 0;
+	protected static final float TAMANO_INICIAL_EDEFAULT = 0.0F;
 
 	/**
 	 * The cached value of the '{@link #getTamanoInicial() <em>Tamano Inicial</em>}' attribute.
@@ -43,7 +43,7 @@ public class AlmacenamientoImpl extends RecursoImpl implements Almacenamiento {
 	 * @generated
 	 * @ordered
 	 */
-	protected int tamanoInicial = TAMANO_INICIAL_EDEFAULT;
+	protected float tamanoInicial = TAMANO_INICIAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,7 +69,7 @@ public class AlmacenamientoImpl extends RecursoImpl implements Almacenamiento {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getTamanoInicial() {
+	public float getTamanoInicial() {
 		return tamanoInicial;
 	}
 
@@ -78,8 +78,8 @@ public class AlmacenamientoImpl extends RecursoImpl implements Almacenamiento {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTamanoInicial(int newTamanoInicial) {
-		int oldTamanoInicial = tamanoInicial;
+	public void setTamanoInicial(float newTamanoInicial) {
+		float oldTamanoInicial = tamanoInicial;
 		tamanoInicial = newTamanoInicial;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.ALMACENAMIENTO__TAMANO_INICIAL, oldTamanoInicial, tamanoInicial));
@@ -108,7 +108,7 @@ public class AlmacenamientoImpl extends RecursoImpl implements Almacenamiento {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CeffectivePackage.ALMACENAMIENTO__TAMANO_INICIAL:
-				setTamanoInicial((Integer)newValue);
+				setTamanoInicial((Float)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -26,8 +26,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ceffective.impl.GrupoSeguridadImpl#getDescripcion <em>Descripcion</em>}</li>
- *   <li>{@link ceffective.impl.GrupoSeguridadImpl#getReglasSalida <em>Reglas Salida</em>}</li>
- *   <li>{@link ceffective.impl.GrupoSeguridadImpl#getReglasEntrada <em>Reglas Entrada</em>}</li>
+ *   <li>{@link ceffective.impl.GrupoSeguridadImpl#getReglas <em>Reglas</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,24 +54,14 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 	protected String descripcion = DESCRIPCION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getReglasSalida() <em>Reglas Salida</em>}' reference list.
+	 * The cached value of the '{@link #getReglas() <em>Reglas</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReglasSalida()
+	 * @see #getReglas()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Regla> reglasSalida;
-
-	/**
-	 * The cached value of the '{@link #getReglasEntrada() <em>Reglas Entrada</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReglasEntrada()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Regla> reglasEntrada;
+	protected EList<Regla> reglas;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,23 +108,11 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Regla> getReglasSalida() {
-		if (reglasSalida == null) {
-			reglasSalida = new EObjectResolvingEList<Regla>(Regla.class, this, CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_SALIDA);
+	public EList<Regla> getReglas() {
+		if (reglas == null) {
+			reglas = new EObjectResolvingEList<Regla>(Regla.class, this, CeffectivePackage.GRUPO_SEGURIDAD__REGLAS);
 		}
-		return reglasSalida;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Regla> getReglasEntrada() {
-		if (reglasEntrada == null) {
-			reglasEntrada = new EObjectResolvingEList<Regla>(Regla.class, this, CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_ENTRADA);
-		}
-		return reglasEntrada;
+		return reglas;
 	}
 
 	/**
@@ -148,10 +125,8 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 		switch (featureID) {
 			case CeffectivePackage.GRUPO_SEGURIDAD__DESCRIPCION:
 				return getDescripcion();
-			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_SALIDA:
-				return getReglasSalida();
-			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_ENTRADA:
-				return getReglasEntrada();
+			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS:
+				return getReglas();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,13 +143,9 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 			case CeffectivePackage.GRUPO_SEGURIDAD__DESCRIPCION:
 				setDescripcion((String)newValue);
 				return;
-			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_SALIDA:
-				getReglasSalida().clear();
-				getReglasSalida().addAll((Collection<? extends Regla>)newValue);
-				return;
-			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_ENTRADA:
-				getReglasEntrada().clear();
-				getReglasEntrada().addAll((Collection<? extends Regla>)newValue);
+			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS:
+				getReglas().clear();
+				getReglas().addAll((Collection<? extends Regla>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,11 +162,8 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 			case CeffectivePackage.GRUPO_SEGURIDAD__DESCRIPCION:
 				setDescripcion(DESCRIPCION_EDEFAULT);
 				return;
-			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_SALIDA:
-				getReglasSalida().clear();
-				return;
-			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_ENTRADA:
-				getReglasEntrada().clear();
+			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS:
+				getReglas().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -211,10 +179,8 @@ public class GrupoSeguridadImpl extends MecanismoSeguridadImpl implements GrupoS
 		switch (featureID) {
 			case CeffectivePackage.GRUPO_SEGURIDAD__DESCRIPCION:
 				return DESCRIPCION_EDEFAULT == null ? descripcion != null : !DESCRIPCION_EDEFAULT.equals(descripcion);
-			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_SALIDA:
-				return reglasSalida != null && !reglasSalida.isEmpty();
-			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS_ENTRADA:
-				return reglasEntrada != null && !reglasEntrada.isEmpty();
+			case CeffectivePackage.GRUPO_SEGURIDAD__REGLAS:
+				return reglas != null && !reglas.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

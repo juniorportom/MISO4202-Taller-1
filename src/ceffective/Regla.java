@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ceffective.Regla#getPuerto <em>Puerto</em>}</li>
  *   <li>{@link ceffective.Regla#getOrigen <em>Origen</em>}</li>
  *   <li>{@link ceffective.Regla#getDescripcion <em>Descripcion</em>}</li>
+ *   <li>{@link ceffective.Regla#getDireccion <em>Direccion</em>}</li>
  * </ul>
  * </p>
  *
@@ -154,5 +155,35 @@ public interface Regla extends EObject {
 	 * @generated
 	 */
 	void setDescripcion(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Direccion</b></em>' attribute.
+	 * The default value is <code>"ENTRADA"</code>.
+	 * The literals are from the enumeration {@link ceffective.DireccionRegla}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Direccion</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Direccion</em>' attribute.
+	 * @see ceffective.DireccionRegla
+	 * @see #setDireccion(DireccionRegla)
+	 * @see ceffective.CeffectivePackage#getRegla_Direccion()
+	 * @model default="ENTRADA"
+	 * @generated
+	 */
+	DireccionRegla getDireccion();
+
+	/**
+	 * Sets the value of the '{@link ceffective.Regla#getDireccion <em>Direccion</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Direccion</em>' attribute.
+	 * @see ceffective.DireccionRegla
+	 * @see #getDireccion()
+	 * @generated
+	 */
+	void setDireccion(DireccionRegla value);
 
 } // Regla

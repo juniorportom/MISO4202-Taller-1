@@ -3,6 +3,7 @@
 package ceffective.impl;
 
 import ceffective.CeffectivePackage;
+import ceffective.DireccionRegla;
 import ceffective.Regla;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ceffective.impl.ReglaImpl#getPuerto <em>Puerto</em>}</li>
  *   <li>{@link ceffective.impl.ReglaImpl#getOrigen <em>Origen</em>}</li>
  *   <li>{@link ceffective.impl.ReglaImpl#getDescripcion <em>Descripcion</em>}</li>
+ *   <li>{@link ceffective.impl.ReglaImpl#getDireccion <em>Direccion</em>}</li>
  * </ul>
  * </p>
  *
@@ -129,6 +131,26 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * @ordered
 	 */
 	protected String descripcion = DESCRIPCION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDireccion() <em>Direccion</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDireccion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final DireccionRegla DIRECCION_EDEFAULT = DireccionRegla.ENTRADA;
+
+	/**
+	 * The cached value of the '{@link #getDireccion() <em>Direccion</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDireccion()
+	 * @generated
+	 * @ordered
+	 */
+	protected DireccionRegla direccion = DIRECCION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,6 +281,27 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DireccionRegla getDireccion() {
+		return direccion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDireccion(DireccionRegla newDireccion) {
+		DireccionRegla oldDireccion = direccion;
+		direccion = newDireccion == null ? DIRECCION_EDEFAULT : newDireccion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.REGLA__DIRECCION, oldDireccion, direccion));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -272,6 +315,8 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 				return getOrigen();
 			case CeffectivePackage.REGLA__DESCRIPCION:
 				return getDescripcion();
+			case CeffectivePackage.REGLA__DIRECCION:
+				return getDireccion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,6 +343,9 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 				return;
 			case CeffectivePackage.REGLA__DESCRIPCION:
 				setDescripcion((String)newValue);
+				return;
+			case CeffectivePackage.REGLA__DIRECCION:
+				setDireccion((DireccionRegla)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -326,6 +374,9 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 			case CeffectivePackage.REGLA__DESCRIPCION:
 				setDescripcion(DESCRIPCION_EDEFAULT);
 				return;
+			case CeffectivePackage.REGLA__DIRECCION:
+				setDireccion(DIRECCION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -348,6 +399,8 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 				return ORIGEN_EDEFAULT == null ? origen != null : !ORIGEN_EDEFAULT.equals(origen);
 			case CeffectivePackage.REGLA__DESCRIPCION:
 				return DESCRIPCION_EDEFAULT == null ? descripcion != null : !DESCRIPCION_EDEFAULT.equals(descripcion);
+			case CeffectivePackage.REGLA__DIRECCION:
+				return direccion != DIRECCION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -372,6 +425,8 @@ public class ReglaImpl extends MinimalEObjectImpl.Container implements Regla {
 		result.append(origen);
 		result.append(", descripcion: ");
 		result.append(descripcion);
+		result.append(", direccion: ");
+		result.append(direccion);
 		result.append(')');
 		return result.toString();
 	}

@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getZonaNombre <em>Zona Nombre</em>}</li>
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getVpc <em>Vpc</em>}</li>
+ *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,6 +101,26 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 	 * @ordered
 	 */
 	protected VPC vpc;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,6 +247,27 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.MECANISMO_SEGURIDAD__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -238,6 +280,8 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 			case CeffectivePackage.MECANISMO_SEGURIDAD__VPC:
 				if (resolve) return getVpc();
 				return basicGetVpc();
+			case CeffectivePackage.MECANISMO_SEGURIDAD__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,6 +305,9 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 				return;
 			case CeffectivePackage.MECANISMO_SEGURIDAD__VPC:
 				setVpc((VPC)newValue);
+				return;
+			case CeffectivePackage.MECANISMO_SEGURIDAD__ID:
+				setId((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,6 +333,9 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 			case CeffectivePackage.MECANISMO_SEGURIDAD__VPC:
 				setVpc((VPC)null);
 				return;
+			case CeffectivePackage.MECANISMO_SEGURIDAD__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -306,6 +356,8 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 				return ZONA_DISPONIBILIDAD_EDEFAULT == null ? zonaDisponibilidad != null : !ZONA_DISPONIBILIDAD_EDEFAULT.equals(zonaDisponibilidad);
 			case CeffectivePackage.MECANISMO_SEGURIDAD__VPC:
 				return vpc != null;
+			case CeffectivePackage.MECANISMO_SEGURIDAD__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -326,6 +378,8 @@ public abstract class MecanismoSeguridadImpl extends MinimalEObjectImpl.Containe
 		result.append(zonaNombre);
 		result.append(", zonaDisponibilidad: ");
 		result.append(zonaDisponibilidad);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}
