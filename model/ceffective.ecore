@@ -9,7 +9,7 @@
         eType="#//AmbienteDespliegue" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mecanismoseguridad" upperBound="-1"
         eType="#//MecanismoSeguridad" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" eType="#//VPC"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" upperBound="-1" eType="#//VPC"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AutenticacionUsuario">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="usuario" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
