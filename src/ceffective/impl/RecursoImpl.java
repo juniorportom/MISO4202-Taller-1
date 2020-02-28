@@ -5,14 +5,11 @@ package ceffective.impl;
 import ceffective.CeffectivePackage;
 import ceffective.Recurso;
 import ceffective.VPC;
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,11 +19,11 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ceffective.impl.RecursoImpl#getNombre <em>Nombre</em>}</li>
- *   <li>{@link ceffective.impl.RecursoImpl#getRecursos <em>Recursos</em>}</li>
  *   <li>{@link ceffective.impl.RecursoImpl#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
  *   <li>{@link ceffective.impl.RecursoImpl#getZonaNombre <em>Zona Nombre</em>}</li>
  *   <li>{@link ceffective.impl.RecursoImpl#getVpc <em>Vpc</em>}</li>
  *   <li>{@link ceffective.impl.RecursoImpl#getId <em>Id</em>}</li>
+ *   <li>{@link ceffective.impl.RecursoImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,16 +49,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String nombre = NOMBRE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getRecursos() <em>Recursos</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecursos()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Recurso> recursos;
 
 	/**
 	 * The default value of the '{@link #getZonaDisponibilidad() <em>Zona Disponibilidad</em>}' attribute.
@@ -134,6 +121,26 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	protected String id = ID_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -171,18 +178,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 		nombre = newNombre;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.RECURSO__NOMBRE, oldNombre, nombre));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Recurso> getRecursos() {
-		if (recursos == null) {
-			recursos = new EObjectResolvingEList<Recurso>(Recurso.class, this, CeffectivePackage.RECURSO__RECURSOS);
-		}
-		return recursos;
 	}
 
 	/**
@@ -249,6 +244,27 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.RECURSO__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getZonaDisponibilidad() {
 		return zonaDisponibilidad;
 	}
@@ -296,8 +312,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case CeffectivePackage.RECURSO__NOMBRE:
 				return getNombre();
-			case CeffectivePackage.RECURSO__RECURSOS:
-				return getRecursos();
 			case CeffectivePackage.RECURSO__ZONA_DISPONIBILIDAD:
 				return getZonaDisponibilidad();
 			case CeffectivePackage.RECURSO__ZONA_NOMBRE:
@@ -307,6 +321,8 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 				return basicGetVpc();
 			case CeffectivePackage.RECURSO__ID:
 				return getId();
+			case CeffectivePackage.RECURSO__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -323,10 +339,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 			case CeffectivePackage.RECURSO__NOMBRE:
 				setNombre((String)newValue);
 				return;
-			case CeffectivePackage.RECURSO__RECURSOS:
-				getRecursos().clear();
-				getRecursos().addAll((Collection<? extends Recurso>)newValue);
-				return;
 			case CeffectivePackage.RECURSO__ZONA_DISPONIBILIDAD:
 				setZonaDisponibilidad((String)newValue);
 				return;
@@ -338,6 +350,9 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 				return;
 			case CeffectivePackage.RECURSO__ID:
 				setId((String)newValue);
+				return;
+			case CeffectivePackage.RECURSO__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -354,9 +369,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 			case CeffectivePackage.RECURSO__NOMBRE:
 				setNombre(NOMBRE_EDEFAULT);
 				return;
-			case CeffectivePackage.RECURSO__RECURSOS:
-				getRecursos().clear();
-				return;
 			case CeffectivePackage.RECURSO__ZONA_DISPONIBILIDAD:
 				setZonaDisponibilidad(ZONA_DISPONIBILIDAD_EDEFAULT);
 				return;
@@ -368,6 +380,9 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 				return;
 			case CeffectivePackage.RECURSO__ID:
 				setId(ID_EDEFAULT);
+				return;
+			case CeffectivePackage.RECURSO__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -383,8 +398,6 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case CeffectivePackage.RECURSO__NOMBRE:
 				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
-			case CeffectivePackage.RECURSO__RECURSOS:
-				return recursos != null && !recursos.isEmpty();
 			case CeffectivePackage.RECURSO__ZONA_DISPONIBILIDAD:
 				return ZONA_DISPONIBILIDAD_EDEFAULT == null ? zonaDisponibilidad != null : !ZONA_DISPONIBILIDAD_EDEFAULT.equals(zonaDisponibilidad);
 			case CeffectivePackage.RECURSO__ZONA_NOMBRE:
@@ -393,6 +406,8 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 				return vpc != null;
 			case CeffectivePackage.RECURSO__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case CeffectivePackage.RECURSO__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -415,6 +430,8 @@ public abstract class RecursoImpl extends MinimalEObjectImpl.Container implement
 		result.append(zonaNombre);
 		result.append(", id: ");
 		result.append(id);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

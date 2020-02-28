@@ -4,6 +4,7 @@ package ceffective.impl;
 
 import ceffective.AmbienteDespliegue;
 import ceffective.CeffectivePackage;
+import ceffective.Conexion;
 import ceffective.MecanismoSeguridad;
 import ceffective.Recurso;
 import ceffective.TipoAmbiente;
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getVpc <em>Vpc</em>}</li>
  *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getMecanismoseguridad <em>Mecanismoseguridad</em>}</li>
  *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getConexion <em>Conexion</em>}</li>
  * </ul>
  * </p>
  *
@@ -106,6 +108,16 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String nombre = NOMBRE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getConexion() <em>Conexion</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConexion()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Conexion> conexion;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,6 +221,18 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Conexion> getConexion() {
+		if (conexion == null) {
+			conexion = new EObjectContainmentEList<Conexion>(Conexion.class, this, CeffectivePackage.AMBIENTE_DESPLIEGUE__CONEXION);
+		}
+		return conexion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -218,6 +242,8 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 				return ((InternalEList<?>)getVpc()).basicRemove(otherEnd, msgs);
 			case CeffectivePackage.AMBIENTE_DESPLIEGUE__MECANISMOSEGURIDAD:
 				return ((InternalEList<?>)getMecanismoseguridad()).basicRemove(otherEnd, msgs);
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__CONEXION:
+				return ((InternalEList<?>)getConexion()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -240,6 +266,8 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 				return getMecanismoseguridad();
 			case CeffectivePackage.AMBIENTE_DESPLIEGUE__NOMBRE:
 				return getNombre();
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__CONEXION:
+				return getConexion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -271,6 +299,10 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 			case CeffectivePackage.AMBIENTE_DESPLIEGUE__NOMBRE:
 				setNombre((String)newValue);
 				return;
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__CONEXION:
+				getConexion().clear();
+				getConexion().addAll((Collection<? extends Conexion>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -298,6 +330,9 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 			case CeffectivePackage.AMBIENTE_DESPLIEGUE__NOMBRE:
 				setNombre(NOMBRE_EDEFAULT);
 				return;
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__CONEXION:
+				getConexion().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -320,6 +355,8 @@ public class AmbienteDespliegueImpl extends MinimalEObjectImpl.Container impleme
 				return mecanismoseguridad != null && !mecanismoseguridad.isEmpty();
 			case CeffectivePackage.AMBIENTE_DESPLIEGUE__NOMBRE:
 				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
+			case CeffectivePackage.AMBIENTE_DESPLIEGUE__CONEXION:
+				return conexion != null && !conexion.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

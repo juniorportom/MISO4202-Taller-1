@@ -2,8 +2,6 @@
  */
 package ceffective;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link ceffective.Recurso#getNombre <em>Nombre</em>}</li>
- *   <li>{@link ceffective.Recurso#getRecursos <em>Recursos</em>}</li>
  *   <li>{@link ceffective.Recurso#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
  *   <li>{@link ceffective.Recurso#getZonaNombre <em>Zona Nombre</em>}</li>
  *   <li>{@link ceffective.Recurso#getVpc <em>Vpc</em>}</li>
  *   <li>{@link ceffective.Recurso#getId <em>Id</em>}</li>
+ *   <li>{@link ceffective.Recurso#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,22 +51,6 @@ public interface Recurso extends EObject {
 	 * @generated
 	 */
 	void setNombre(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Recursos</b></em>' reference list.
-	 * The list contents are of type {@link ceffective.Recurso}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Recursos</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Recursos</em>' reference list.
-	 * @see ceffective.CeffectivePackage#getRecurso_Recursos()
-	 * @model
-	 * @generated
-	 */
-	EList<Recurso> getRecursos();
 
 	/**
 	 * Returns the value of the '<em><b>Vpc</b></em>' reference.
@@ -121,6 +103,32 @@ public interface Recurso extends EObject {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see ceffective.CeffectivePackage#getRecurso_Name()
+	 * @model id="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link ceffective.Recurso#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Zona Disponibilidad</b></em>' attribute.

@@ -157,6 +157,15 @@ public interface CeffectiveFactory extends EFactory {
 	AutenticacionFirma createAutenticacionFirma();
 
 	/**
+	 * Returns a new object of class '<em>Conexion</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conexion</em>'.
+	 * @generated
+	 */
+	Conexion createConexion();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

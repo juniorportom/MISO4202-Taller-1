@@ -105,7 +105,7 @@ AmbienteDespliegue returns AmbienteDespliegue:
 		(
 			'conexiones' EQUALS 
 				LIST_START
-				 Conexion ( COMA Conexion )*
+				 conexion+=Conexion ( COMA conexion+=Conexion )*
 				LIST_END
 		)?
 		
@@ -120,10 +120,11 @@ enum TipoAmbiente returns TipoAmbiente:
 /**
  * CONEXIONES
  */
-Conexion:
+Conexion returns Conexion:
+	{Conexion}
 	OBJECT_START
-		'recurso1' EQUALS ID SEMICOLON
-		'recurso2' EQUALS ID SEMICOLON
+		'recurso1' EQUALS recurso1=[Recurso] SEMICOLON
+		'recurso2' EQUALS recurso2=[Recurso] SEMICOLON
 	OBJECT_END
 ;
 
@@ -139,7 +140,6 @@ VPC returns VPC:
 	OBJECT_END
 	;
 
-FQN: ID ("." ID)*;
 
 /**
  * MECANISMOS DE SEGURIDAD
@@ -155,7 +155,7 @@ Subred returns Subred:
 		('zonaDisponibilidad' EQUALS zonaDisponibilidad=EString SEMICOLON)?
 		'id' EQUALS id=EString SEMICOLON
 		'cidrBlock' EQUALS cidrBlock=EString SEMICOLON
-		('vpc' EQUALS vpc=[VPC|EString] SEMICOLON)?
+		('vpc' EQUALS vpc=[VPC] SEMICOLON)?
 	OBJECT_END;
 
 InternetGateway returns InternetGateway:
@@ -165,7 +165,7 @@ InternetGateway returns InternetGateway:
 		('zonaNombre' EQUALS zonaNombre=EString SEMICOLON)?
 		('zonaDisponibilidad' EQUALS zonaDisponibilidad=EString SEMICOLON)?
 		'id' EQUALS id=EString SEMICOLON
-		('vpc' EQUALS vpc=[VPC|FQN] SEMICOLON )?
+		('vpc' EQUALS vpc=[VPC] SEMICOLON )?
 	OBJECT_END;
 
 GrupoSeguridad returns GrupoSeguridad:
@@ -176,7 +176,7 @@ GrupoSeguridad returns GrupoSeguridad:
 		('zonaDisponibilidad' EQUALS zonaDisponibilidad=EString SEMICOLON)?
 		'id' EQUALS id=EString SEMICOLON
 		('descripcion' EQUALS descripcion=EString SEMICOLON)?
-		('vpc' EQUALS vpc=[VPC|EString] SEMICOLON)?
+		('vpc' EQUALS vpc=[VPC] SEMICOLON)?
 		'reglas' EQUALS 
 			LIST_START
 				reglas+=Regla ( COMA reglas+=Regla)* 
@@ -215,7 +215,6 @@ OBJECT_START
 	('zonaNombre' EQUALS zonaNombre=EString SEMICOLON)?
 	('id' EQUALS id=EString SEMICOLON)?
 	('tamano' EQUALS tamano=TamanoServidor SEMICOLON)?
-	('recursos'  EQUALS '(' recursos+=[Recurso|EString] ( COMA recursos+=[Recurso|EString])* ')' SEMICOLON )? 
 	'vpc' EQUALS vpc=[VPC|EString] SEMICOLON
 OBJECT_END;
 
@@ -224,11 +223,10 @@ ServidorAplicaciones returns ServidorAplicaciones:
 		'nombre' EQUALS nombre=EString SEMICOLON
 		('zonaDisponibilidad' EQUALS zonaDisponibilidad=EString SEMICOLON)?
 		('zonaNombre' EQUALS zonaNombre=EString SEMICOLON)?
-		'id' EQUALS id=EString SEMICOLON
+		'id' EQUALS name=ID SEMICOLON
 		'dimension' EQUALS tamano=TamanoServidor SEMICOLON
 		('sistemaOperativo' EQUALS sistemaOperativo=EString SEMICOLON)?
-		('recursos' EQUALS '(' recursos+=[Recurso|EString] ( COMA recursos+=[Recurso|EString])* ')' SEMICOLON )? 	//TODO CONEXIONES 
-		('vpc' EQUALS vpc=[VPC|EString] SEMICOLON)?
+		('vpc' EQUALS vpc=[VPC] SEMICOLON)?
 	OBJECT_END;
 
 Almacenamiento returns Almacenamiento:
@@ -236,10 +234,9 @@ Almacenamiento returns Almacenamiento:
 		('nombre' EQUALS nombre=EString SEMICOLON)?
 		('zonaDisponibilidad' EQUALS zonaDisponibilidad=EString SEMICOLON)?
 		('zonaNombre' EQUALS zonaNombre=EString SEMICOLON)?
-		('id' EQUALS id=EString SEMICOLON)?
+		'id' EQUALS name=ID SEMICOLON
 		'gigas' EQUALS tamanoInicial=EFloat SEMICOLON
-		('recursos' EQUALS '(' recursos+=[Recurso|EString] ( COMA recursos+=[Recurso|EString])* ')' SEMICOLON)? 	//TODO CONEXIONES
-		('vpc' EQUALS vpc=[VPC|EString] SEMICOLON)?
+		('vpc' EQUALS vpc=[VPC] SEMICOLON)?
 	OBJECT_END;
 
 ServidorBD returns ServidorBD:
@@ -247,12 +244,11 @@ ServidorBD returns ServidorBD:
 		'nombre' EQUALS nombre=EString SEMICOLON
 		('zonaDisponibilidad' EQUALS zonaDisponibilidad=EString SEMICOLON)?
 		('zonaNombre' EQUALS zonaNombre=EString SEMICOLON)?
-		'id' EQUALS id=EString SEMICOLON
+		'id' EQUALS name=ID SEMICOLON
 		'dimension' EQUALS tamano=TamanoServidor SEMICOLON
 		'tipo' EQUALS tipo=TipoBaseDatos SEMICOLON
 		('sistemaManejador' EQUALS sistemaManejador=EString SEMICOLON)?
-		('recursos' EQUALS '(' recursos+=[Recurso|EString] ( COMA recursos+=[Recurso|EString])* ')' SEMICOLON )? 	//TODO CONEXIONES
-		('vpc' EQUALS vpc=[VPC|EString] SEMICOLON)?
+		('vpc' EQUALS vpc=[VPC] SEMICOLON)?
 	OBJECT_END;
 
 enum TamanoServidor returns TamanoServidor:
@@ -301,4 +297,3 @@ terminal OBJECT_END:
 	"}";
 				
 
-				

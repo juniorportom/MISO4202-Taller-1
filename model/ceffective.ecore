@@ -31,6 +31,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="zonaNombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" eType="#//VPC"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServidorAplicaciones" eSuperTypes="#//Servidor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sistemaOperativo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

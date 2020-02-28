@@ -72,6 +72,7 @@ public class CeffectiveFactoryImpl extends EFactoryImpl implements CeffectiveFac
 			case CeffectivePackage.SERVIDOR: return createServidor();
 			case CeffectivePackage.AUTENTICACION_BASICA: return createAutenticacionBasica();
 			case CeffectivePackage.AUTENTICACION_FIRMA: return createAutenticacionFirma();
+			case CeffectivePackage.CONEXION: return createConexion();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -267,6 +268,16 @@ public class CeffectiveFactoryImpl extends EFactoryImpl implements CeffectiveFac
 	public AutenticacionFirma createAutenticacionFirma() {
 		AutenticacionFirmaImpl autenticacionFirma = new AutenticacionFirmaImpl();
 		return autenticacionFirma;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Conexion createConexion() {
+		ConexionImpl conexion = new ConexionImpl();
+		return conexion;
 	}
 
 	/**

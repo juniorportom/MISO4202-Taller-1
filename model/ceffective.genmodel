@@ -40,14 +40,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//AmbienteDespliegue/vpc"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//AmbienteDespliegue/mecanismoseguridad"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AmbienteDespliegue/nombre"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ceffective.ecore#//AmbienteDespliegue/conexion"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ceffective.ecore#//Recurso">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Recurso/nombre"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//Recurso/recursos"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Recurso/zonaDisponibilidad"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Recurso/zonaNombre"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//Recurso/vpc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Recurso/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Recurso/name"/>
     </genClasses>
     <genClasses ecoreClass="ceffective.ecore#//ServidorAplicaciones">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//ServidorAplicaciones/sistemaOperativo"/>
@@ -101,6 +102,10 @@
     <genClasses ecoreClass="ceffective.ecore#//AutenticacionFirma">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AutenticacionFirma/accessId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//AutenticacionFirma/secret"/>
+    </genClasses>
+    <genClasses ecoreClass="ceffective.ecore#//Conexion">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//Conexion/recurso1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ceffective.ecore#//Conexion/recurso2"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

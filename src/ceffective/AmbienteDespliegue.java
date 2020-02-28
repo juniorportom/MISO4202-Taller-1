@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ceffective.AmbienteDespliegue#getVpc <em>Vpc</em>}</li>
  *   <li>{@link ceffective.AmbienteDespliegue#getMecanismoseguridad <em>Mecanismoseguridad</em>}</li>
  *   <li>{@link ceffective.AmbienteDespliegue#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link ceffective.AmbienteDespliegue#getConexion <em>Conexion</em>}</li>
  * </ul>
  * </p>
  *
@@ -130,5 +131,21 @@ public interface AmbienteDespliegue extends EObject {
 	 * @generated
 	 */
 	void setNombre(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Conexion</b></em>' containment reference list.
+	 * The list contents are of type {@link ceffective.Conexion}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Conexion</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Conexion</em>' containment reference list.
+	 * @see ceffective.CeffectivePackage#getAmbienteDespliegue_Conexion()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Conexion> getConexion();
 
 } // AmbienteDespliegue

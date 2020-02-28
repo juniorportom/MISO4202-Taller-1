@@ -214,13 +214,22 @@ public interface CeffectivePackage extends EPackage {
 	int AMBIENTE_DESPLIEGUE__NOMBRE = 4;
 
 	/**
+	 * The feature id for the '<em><b>Conexion</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMBIENTE_DESPLIEGUE__CONEXION = 5;
+
+	/**
 	 * The number of structural features of the '<em>Ambiente Despliegue</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AMBIENTE_DESPLIEGUE_FEATURE_COUNT = 5;
+	int AMBIENTE_DESPLIEGUE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Ambiente Despliegue</em>' class.
@@ -251,22 +260,13 @@ public interface CeffectivePackage extends EPackage {
 	int RECURSO__NOMBRE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Recursos</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURSO__RECURSOS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Zona Disponibilidad</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECURSO__ZONA_DISPONIBILIDAD = 2;
+	int RECURSO__ZONA_DISPONIBILIDAD = 1;
 
 	/**
 	 * The feature id for the '<em><b>Zona Nombre</b></em>' attribute.
@@ -275,7 +275,7 @@ public interface CeffectivePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURSO__ZONA_NOMBRE = 3;
+	int RECURSO__ZONA_NOMBRE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Vpc</b></em>' reference.
@@ -284,7 +284,7 @@ public interface CeffectivePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURSO__VPC = 4;
+	int RECURSO__VPC = 3;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -293,7 +293,16 @@ public interface CeffectivePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURSO__ID = 5;
+	int RECURSO__ID = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECURSO__NAME = 5;
 
 	/**
 	 * The number of structural features of the '<em>Recurso</em>' class.
@@ -333,15 +342,6 @@ public interface CeffectivePackage extends EPackage {
 	int SERVIDOR__NOMBRE = RECURSO__NOMBRE;
 
 	/**
-	 * The feature id for the '<em><b>Recursos</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR__RECURSOS = RECURSO__RECURSOS;
-
-	/**
 	 * The feature id for the '<em><b>Zona Disponibilidad</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -376,6 +376,15 @@ public interface CeffectivePackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVIDOR__ID = RECURSO__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVIDOR__NAME = RECURSO__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Tamano</b></em>' attribute.
@@ -424,15 +433,6 @@ public interface CeffectivePackage extends EPackage {
 	int SERVIDOR_APLICACIONES__NOMBRE = SERVIDOR__NOMBRE;
 
 	/**
-	 * The feature id for the '<em><b>Recursos</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR_APLICACIONES__RECURSOS = SERVIDOR__RECURSOS;
-
-	/**
 	 * The feature id for the '<em><b>Zona Disponibilidad</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -467,6 +467,15 @@ public interface CeffectivePackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVIDOR_APLICACIONES__ID = SERVIDOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVIDOR_APLICACIONES__NAME = SERVIDOR__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Tamano</b></em>' attribute.
@@ -524,15 +533,6 @@ public interface CeffectivePackage extends EPackage {
 	int ALMACENAMIENTO__NOMBRE = RECURSO__NOMBRE;
 
 	/**
-	 * The feature id for the '<em><b>Recursos</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALMACENAMIENTO__RECURSOS = RECURSO__RECURSOS;
-
-	/**
 	 * The feature id for the '<em><b>Zona Disponibilidad</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -567,6 +567,15 @@ public interface CeffectivePackage extends EPackage {
 	 * @ordered
 	 */
 	int ALMACENAMIENTO__ID = RECURSO__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALMACENAMIENTO__NAME = RECURSO__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Tamano Inicial</b></em>' attribute.
@@ -615,15 +624,6 @@ public interface CeffectivePackage extends EPackage {
 	int SERVIDOR_BD__NOMBRE = SERVIDOR__NOMBRE;
 
 	/**
-	 * The feature id for the '<em><b>Recursos</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVIDOR_BD__RECURSOS = SERVIDOR__RECURSOS;
-
-	/**
 	 * The feature id for the '<em><b>Zona Disponibilidad</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -658,6 +658,15 @@ public interface CeffectivePackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVIDOR_BD__ID = SERVIDOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVIDOR_BD__NAME = SERVIDOR__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Tamano</b></em>' attribute.
@@ -1335,6 +1344,52 @@ public interface CeffectivePackage extends EPackage {
 	int AUTENTICACION_FIRMA_OPERATION_COUNT = AUTENTICACION_USUARIO_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link ceffective.impl.ConexionImpl <em>Conexion</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ceffective.impl.ConexionImpl
+	 * @see ceffective.impl.CeffectivePackageImpl#getConexion()
+	 * @generated
+	 */
+	int CONEXION = 17;
+
+	/**
+	 * The feature id for the '<em><b>Recurso1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION__RECURSO1 = 0;
+
+	/**
+	 * The feature id for the '<em><b>Recurso2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION__RECURSO2 = 1;
+
+	/**
+	 * The number of structural features of the '<em>Conexion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Conexion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONEXION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link ceffective.TipoAmbiente <em>Tipo Ambiente</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1342,7 +1397,7 @@ public interface CeffectivePackage extends EPackage {
 	 * @see ceffective.impl.CeffectivePackageImpl#getTipoAmbiente()
 	 * @generated
 	 */
-	int TIPO_AMBIENTE = 17;
+	int TIPO_AMBIENTE = 18;
 
 	/**
 	 * The meta object id for the '{@link ceffective.TamanoServidor <em>Tamano Servidor</em>}' enum.
@@ -1352,7 +1407,7 @@ public interface CeffectivePackage extends EPackage {
 	 * @see ceffective.impl.CeffectivePackageImpl#getTamanoServidor()
 	 * @generated
 	 */
-	int TAMANO_SERVIDOR = 18;
+	int TAMANO_SERVIDOR = 19;
 
 	/**
 	 * The meta object id for the '{@link ceffective.TipoBaseDatos <em>Tipo Base Datos</em>}' enum.
@@ -1362,7 +1417,7 @@ public interface CeffectivePackage extends EPackage {
 	 * @see ceffective.impl.CeffectivePackageImpl#getTipoBaseDatos()
 	 * @generated
 	 */
-	int TIPO_BASE_DATOS = 19;
+	int TIPO_BASE_DATOS = 20;
 
 
 	/**
@@ -1373,7 +1428,7 @@ public interface CeffectivePackage extends EPackage {
 	 * @see ceffective.impl.CeffectivePackageImpl#getDireccionRegla()
 	 * @generated
 	 */
-	int DIRECCION_REGLA = 20;
+	int DIRECCION_REGLA = 21;
 
 
 	/**
@@ -1517,6 +1572,17 @@ public interface CeffectivePackage extends EPackage {
 	EAttribute getAmbienteDespliegue_Nombre();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link ceffective.AmbienteDespliegue#getConexion <em>Conexion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Conexion</em>'.
+	 * @see ceffective.AmbienteDespliegue#getConexion()
+	 * @see #getAmbienteDespliegue()
+	 * @generated
+	 */
+	EReference getAmbienteDespliegue_Conexion();
+
+	/**
 	 * Returns the meta object for class '{@link ceffective.Recurso <em>Recurso</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1536,17 +1602,6 @@ public interface CeffectivePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRecurso_Nombre();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ceffective.Recurso#getRecursos <em>Recursos</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Recursos</em>'.
-	 * @see ceffective.Recurso#getRecursos()
-	 * @see #getRecurso()
-	 * @generated
-	 */
-	EReference getRecurso_Recursos();
 
 	/**
 	 * Returns the meta object for the reference '{@link ceffective.Recurso#getVpc <em>Vpc</em>}'.
@@ -1569,6 +1624,17 @@ public interface CeffectivePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRecurso_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ceffective.Recurso#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see ceffective.Recurso#getName()
+	 * @see #getRecurso()
+	 * @generated
+	 */
+	EAttribute getRecurso_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link ceffective.Recurso#getZonaDisponibilidad <em>Zona Disponibilidad</em>}'.
@@ -2031,6 +2097,38 @@ public interface CeffectivePackage extends EPackage {
 	EAttribute getAutenticacionFirma_Secret();
 
 	/**
+	 * Returns the meta object for class '{@link ceffective.Conexion <em>Conexion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conexion</em>'.
+	 * @see ceffective.Conexion
+	 * @generated
+	 */
+	EClass getConexion();
+
+	/**
+	 * Returns the meta object for the reference '{@link ceffective.Conexion#getRecurso1 <em>Recurso1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Recurso1</em>'.
+	 * @see ceffective.Conexion#getRecurso1()
+	 * @see #getConexion()
+	 * @generated
+	 */
+	EReference getConexion_Recurso1();
+
+	/**
+	 * Returns the meta object for the reference '{@link ceffective.Conexion#getRecurso2 <em>Recurso2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Recurso2</em>'.
+	 * @see ceffective.Conexion#getRecurso2()
+	 * @see #getConexion()
+	 * @generated
+	 */
+	EReference getConexion_Recurso2();
+
+	/**
 	 * Returns the meta object for enum '{@link ceffective.TipoAmbiente <em>Tipo Ambiente</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2204,6 +2302,14 @@ public interface CeffectivePackage extends EPackage {
 		EAttribute AMBIENTE_DESPLIEGUE__NOMBRE = eINSTANCE.getAmbienteDespliegue_Nombre();
 
 		/**
+		 * The meta object literal for the '<em><b>Conexion</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AMBIENTE_DESPLIEGUE__CONEXION = eINSTANCE.getAmbienteDespliegue_Conexion();
+
+		/**
 		 * The meta object literal for the '{@link ceffective.impl.RecursoImpl <em>Recurso</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2222,14 +2328,6 @@ public interface CeffectivePackage extends EPackage {
 		EAttribute RECURSO__NOMBRE = eINSTANCE.getRecurso_Nombre();
 
 		/**
-		 * The meta object literal for the '<em><b>Recursos</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RECURSO__RECURSOS = eINSTANCE.getRecurso_Recursos();
-
-		/**
 		 * The meta object literal for the '<em><b>Vpc</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2244,6 +2342,14 @@ public interface CeffectivePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RECURSO__ID = eINSTANCE.getRecurso_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECURSO__NAME = eINSTANCE.getRecurso_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Zona Disponibilidad</b></em>' attribute feature.
@@ -2614,6 +2720,32 @@ public interface CeffectivePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute AUTENTICACION_FIRMA__SECRET = eINSTANCE.getAutenticacionFirma_Secret();
+
+		/**
+		 * The meta object literal for the '{@link ceffective.impl.ConexionImpl <em>Conexion</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ceffective.impl.ConexionImpl
+		 * @see ceffective.impl.CeffectivePackageImpl#getConexion()
+		 * @generated
+		 */
+		EClass CONEXION = eINSTANCE.getConexion();
+
+		/**
+		 * The meta object literal for the '<em><b>Recurso1</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONEXION__RECURSO1 = eINSTANCE.getConexion_Recurso1();
+
+		/**
+		 * The meta object literal for the '<em><b>Recurso2</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONEXION__RECURSO2 = eINSTANCE.getConexion_Recurso2();
 
 		/**
 		 * The meta object literal for the '{@link ceffective.TipoAmbiente <em>Tipo Ambiente</em>}' enum.
