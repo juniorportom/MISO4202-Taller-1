@@ -78,6 +78,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//VPC/nombre"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//VPC/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//VPC/cidrBlock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//VPC/name"/>
     </genClasses>
     <genClasses ecoreClass="ceffective.ecore#//Regla">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ceffective.ecore#//Regla/tipo"/>

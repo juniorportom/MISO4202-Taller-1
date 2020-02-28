@@ -5,6 +5,7 @@ import "https://www.uniandes.edu.co/ceffective"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 
+
 /**
  * ROOT
  */
@@ -132,8 +133,8 @@ Conexion:
 VPC returns VPC:
 	{VPC}
 	OBJECT_START
-		('nombre' EQUALS nombre=EString SEMICOLON)?
-		'id' EQUALS id=ID SEMICOLON
+		('nombre' EQUALS nombre=ID SEMICOLON)?
+		'id' EQUALS name=ID SEMICOLON
 		('cidrBlock' EQUALS cidrBlock=EString SEMICOLON)?
 	OBJECT_END
 	;
@@ -251,7 +252,7 @@ ServidorBD returns ServidorBD:
 		'tipo' EQUALS tipo=TipoBaseDatos SEMICOLON
 		('sistemaManejador' EQUALS sistemaManejador=EString SEMICOLON)?
 		('recursos' EQUALS '(' recursos+=[Recurso|EString] ( COMA recursos+=[Recurso|EString])* ')' SEMICOLON )? 	//TODO CONEXIONES
-		('vpc' vpc=[VPC|EString])?
+		('vpc' EQUALS vpc=[VPC|EString] SEMICOLON)?
 	OBJECT_END;
 
 enum TamanoServidor returns TamanoServidor:

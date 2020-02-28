@@ -640,6 +640,15 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getVPC_Name() {
+		return (EAttribute)vpcEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRegla() {
 		return reglaEClass;
 	}
@@ -906,6 +915,7 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 		createEAttribute(vpcEClass, VPC__NOMBRE);
 		createEAttribute(vpcEClass, VPC__ID);
 		createEAttribute(vpcEClass, VPC__CIDR_BLOCK);
+		createEAttribute(vpcEClass, VPC__NAME);
 
 		reglaEClass = createEClass(REGLA);
 		createEAttribute(reglaEClass, REGLA__TIPO);
@@ -1029,6 +1039,7 @@ public class CeffectivePackageImpl extends EPackageImpl implements CeffectivePac
 		initEAttribute(getVPC_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, ceffective.VPC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVPC_Id(), ecorePackage.getEString(), "id", null, 0, 1, ceffective.VPC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVPC_CidrBlock(), ecorePackage.getEString(), "cidrBlock", null, 0, 1, ceffective.VPC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVPC_Name(), ecorePackage.getEString(), "name", null, 0, 1, ceffective.VPC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reglaEClass, Regla.class, "Regla", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRegla_Tipo(), ecorePackage.getEString(), "tipo", null, 0, 1, Regla.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

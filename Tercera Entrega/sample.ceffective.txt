@@ -23,12 +23,12 @@ InfraestructuraCeffective ProyectoPrueba {
 					{
 						nombre = InternetGateway;
 						id = gatewaydesarrollo;
-						//vpc = VPC;
+						vpc = vpcdesarrollo;
 					}, 
 					{
 						nombre = GrupoSeguridad;
 						id = gseguridaddesarrollo;
-						//vpc = vpcdesarrollo;
+						vpc = vpcdesarrollo;
 						reglas = [
 							{
 								tipo = HTTP;
@@ -53,7 +53,7 @@ InfraestructuraCeffective ProyectoPrueba {
 						zonaDisponibilidad = useast1;
 						id = subred1;
 						cidrBlock = "172.34.2.0/24";
-						//vpc = vpcdesarrollo;
+						vpc = vpcdesarrollo;
 					}
 				]
 				recursos = [
@@ -62,20 +62,20 @@ InfraestructuraCeffective ProyectoPrueba {
 						id = servidorapp;
 						dimension = Micro;
 						sistemaOperativo = linux;
-						//vpc = vpcdesarrollo;
+						vpc = vpcdesarrollo;
 					},
 					{
 						nombre = Database;
 						id = dbdesarrollo;
 						dimension = Micro;
 						tipo = NoSql;
-						//vpc = vpcdesarrollo;
+						vpc = vpcdesarrollo;
 					},
 					{
 						nombre = Almacenamiento;
 						id = almacenamientodesarrollo;
 						gigas = 20.0;
-						//vpc = vpcdesarrollo;
+						vpc = vpcdesarrollo;
 					}
 				]
 				conexiones = [

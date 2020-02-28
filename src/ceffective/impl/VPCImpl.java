@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ceffective.impl.VPCImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.VPCImpl#getId <em>Id</em>}</li>
  *   <li>{@link ceffective.impl.VPCImpl#getCidrBlock <em>Cidr Block</em>}</li>
+ *   <li>{@link ceffective.impl.VPCImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,6 +85,26 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	 * @ordered
 	 */
 	protected String cidrBlock = CIDR_BLOCK_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,6 +193,27 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CeffectivePackage.VPC__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -181,6 +223,8 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 				return getId();
 			case CeffectivePackage.VPC__CIDR_BLOCK:
 				return getCidrBlock();
+			case CeffectivePackage.VPC__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,6 +247,9 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 			case CeffectivePackage.VPC__CIDR_BLOCK:
 				setCidrBlock((String)newValue);
 				return;
+			case CeffectivePackage.VPC__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -224,6 +271,9 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 			case CeffectivePackage.VPC__CIDR_BLOCK:
 				setCidrBlock(CIDR_BLOCK_EDEFAULT);
 				return;
+			case CeffectivePackage.VPC__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -242,6 +292,8 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case CeffectivePackage.VPC__CIDR_BLOCK:
 				return CIDR_BLOCK_EDEFAULT == null ? cidrBlock != null : !CIDR_BLOCK_EDEFAULT.equals(cidrBlock);
+			case CeffectivePackage.VPC__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -262,6 +314,8 @@ public class VPCImpl extends MinimalEObjectImpl.Container implements VPC {
 		result.append(id);
 		result.append(", cidrBlock: ");
 		result.append(cidrBlock);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

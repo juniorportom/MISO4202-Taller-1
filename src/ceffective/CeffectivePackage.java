@@ -1061,13 +1061,22 @@ public interface CeffectivePackage extends EPackage {
 	int VPC__CIDR_BLOCK = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VPC__NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>VPC</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VPC_FEATURE_COUNT = 3;
+	int VPC_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>VPC</em>' class.
@@ -1829,6 +1838,17 @@ public interface CeffectivePackage extends EPackage {
 	EAttribute getVPC_CidrBlock();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ceffective.VPC#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see ceffective.VPC#getName()
+	 * @see #getVPC()
+	 * @generated
+	 */
+	EAttribute getVPC_Name();
+
+	/**
 	 * Returns the meta object for class '{@link ceffective.Regla <em>Regla</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2440,6 +2460,14 @@ public interface CeffectivePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VPC__CIDR_BLOCK = eINSTANCE.getVPC_CidrBlock();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VPC__NAME = eINSTANCE.getVPC_Name();
 
 		/**
 		 * The meta object literal for the '{@link ceffective.impl.ReglaImpl <em>Regla</em>}' class.
