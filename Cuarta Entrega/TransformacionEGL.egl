@@ -1,83 +1,155 @@
 
-[%	
-var root : mp!CodeModel:= mp!CodeModel.all.at(0);
-%]
 
 [*
 Sebastian Garcia
-Junior 
+Reinaldo Portocarrero 
 *]
 
 
+	
+[%	
+	var ceffective = Ceffective.all;
+	var proveedor = ceffective.proveedorNube;
+%]
+
 # connection to AWS
-provider "aws" {
+provider "[%=proveedor.nombre %]" {
   profile    = "default"
-  region     = var.region
+  region     = "us-east-1"
 }
 #end connection to AWS
 
+
+[%	
+	var ambiente = AmbienteDespliegue.all;
+	
+	var vpcs = ambiente.vpc;
+	for ( vpc in vpcs ) 
+	{
+		%]
+		
 # create the VPC
-resource "aws_vpc" "vpc1" {
-  cidr_block           = var.vpcCIDRblock
-  instance_tenancy     = var.instanceTenancy 
-  enable_dns_support   = var.dnsSupport 
-  enable_dns_hostnames = var.dnsHostNames
+resource "aws_vpc" "[%=vpc.id %]" {
+  cidr_block           = [%=vpc.cidrBlock %]
+  instance_tenancy     = "default" 
+  enable_dns_support   = true 
+  enable_dns_hostnames = true
   
-} # end resource
-
-# create the internet gateway
-resource "aws_internet_gateway" "gateway1" {
-  vpc_id = aws_vpc.vpc1.id
-  
+} 
+# end VPC
+		
+		[%
+	}
+	
+	var mecanismosSeguridad = ambiente.mecanismoseguridad;
+	
+	var iinternetGateways = mecanismosSeguridad.select( i | i.isTypeOf( mcf!InternetGateway ) );
+	for ( mec in iinternetGateways )
+	{
+		%]
+		
+# create the security resource
+resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
+  vpc_id = [%=mec.vpc.id %]
 }
-# end internet gateway
-
-# create the Subnet
-resource "aws_subnet" "subnet1" {
-  vpc_id                  = aws_vpc.vpc1.id
-  cidr_block              = var.subnetCIDRblock
-  map_public_ip_on_launch = var.mapPublicIP 
-  availability_zone       = var.availabilityZone
- 
-} # end resource
-# create the Subnet
-resource "aws_subnet" "subnet2" {
-  vpc_id                  = aws_vpc.vpc1.id
-  cidr_block              = var.subnetCIDRblock2
-  map_public_ip_on_launch = var.mapPublicIP
-  availability_zone       = var.availabilityZone2
- 
-} # end resource
-
-# Create the Security Group
-resource "aws_security_group" "securitygroup1" {
-  vpc_id       = aws_vpc.vpc1.id
-  name         = "Security Group 1"
-  description  = "Security Group 1"
+# end security resouce
+		
+		[%
+	}
+	
+	var subreds = mecanismosSeguridad.select( i | i.isTypeOf( mcf!Subred ) );
+	for ( mec in subreds )
+	{
+		%]
+		
+# create the security resource
+resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
+  vpc_id = [%=mec.vpc.id %]
+  cidr_block              = [%=mec.cidrBlock %]
+  map_public_ip_on_launch = true 
+  availability_zone       = [%=mec.zonaDisponibilidad %]		
+}
+# end security resouce
+		
+		[%
+	}
+	
+	var securityGroups = mecanismosSeguridad.select( i | i.isTypeOf( mcf!GrupoSeguridad ) );
+	for ( mec in securityGroups )
+	{
+		%]
+		
+# create the security resource
+resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
+  vpc_id = [%=mec.vpc.id %]
+  name         = [%=mec.nombre %]
+  description  = [%=mec.descripcion %]
+  cidr_block              = [%=mec.cidrBlock %]
+  map_public_ip_on_launch = true 
+  availability_zone       = [%=mec.zonaDisponibilidad %]	
   
-  # allow ingress of port 22
-  ingress {
-    cidr_blocks = var.ingressCIDRblock  
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-  } 
+  [%
   
-  # allow egress of all ports
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-} # end resource
+  		for ( regla in mec.regla )
+  		{
+  			var direccion =  "ingress";
+  			if ( regla.direccion.matches("^(ENTRADA)$") )
+  			{
+  				direccion =  "ingress";
+  			} 
+  			else 
+  			{
+  				direccion =  "egress";
+  			}
+  			
+  		%]
+  		
+ [%=direccion %] {
+    cidr_blocks = [%=regla.cidrBlock %]
+    from_port   = [%=mec.origin %]
+    to_port     = [%=mec.puerto %]
+    protocol    = [%=mec.protocolo %]
+  }  		
+  		
+  		[%
+  			
+  		}
+  
+  %]
+  	
+}
+# end security resouce
+		
+		[%
+	}
+	
+%]
+
+
+
+
+
+
+
+
+	
+[%	
+	var auth = proveedor.autenticacionUsuario;
+	// TODO
+%]
+
 
 #Public key
 resource "aws_key_pair" "ec2key" {
   key_name = "ec2key1"
-  public_key = file(var.public_key_path)
+  public_key = [%=auth %]
 }
 #end Public key
+
+
+
+
+
 
 data "aws_ami" "ubuntu" {
   most_recent = true
@@ -98,6 +170,9 @@ data "aws_ami" "ubuntu" {
 #Resources
 
 
+
+
+
 #Server instance
 resource "aws_instance" "ec21" {
   ami           = data.aws_ami.ubuntu.id
@@ -110,10 +185,24 @@ resource "aws_instance" "ec21" {
 #End server instane
 
 
+
+
+
 resource "aws_db_subnet_group" "dbsubnet1" {
   name       = "dbsubnet1"
   subnet_ids = [aws_subnet.subnet1.id,aws_subnet.subnet2.id]
 }
+
+
+
+
+	
+[%	
+	var recursos = ambiente.recursos;
+	// TODO
+%]
+
+
 #DB instance
 resource "aws_db_instance" "db1" {
   name = "db1"
@@ -130,12 +219,24 @@ resource "aws_db_instance" "db1" {
 }
 #End db instance
 
+
+
+
+
+
+
 #EBS instance
 resource "aws_ebs_volume" "ebs1" {
   availability_zone = var.availabilityZone
   size              = 40
 }
 #end EBS instance
+
+
+
+
+
+
 
 #EBS attachment
 resource "aws_volume_attachment" "ebs_att" {
@@ -147,112 +248,4 @@ resource "aws_volume_attachment" "ebs_att" {
 
 
 
-	
-	[%
-	var count = 0;
-	 for(clases in mp!ClassUnit.all)
-	 {
-	 	count += 1;
-		 var tieneAnotaciones=false; 
-		 for(elementos in clases.codeElement)
-		 {
-			 if ( elementos.codeRelation.select( a | a.isTypeOf( mp!HasValue ) ).select( a | a.annotation.size() > 0 ).size() > 0 )
-			 {
-				 tieneAnotaciones=true;
-				 break;
-			 }
-		 }
-		 if( clases.codeRelation.select( a | a.isTypeOf( mp!HasValue ) ).select( a | a.annotation.size() > 0 ).size() > 0 or tieneAnotaciones == true )
-		 {
-	%]
-		 <a class="custom" href="#[%=clases.name%]">[%=clases.name%]</a> 
-	[%
-			if ( count == 3 ) 
-			{ 
-				count = 0;
-				%]
-					 <br/>
-				[%	
-		 	}
-	 	}
-	 }
-	%]
-	<br>
-	<br>
-	
-	
-	[%
-	 for(clases in mp!ClassUnit.all)
-	 {
-		 var tieneAnotaciones=false; 
-		 for(elementos in clases.codeElement)
-		 {
-			 if ( elementos.codeRelation.select( a | a.isTypeOf( mp!HasValue ) ).select( a | a.annotation.size() > 0 ).size() > 0 )
-			 {
-				 tieneAnotaciones=true;
-				 break;
-			 }
-		 }
-		 if( clases.codeRelation.select( a | a.isTypeOf( mp!HasValue ) ).select( a | a.annotation.size() > 0 ).size() > 0 or tieneAnotaciones == true )
-		 {
-	%]
-		 <a name="[%=clases.name %]"></a>
-		<h1>
-			Clase: [%=clases.name %]
-		</h1>
-		
-		<table  border="1" style="width: 100%">
-			<tr >
-				<td colspan="2" bgcolor="#C9C9C9">
-					<h1>
-						Anotaciones
-					</h1>
-				</td>
-			</tr>
-				[%
-				for(elementos in clases.codeElement)
-				 {
-				 	for ( x in  elementos.codeRelation.select( a | a.isTypeOf( mp!HasValue ) ).select( a | a.annotation.size() > 0 ) ) 
-				 	{
-				 		 %]
-						 	<tr>
-							 	<td style="width: 20%">
-									@[%=x.to.name %]
-								</td>
-								<td style="width: 80%">
-									<label style="color: #019875;">
-										[%=x.from.name %]
-									</label>
-									</br>
-								</td>
-							</tr>
-						 [%
-				 	}
-				 }
-				 for(coderel in clases.codeRelation.select( a | a.isTypeOf( mp!HasValue ) ).select( a | a.annotation.size() > 0 ))
-				 {
-			 		 %]
-					 	<tr>
-						 	<td style="width: 20%">
-								@[%=coderel.to.name %]
-							</td>
-							<td style="width: 80%">
-								<label style="color: #019875;">
-									[%=coderel.from.name %]
-								</label>
-								</br>
-							</td>
-						</tr>
-					 [%
-				 }
-				%]
-		</table>
-		<br/>
-		<br/>
-	[%
-	 	}
-	 }
-	%]
-	
-	
 	
