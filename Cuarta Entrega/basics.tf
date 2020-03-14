@@ -23,6 +23,60 @@ resource "aws_vpc" "[vpc1]" {
 } 
 # end VPC
 		
+		
+# create the security resource
+resource "aws_internet_gateway" "gateway1" {
+  vpc_id = vpc1
+}
+# end security resouce
+		
+		
+# create the security resource
+resource "aws_subnet" "subnet1" {
+  vpc_id = vpc1
+  cidr_block              = 10.0.1.0/24
+  map_public_ip_on_launch = true 
+  availability_zone       = us-east-1a		
+}
+# end security resouce
+		
+		
+# create the security resource
+resource "aws_subnet" "subnet2" {
+  vpc_id = vpc1
+  cidr_block              = 10.0.2.0/24
+  map_public_ip_on_launch = true 
+  availability_zone       = us-east-1b		
+}
+# end security resouce
+		
+		
+# create the security resource
+resource "aws_security_group" "securitygroup1" {
+  vpc_id = vpc1
+  name         = security_group
+  description  = Security Group 1
+  map_public_ip_on_launch = true 
+  availability_zone       = us-east-1a	
+  
+  		
+ egress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = tcp
+  }  		
+  		
+  		
+ egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = -1
+  }  		
+  		
+  	
+}
+# end security resouce
+		
 
 
 
@@ -37,7 +91,7 @@ resource "aws_vpc" "[vpc1]" {
 #Public key
 resource "aws_key_pair" "ec2key" {
   key_name = "ec2key1"
-  public_key = [[org.eclipse.emf.ecore.impl.DynamicEObjectImpl@428177c5 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@5b34e656 (name: AutenticacionFirma) (instanceClassName: null) (abstract: false, interface: false))]]
+  public_key = [[org.eclipse.emf.ecore.impl.DynamicEObjectImpl@3f8ee80f (eClass: org.eclipse.emf.ecore.impl.EClassImpl@5b34e656 (name: AutenticacionFirma) (instanceClassName: null) (abstract: false, interface: false))]]
 }
 #end Public key
 

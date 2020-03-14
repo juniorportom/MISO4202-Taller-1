@@ -43,8 +43,8 @@ resource "aws_vpc" "[%=vpc.id %]" {
 	
 	var mecanismosSeguridad = ambiente.mecanismoseguridad;
 	
-	var iinternetGateways = mecanismosSeguridad.select( i | i.isTypeOf( mcf!InternetGateway ) );
-	for ( mec in iinternetGateways )
+	var internetGateways = InternetGateway.all;  //mecanismosSeguridad.select( i | i.isTypeOf( mcf!InternetGateway ) );
+	for ( mec in internetGateways )
 	{
 		%]
 		
@@ -57,7 +57,7 @@ resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
 		[%
 	}
 	
-	var subreds = mecanismosSeguridad.select( i | i.isTypeOf( mcf!Subred ) );
+	var subreds = Subred.all;
 	for ( mec in subreds )
 	{
 		%]
@@ -74,7 +74,7 @@ resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
 		[%
 	}
 	
-	var securityGroups = mecanismosSeguridad.select( i | i.isTypeOf( mcf!GrupoSeguridad ) );
+	var securityGroups = GrupoSeguridad.all;
 	for ( mec in securityGroups )
 	{
 		%]
@@ -84,16 +84,15 @@ resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
   vpc_id = [%=mec.vpc.id %]
   name         = [%=mec.nombre %]
   description  = [%=mec.descripcion %]
-  cidr_block              = [%=mec.cidrBlock %]
   map_public_ip_on_launch = true 
   availability_zone       = [%=mec.zonaDisponibilidad %]	
   
   [%
   
-  		for ( regla in mec.regla )
+  		for ( regla in Regla.all ) // mec.regla
   		{
   			var direccion =  "ingress";
-  			if ( regla.direccion.matches("^(ENTRADA)$") )
+  			if ( regla.direccion = "ENTRADA" )
   			{
   				direccion =  "ingress";
   			} 
@@ -105,10 +104,9 @@ resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
   		%]
   		
  [%=direccion %] {
-    cidr_blocks = [%=regla.cidrBlock %]
-    from_port   = [%=mec.origin %]
-    to_port     = [%=mec.puerto %]
-    protocol    = [%=mec.protocolo %]
+    from_port   = [%=regla.origen %]
+    to_port     = [%=regla.puerto %]
+    protocol    = [%=regla.protocolo %]
   }  		
   		
   		[%
