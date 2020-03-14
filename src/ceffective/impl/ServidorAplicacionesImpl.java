@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.ServidorAplicacionesImpl#getSistemaOperativo <em>Sistema Operativo</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

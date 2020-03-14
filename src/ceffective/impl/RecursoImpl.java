@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.RecursoImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.RecursoImpl#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
@@ -25,7 +26,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ceffective.impl.RecursoImpl#getId <em>Id</em>}</li>
  *   <li>{@link ceffective.impl.RecursoImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

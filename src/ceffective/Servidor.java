@@ -10,10 +10,10 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.Servidor#getTamano <em>Tamano</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getServidor()
  * @model

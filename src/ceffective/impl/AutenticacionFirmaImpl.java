@@ -17,11 +17,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.AutenticacionFirmaImpl#getAccessId <em>Access Id</em>}</li>
  *   <li>{@link ceffective.impl.AutenticacionFirmaImpl#getSecret <em>Secret</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

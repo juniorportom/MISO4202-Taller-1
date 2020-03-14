@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.Recurso#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.Recurso#getZonaDisponibilidad <em>Zona Disponibilidad</em>}</li>
@@ -19,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ceffective.Recurso#getId <em>Id</em>}</li>
  *   <li>{@link ceffective.Recurso#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getRecurso()
  * @model abstract="true"

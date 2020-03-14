@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.ServidorBDImpl#getTipo <em>Tipo</em>}</li>
  *   <li>{@link ceffective.impl.ServidorBDImpl#getSistemaManejador <em>Sistema Manejador</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

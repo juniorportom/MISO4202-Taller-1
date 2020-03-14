@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.AutenticacionUsuarioImpl#getUsuario <em>Usuario</em>}</li>
  *   <li>{@link ceffective.impl.AutenticacionUsuarioImpl#getCorreo <em>Correo</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

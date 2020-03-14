@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.AmbienteDespliegue#getAmbiente <em>Ambiente</em>}</li>
  *   <li>{@link ceffective.AmbienteDespliegue#getRecursos <em>Recursos</em>}</li>
@@ -21,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ceffective.AmbienteDespliegue#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.AmbienteDespliegue#getConexion <em>Conexion</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getAmbienteDespliegue()
  * @model

@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.CeffectiveImpl#getProveedorNube <em>Proveedor Nube</em>}</li>
  *   <li>{@link ceffective.impl.CeffectiveImpl#getNombre <em>Nombre</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
