@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ceffective:ProveedorNube xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ceffective="https://www.uniandes.edu.co/ceffective" nombre="AWS">
+  <autenticacionUsuario xsi:type="ceffective:AutenticacionFirma" usuario="usaurio1" correo="prueba@correo.com" accessId="acceso1" secret="secreto1" firma="/home/ubuntu/Documentos/Terraform/terraformtest_key.pem"/>
+  <ambientedespliegue nombre="Ambiente_de_pruebas">
+    <recursos xsi:type="ceffective:Almacenamiento" nombre="Almacenamiento" zonaDisponibilidad="z1" zonaNombre="Zona 1" vpc="VPC" id="almacenamientodesarrollo" name="Almacenamiento" tamanoInicial="20.0"/>
+    <recursos xsi:type="ceffective:ServidorBD" nombre="Database" zonaDisponibilidad="z1" zonaNombre="zona_1" vpc="VPC" id="dbdesarrollo" name="Database" sistemaManejador="MySql"/>
+    <recursos xsi:type="ceffective:ServidorAplicaciones" nombre="ServidorApp" zonaDisponibilidad="z1" zonaNombre="Zona_1" vpc="VPC" id="servidorApp" name="ServidorApp" sistemaOperativo="linux"/>
+    <vpc nombre="VPC_Desarrollo" id="vpcdesarrollo" cidrBlock="172.34.0.0/16" name="VPC"/>
+    <mecanismoseguridad xsi:type="ceffective:GrupoSeguridad" nombre="InternetGateway" zonaNombre="Zona_1" zonaDisponibilidad="z1" vpc="VPC" id="gatewaydesarrollo" descripcion="Seguridad_desarrollo">
+      <reglas tipo="HTTP" protocolo="TCP" puerto="80" origen="127.0.0.1/0" descripcion="HTTP_Entrada"/>
+      <reglas tipo="HTTP" protocolo="TCP" puerto="8080" origen="127.0.0.1/0" descripcion="HTTP_Salida"/>
+      <reglas tipo="SSH" protocolo="TCP" puerto="22" origen="192.0.0.1/128" descripcion="Conexion_SSH"/>
+    </mecanismoseguridad>
+    <mecanismoseguridad xsi:type="ceffective:Subred" nombre="Subred_1" zonaNombre="Zona_1" zonaDisponibilidad="z1" vpc="VPC" id="subred1" cidrBlock="172.34.2.0/24"/>
+    <mecanismoseguridad xsi:type="ceffective:Subred" nombre="Subred_2" zonaNombre="Zona_1" zonaDisponibilidad="z1" vpc="VPC" id="subred2" cidrBlock="172.34.1.0/24"/>
+    <conexion recurso1="ServidorApp" recurso2="Database"/>
+    <conexion recurso1="ServidorApp" recurso2="Almacenamiento"/>
+  </ambientedespliegue>
+</ceffective:ProveedorNube>

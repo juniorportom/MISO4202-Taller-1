@@ -10,11 +10,11 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.ServidorBD#getTipo <em>Tipo</em>}</li>
  *   <li>{@link ceffective.ServidorBD#getSistemaManejador <em>Sistema Manejador</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getServidorBD()
  * @model

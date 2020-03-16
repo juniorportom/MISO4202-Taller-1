@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.AutenticacionUsuario#getUsuario <em>Usuario</em>}</li>
  *   <li>{@link ceffective.AutenticacionUsuario#getCorreo <em>Correo</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getAutenticacionUsuario()
  * @model

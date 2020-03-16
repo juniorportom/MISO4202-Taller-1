@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.ConexionImpl#getRecurso1 <em>Recurso1</em>}</li>
  *   <li>{@link ceffective.impl.ConexionImpl#getRecurso2 <em>Recurso2</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

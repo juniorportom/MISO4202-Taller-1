@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.ProveedorNube#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.ProveedorNube#getAutenticacionUsuario <em>Autenticacion Usuario</em>}</li>
  *   <li>{@link ceffective.ProveedorNube#getAmbientedespliegue <em>Ambientedespliegue</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getProveedorNube()
  * @model

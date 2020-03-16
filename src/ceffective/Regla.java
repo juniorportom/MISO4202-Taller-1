@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.Regla#getTipo <em>Tipo</em>}</li>
  *   <li>{@link ceffective.Regla#getProtocolo <em>Protocolo</em>}</li>
@@ -19,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ceffective.Regla#getDescripcion <em>Descripcion</em>}</li>
  *   <li>{@link ceffective.Regla#getDireccion <em>Direccion</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getRegla()
  * @model

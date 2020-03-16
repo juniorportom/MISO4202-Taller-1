@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getAmbiente <em>Ambiente</em>}</li>
  *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getRecursos <em>Recursos</em>}</li>
@@ -34,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.AmbienteDespliegueImpl#getConexion <em>Conexion</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -10,10 +10,10 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.Almacenamiento#getTamanoInicial <em>Tamano Inicial</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getAlmacenamiento()
  * @model

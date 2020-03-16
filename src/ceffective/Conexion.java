@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.Conexion#getRecurso1 <em>Recurso1</em>}</li>
  *   <li>{@link ceffective.Conexion#getRecurso2 <em>Recurso2</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getConexion()
  * @model

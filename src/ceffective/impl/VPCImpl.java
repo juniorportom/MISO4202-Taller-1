@@ -15,13 +15,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.VPCImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.VPCImpl#getId <em>Id</em>}</li>
  *   <li>{@link ceffective.impl.VPCImpl#getCidrBlock <em>Cidr Block</em>}</li>
  *   <li>{@link ceffective.impl.VPCImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

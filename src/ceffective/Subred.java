@@ -10,10 +10,10 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.Subred#getCidrBlock <em>Cidr Block</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getSubred()
  * @model

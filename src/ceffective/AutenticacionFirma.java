@@ -10,11 +10,11 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.AutenticacionFirma#getAccessId <em>Access Id</em>}</li>
  *   <li>{@link ceffective.AutenticacionFirma#getSecret <em>Secret</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getAutenticacionFirma()
  * @model

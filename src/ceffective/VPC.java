@@ -11,13 +11,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.VPC#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.VPC#getId <em>Id</em>}</li>
  *   <li>{@link ceffective.VPC#getCidrBlock <em>Cidr Block</em>}</li>
  *   <li>{@link ceffective.VPC#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getVPC()
  * @model

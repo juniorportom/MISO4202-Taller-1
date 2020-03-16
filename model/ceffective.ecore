@@ -109,6 +109,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AutenticacionFirma" eSuperTypes="#//AutenticacionUsuario">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="secret" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firma" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DireccionRegla">
     <eLiterals name="ENTRADA" value="1"/>

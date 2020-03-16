@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.Ceffective#getProveedorNube <em>Proveedor Nube</em>}</li>
  *   <li>{@link ceffective.Ceffective#getNombre <em>Nombre</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getCeffective()
  * @model

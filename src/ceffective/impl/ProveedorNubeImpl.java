@@ -23,12 +23,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.ProveedorNubeImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.ProveedorNubeImpl#getAutenticacionUsuario <em>Autenticacion Usuario</em>}</li>
  *   <li>{@link ceffective.impl.ProveedorNubeImpl#getAmbientedespliegue <em>Ambientedespliegue</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

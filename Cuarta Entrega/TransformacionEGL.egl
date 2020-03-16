@@ -1,0 +1,250 @@
+
+
+[*
+Sebastian Garcia
+Reinaldo Portocarrero 
+*]
+
+
+	
+[%	
+	var ceffective = Ceffective.all;
+	var proveedor = ProveedorNube.all.first();
+%]
+
+# connection to AWS
+provider "[%=proveedor.nombre.toLowerCase() %]" {
+  profile    = "default"
+  region     = "us-east-1"
+}
+#end connection to AWS
+
+[%	
+	var ambiente = AmbienteDespliegue.all.first();
+	
+	//for(ambiente in ambientes){
+
+	var vpcs = ambiente.vpc;
+	
+	for ( vpc in vpcs ) 
+	{
+		%]
+		
+# create the VPC
+resource "aws_vpc" "[%=vpc.id %]" {
+  cidr_block           = ["[%=vpc.cidrBlock %]"]
+  instance_tenancy     = "default" 
+  enable_dns_support   = true 
+  enable_dns_hostnames = true
+  
+} 
+# end VPC
+
+	[%
+//	}
+	
+}
+	
+	var mecanismosSeguridad = ambiente.mecanismoseguridad;
+	
+	var internetGateways = InternetGateway.all;  //mecanismosSeguridad.select( i | i.isTypeOf( mcf!InternetGateway ) );
+	
+for ( mec in internetGateways )
+	{
+		%]
+		
+# create the security resource
+resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
+  vpc_id = [%=mec.vpc.id %]
+}
+# end security resouce
+		
+	[%
+	}
+	
+	var subreds = Subred.all;
+	for ( mec in subreds )
+	{
+		%]
+		
+# create the security resource
+resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
+  vpc_id = [%=mec.vpc.id %]
+  cidr_block              = ["[%=mec.cidrBlock %]"]
+  map_public_ip_on_launch = true 
+  availability_zone       = [%=mec.zonaDisponibilidad %]		
+}
+# end security resouce
+		
+		[%
+	}
+	
+	var securityGroups = GrupoSeguridad.all;
+	for ( mec in securityGroups )
+	{
+		%]
+		
+# create the security resource
+resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
+  vpc_id = [%=mec.vpc.id %]
+  name         = [%=mec.nombre %]
+  description  = [%=mec.descripcion %]
+  map_public_ip_on_launch = true 
+  availability_zone       = [%=mec.zonaDisponibilidad %]	
+  
+  [%
+  
+  		for ( regla in Regla.all ) // mec.regla
+  		{
+  			var direccion =  "ingress";
+  			if ( regla.direccion = "ENTRADA" )
+  			{
+  				direccion =  "ingress";
+  			} 
+  			else 
+  			{
+  				direccion =  "egress";
+  			}
+  			
+  		%]
+  		
+ [%=direccion %] {
+    from_port   = [%=regla.puerto %]
+    to_port     = [%=regla.puerto %]
+    protocol    = [%=regla.protocolo %]
+  }  		
+  		
+  		[%
+  			
+  		}
+  
+  %]
+  	
+}
+# end security resouce
+		
+		[%
+	}
+	
+%]
+
+	
+[%	
+	var auth = ProveedorNube.all.first().autenticacionUsuario;
+	%]
+	#Public key
+	resource "aws_key_pair" "ec2key" {
+  	key_name = "ec2key1"
+  	public_key = file("[%=auth.firma %]")
+	}
+#end Public key
+
+
+
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"] # Canonical
+}
+
+#Resources
+
+
+
+[%	
+	var servers = ambiente.recursos.select(r|r.isTypeOf(ServidorAplicaciones));
+	
+	for (server in servers){ 
+	%]
+	
+	  #Server instance
+	  resource "aws_instance" "[%=server.id %]" {
+	  ami           = data.aws_ami.ubuntu.id
+	  instance_type = "t2.[%=server.tamano.name.toLowerCase() %]"
+	  key_name = aws_key_pair.ec2key.key_name
+	  vpc_security_group_ids = [%=server.vpc.name %]
+	  subnet_id = aws_subnet.subnet1.id
+
+}
+#End server instance
+	
+	[%
+	}
+	
+	var subNets = ambiente.mecanismoseguridad.select(r|r.isTypeOf(Subred));	
+	
+	%]
+
+
+resource "aws_db_subnet_group" "dbsubnet1" {
+  name       = "dbsubnet1"
+  subnet_ids = [[%=subNets.collect(c|c.id).concat(",")%]]
+}
+
+	
+[%	
+	var databases = ambiente.recursos.select(r|r.isTypeOf(ServidorBD));
+	
+	for(db in databases){
+	%]
+	
+	#DB instance
+resource "aws_db_instance" "[%=db.id%]" {
+  name = "db1"
+  allocated_storage    = 20
+  storage_type         = "gp2"
+  engine               = "[%=db.sistemaManejador%]"
+  engine_version       = "5.7"
+  instance_class       = "db.t2.[%=db.tamano.name.toLowerCase()%]"
+  username             = "root"
+  password             = "miso4202-202002"
+  parameter_group_name = "default.mysql5.7"
+  vpc_security_group_ids = [[%=db.vpc.id%]]
+  db_subnet_group_name = aws_db_subnet_group.dbsubnet1.name
+}
+#End db instance
+	
+	
+[%	
+	}
+	
+	var disks = ambiente.recursos.select(r|r.isTypeOf(Almacenamiento));
+	
+	for(disk in disks){
+	
+%]
+
+#EBS instance
+resource "aws_ebs_volume" "[%=disk.id%]" {
+  availability_zone = [%=disk.zonaDisponibilidad%]
+  size              = [%=disk.tamanoInicial%]
+}
+#end EBS instance
+
+
+[%	
+	}
+	
+	
+%]
+
+
+#EBS attachment
+resource "aws_volume_attachment" "ebs_att" {
+  device_name = "/dev/sdh"
+  volume_id   = [%=ambiente.recursos.select(r|r.isTypeOf(Almacenamiento)).first().id%]
+  instance_id = [%=ambiente.recursos.select(r|r.isTypeOf(ServidorAplicaciones)).first().id%]
+}
+
+
+	

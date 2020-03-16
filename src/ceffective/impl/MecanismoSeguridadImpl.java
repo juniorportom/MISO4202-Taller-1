@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getZonaNombre <em>Zona Nombre</em>}</li>
@@ -27,7 +28,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getVpc <em>Vpc</em>}</li>
  *   <li>{@link ceffective.impl.MecanismoSeguridadImpl#getId <em>Id</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

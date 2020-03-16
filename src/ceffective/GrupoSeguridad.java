@@ -11,11 +11,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.GrupoSeguridad#getDescripcion <em>Descripcion</em>}</li>
  *   <li>{@link ceffective.GrupoSeguridad#getReglas <em>Reglas</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getGrupoSeguridad()
  * @model

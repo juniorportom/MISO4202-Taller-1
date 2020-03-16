@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.MecanismoSeguridad#getNombre <em>Nombre</em>}</li>
  *   <li>{@link ceffective.MecanismoSeguridad#getZonaNombre <em>Zona Nombre</em>}</li>
@@ -18,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ceffective.MecanismoSeguridad#getVpc <em>Vpc</em>}</li>
  *   <li>{@link ceffective.MecanismoSeguridad#getId <em>Id</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getMecanismoSeguridad()
  * @model abstract="true"

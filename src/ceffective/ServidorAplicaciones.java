@@ -10,10 +10,10 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.ServidorAplicaciones#getSistemaOperativo <em>Sistema Operativo</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getServidorAplicaciones()
  * @model

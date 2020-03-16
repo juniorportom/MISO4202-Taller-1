@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.ReglaImpl#getTipo <em>Tipo</em>}</li>
  *   <li>{@link ceffective.impl.ReglaImpl#getProtocolo <em>Protocolo</em>}</li>
@@ -27,7 +28,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ceffective.impl.ReglaImpl#getDescripcion <em>Descripcion</em>}</li>
  *   <li>{@link ceffective.impl.ReglaImpl#getDireccion <em>Direccion</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

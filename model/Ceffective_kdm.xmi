@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ceffective:Ceffective xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ceffective="https://www.uniandes.edu.co/ceffective" nombre="Prueba M2T">
+  <proveedorNube nombre="aws">
+    <autenticacionUsuario xsi:type="ceffective:AutenticacionFirma" usuario="Nidoo" correo="prubenidoo@gmail.com" accessId="id123aabc" secret="./key.pem"/>
+    <ambientedespliegue nombre="despliegue_prueba_m2t">
+      <recursos xsi:type="ceffective:ServidorBD" nombre="db1" zonaDisponibilidad="us-east-1a" zonaNombre="US East (N. Virginia)" vpc="vpc1" id="db1" name="db1" sistemaManejador="mysql"/>
+      <vpc nombre="vpc1" id="vpc1" cidrBlock="10.0.0.0/16" name="vpc1"/>
+      <mecanismoseguridad xsi:type="ceffective:InternetGateway" nombre="internet_gateway" zonaNombre="US East (N. Virginia)" zonaDisponibilidad="us-east-1a" vpc="vpc1" id="gateway1"/>
+      <mecanismoseguridad xsi:type="ceffective:Subred" nombre="subnet" zonaNombre="US East (N. Virginia)" zonaDisponibilidad="us-east-1a" vpc="vpc1" id="subnet1" cidrBlock="10.0.1.0/24"/>
+      <mecanismoseguridad xsi:type="ceffective:Subred" nombre="subnet" zonaNombre="10.0.2.0/2" zonaDisponibilidad="us-east-1b" vpc="vpc1" id="subnet2" cidrBlock="10.0.2.0/24"/>
+      <mecanismoseguridad xsi:type="ceffective:GrupoSeguridad" nombre="security_group" zonaNombre="US East (N. Virginia)" zonaDisponibilidad="us-east-1a" vpc="vpc1" id="securitygroup1" descripcion="Security Group 1">
+        <reglas tipo="SSH" protocolo="tcp" puerto="22" origen="22" descripcion="Allos Ingress of Port 22"/>
+        <reglas tipo="[&quot;0.0.0.0/0&quot;]" protocolo="-1" puerto="0" origen="0" descripcion="Allows egress of all Ports" direccion="SALIDA"/>
+      </mecanismoseguridad>
+    </ambientedespliegue>
+  </proveedorNube>
+</ceffective:Ceffective>

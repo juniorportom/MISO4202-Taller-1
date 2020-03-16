@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.impl.GrupoSeguridadImpl#getDescripcion <em>Descripcion</em>}</li>
  *   <li>{@link ceffective.impl.GrupoSeguridadImpl#getReglas <em>Reglas</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

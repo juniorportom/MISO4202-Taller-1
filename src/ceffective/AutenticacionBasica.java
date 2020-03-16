@@ -10,10 +10,10 @@ package ceffective;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ceffective.AutenticacionBasica#getPassword <em>Password</em>}</li>
  * </ul>
- * </p>
  *
  * @see ceffective.CeffectivePackage#getAutenticacionBasica()
  * @model
