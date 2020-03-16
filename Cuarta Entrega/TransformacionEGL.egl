@@ -9,11 +9,11 @@ Reinaldo Portocarrero
 	
 [%	
 	var ceffective = Ceffective.all;
-	var proveedor = ceffective.proveedorNube;
+	var proveedor = ProveedorNube.all.first();
 %]
 
 # connection to AWS
-provider "[%=proveedor.nombre %]" {
+provider "[%=proveedor.nombre.toLowerCase() %]" {
   profile    = "default"
   region     = "us-east-1"
 }
@@ -32,7 +32,7 @@ provider "[%=proveedor.nombre %]" {
 		
 # create the VPC
 resource "aws_vpc" "[%=vpc.id %]" {
-  cidr_block           = [%=vpc.cidrBlock %]
+  cidr_block           = ["[%=vpc.cidrBlock %]"]
   instance_tenancy     = "default" 
   enable_dns_support   = true 
   enable_dns_hostnames = true
@@ -70,7 +70,7 @@ resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
 # create the security resource
 resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
   vpc_id = [%=mec.vpc.id %]
-  cidr_block              = [%=mec.cidrBlock %]
+  cidr_block              = ["[%=mec.cidrBlock %]"]
   map_public_ip_on_launch = true 
   availability_zone       = [%=mec.zonaDisponibilidad %]		
 }
@@ -109,7 +109,7 @@ resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
   		%]
   		
  [%=direccion %] {
-    from_port   = [%=regla.origen %]
+    from_port   = [%=regla.puerto %]
     to_port     = [%=regla.puerto %]
     protocol    = [%=regla.protocolo %]
   }  		
@@ -135,7 +135,7 @@ resource "aws_[%=mec.nombre %]" "[%=mec.id %]" {
 	#Public key
 	resource "aws_key_pair" "ec2key" {
   	key_name = "ec2key1"
-  	public_key = public_key = file("[%=auth.firma%]")
+  	public_key = file("[%=auth.firma %]")
 	}
 #end Public key
 

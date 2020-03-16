@@ -5,7 +5,7 @@
 	
 
 # connection to AWS
-provider "[]" {
+provider "aws" {
   profile    = "default"
   region     = "us-east-1"
 }
@@ -14,7 +14,7 @@ provider "[]" {
 		
 # create the VPC
 resource "aws_vpc" "vpcdesarrollo" {
-  cidr_block           = 172.34.0.0/16
+  cidr_block           = ["172.34.0.0/16"]
   instance_tenancy     = "default" 
   enable_dns_support   = true 
   enable_dns_hostnames = true
@@ -24,9 +24,9 @@ resource "aws_vpc" "vpcdesarrollo" {
 
 		
 # create the security resource
-resource "aws_Subred 1" "subred1" {
+resource "aws_Subred_1" "subred1" {
   vpc_id = vpcdesarrollo
-  cidr_block              = 172.34.2.0/24
+  cidr_block              = ["172.34.2.0/24"]
   map_public_ip_on_launch = true 
   availability_zone       = z1		
 }
@@ -34,9 +34,9 @@ resource "aws_Subred 1" "subred1" {
 		
 		
 # create the security resource
-resource "aws_Subred 2" "subred2" {
+resource "aws_Subred_2" "subred2" {
   vpc_id = vpcdesarrollo
-  cidr_block              = 172.34.1.0/24
+  cidr_block              = ["172.34.1.0/24"]
   map_public_ip_on_launch = true 
   availability_zone       = z1		
 }
@@ -47,27 +47,27 @@ resource "aws_Subred 2" "subred2" {
 resource "aws_InternetGateway" "gatewaydesarrollo" {
   vpc_id = vpcdesarrollo
   name         = InternetGateway
-  description  = Seguridad desarrollo
+  description  = Seguridad_desarrollo
   map_public_ip_on_launch = true 
   availability_zone       = z1	
   
   		
  egress {
-    from_port   = 127.0.0.1/0
+    from_port   = 80
     to_port     = 80
     protocol    = TCP
   }  		
   		
   		
  egress {
-    from_port   = 127.0.0.1/0
+    from_port   = 8080
     to_port     = 8080
     protocol    = TCP
   }  		
   		
   		
  egress {
-    from_port   = 192.0.0.1/128
+    from_port   = 22
     to_port     = 22
     protocol    = TCP
   }  		
@@ -81,7 +81,7 @@ resource "aws_InternetGateway" "gatewaydesarrollo" {
 	#Public key
 	resource "aws_key_pair" "ec2key" {
   	key_name = "ec2key1"
-  	public_key = public_key = file("[/home/ubuntu/Documentos/Terraform/terraformtest_key.pem]")
+  	public_key = file("[/home/ubuntu/Documentos/Terraform/terraformtest_key.pem]")
 	}
 #end Public key
 
